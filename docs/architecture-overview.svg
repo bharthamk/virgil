@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title description">
+  <title id="title">Virgil system architecture</title>
+  <desc id="description">Learner surfaces connect to a Cloud Run service and Firestore. A Cloud Run Job runs an eleven-stage Google ADK workflow through a typed Gemini boundary, independently verifies the result, and writes evidence back to the learner state.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f5ed"/>
+      <stop offset="1" stop-color="#eef4ef"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#173d32" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#2d6452"/>
+    </marker>
+    <style>
+      .title { font: 700 40px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #173d32; }
+      .subtitle { font: 500 20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #49675d; }
+      .eyebrow { font: 700 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 2px; fill: #5f746c; }
+      .box-title { font: 700 24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #173d32; }
+      .box-copy { font: 500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #405b52; }
+      .small { font: 600 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #49675d; }
+      .flow { fill: none; stroke: #2d6452; stroke-width: 4; marker-end: url(#arrow); }
+      .return { fill: none; stroke: #bd6a35; stroke-width: 4; stroke-dasharray: 10 8; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1440" height="900" rx="28" fill="url(#background)"/>
+  <text x="70" y="78" class="title">Virgil: one adaptive learning loop</text>
+  <text x="70" y="112" class="subtitle">Capture evidence → prepare and verify in the background → recommend one next move → learn from the outcome</text>
+
+  <text x="70" y="168" class="eyebrow">LEARNER EXPERIENCE</text>
+  <g filter="url(#shadow)">
+    <rect x="70" y="190" width="330" height="172" rx="22" fill="#ffffff" stroke="#cad9d2" stroke-width="2"/>
+    <rect x="555" y="190" width="330" height="172" rx="22" fill="#ffffff" stroke="#cad9d2" stroke-width="2"/>
+    <rect x="1040" y="190" width="330" height="172" rx="22" fill="#ffffff" stroke="#cad9d2" stroke-width="2"/>
+  </g>
+  <text x="100" y="235" class="box-title">Capture</text>
+  <text x="100" y="270" class="box-copy">Chrome extension + full page</text>
+  <text x="100" y="301" class="box-copy">Pages, notes, files, feedback</text>
+  <text x="100" y="332" class="small">Exact source context retained</text>
+  <text x="585" y="235" class="box-title">Learn &amp; Manage</text>
+  <text x="585" y="270" class="box-copy">Board, lesson, plan, insights</text>
+  <text x="585" y="301" class="box-copy">Answer, correct, or record outcome</text>
+  <text x="585" y="332" class="small">Every action becomes evidence</text>
+  <text x="1070" y="235" class="box-title">Customize</text>
+  <text x="1070" y="270" class="box-copy">Privacy, spend, model routes</text>
+  <text x="1070" y="301" class="box-copy">Pause, exclusions, connections</text>
+  <text x="1070" y="332" class="small">Learner-visible control</text>
+
+  <path d="M 400 276 H 535" class="flow"/>
+  <path d="M 885 276 H 1020" class="flow"/>
+
+  <text x="70" y="432" class="eyebrow">GOOGLE CLOUD RUNTIME</text>
+  <g filter="url(#shadow)">
+    <rect x="70" y="454" width="370" height="194" rx="22" fill="#e4f1e9" stroke="#8fb7a5" stroke-width="2"/>
+    <rect x="535" y="454" width="370" height="194" rx="22" fill="#fff8e8" stroke="#dcc991" stroke-width="2"/>
+    <rect x="1000" y="454" width="370" height="194" rx="22" fill="#e8eef8" stroke="#aabbd7" stroke-width="2"/>
+  </g>
+  <text x="100" y="499" class="box-title">Cloud Run service</text>
+  <text x="100" y="534" class="box-copy">Authenticated product API</text>
+  <text x="100" y="565" class="box-copy">Per-learner request boundary</text>
+  <text x="100" y="596" class="box-copy">Dispatches background work</text>
+  <text x="100" y="627" class="small">Same API for both surfaces</text>
+
+  <text x="565" y="499" class="box-title">Firestore</text>
+  <text x="565" y="534" class="box-copy">Learner board + evidence</text>
+  <text x="565" y="565" class="box-copy">Plans, progress, corrections</text>
+  <text x="565" y="596" class="box-copy">Durable async checkpoints</text>
+  <text x="565" y="627" class="small">Isolated by learner identity</text>
+
+  <text x="1030" y="499" class="box-title">Cloud Run Job</text>
+  <text x="1030" y="534" class="box-copy">Google ADK orchestration</text>
+  <text x="1030" y="565" class="box-copy">11 ordered, restartable stages</text>
+  <text x="1030" y="596" class="box-copy">Independent final verifier</text>
+  <text x="1030" y="627" class="small">Long-running background work</text>
+
+  <path d="M 255 362 V 434" class="flow"/>
+  <path d="M 440 551 H 515" class="flow"/>
+  <path d="M 905 551 H 980" class="flow"/>
+
+  <g filter="url(#shadow)">
+    <rect x="1000" y="706" width="370" height="112" rx="22" fill="#f2e9f7" stroke="#c6a7d2" stroke-width="2"/>
+  </g>
+  <text x="1030" y="751" class="box-title">Gemini 3.5</text>
+  <text x="1030" y="785" class="box-copy">Typed Llm boundary + schemas</text>
+  <path d="M 1185 648 V 686" class="flow"/>
+
+  <path d="M 1000 778 C 800 860, 510 860, 350 665" class="return"/>
+  <text x="466" y="843" class="small" fill="#9b552d">verified recommendations + provenance return to the learner loop</text>
+
+  <g>
+    <rect x="70" y="706" width="835" height="112" rx="22" fill="#173d32"/>
+    <text x="100" y="748" style="font:700 18px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill:#dcebe4; letter-spacing:1.5px;">TRUST BOUNDARY</text>
+    <text x="100" y="783" style="font:600 18px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill:#ffffff;">Auth + allowlist · Secret Manager · spend guard · scoped tools · no silent external writes</text>
+  </g>
+</svg>

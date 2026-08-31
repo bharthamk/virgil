@@ -1,0 +1,1676 @@
+{
+  "pins": [
+    {
+      "id": "4dcb76db-3e08-409a-b547-f86d78a11855",
+      "type": "struggle",
+      "envelope": {
+        "selection": "With pull delivery your subscriber client requests messages; with push delivery Pub/Sub sends each message as an HTTP request to an endpoint you control.",
+        "parts": [],
+        "surroundingText": "Subscription type determines how messages reach your code. Pull suits high throughput and variable processing time. Push suits low volume and serverless endpoints that are already HTTP.",
+        "headingPath": [
+          "Pub/Sub",
+          "Subscriptions"
+        ],
+        "pageTitle": "Choose a subscription type — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/pubsub-delivery/1",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-07-14T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic pubsub-delivery prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "4dcb76db-3e08-409a-b547-f86d78a11855:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/pubsub-delivery/1",
+            "title": "Choose a subscription type — synthetic demo",
+            "retrievedAt": "2026-07-14T00:33:45.329Z",
+            "pinId": "4dcb76db-3e08-409a-b547-f86d78a11855"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:34:44.530Z"
+      },
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f"
+    },
+    {
+      "id": "5e860f4c-8455-4fd5-86f6-3f4a9b8afbd7",
+      "type": "struggle",
+      "envelope": {
+        "selection": "If you do not acknowledge within the ack deadline the message is redelivered. Extending the deadline is done by the client library automatically, but only up to maxExtension.",
+        "parts": [],
+        "surroundingText": "Accepted answer explains that redelivery is expected behaviour and at-least-once delivery means your handler must be idempotent.",
+        "headingPath": [
+          "Questions"
+        ],
+        "pageTitle": "Why are my Pub/Sub messages redelivered? — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/pubsub-delivery/2",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": "why?",
+      "capturedAt": "2026-07-12T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic pubsub-delivery prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "5e860f4c-8455-4fd5-86f6-3f4a9b8afbd7:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/pubsub-delivery/2",
+            "title": "Why are my Pub/Sub messages redelivered? — synthetic demo",
+            "retrievedAt": "2026-07-12T00:33:45.329Z",
+            "pinId": "5e860f4c-8455-4fd5-86f6-3f4a9b8afbd7"
+          }
+        ],
+        "confidence": "full",
+        "enrichedAt": "2026-08-19T00:34:48.469Z"
+      },
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f"
+    },
+    {
+      "id": "a96f4a5f-9ca7-4906-92ac-bc25d5833858",
+      "type": "interest",
+      "envelope": {
+        "selection": "Exactly-once delivery guarantees that an acknowledged message is not redelivered, within a single subscription and region.",
+        "parts": [],
+        "surroundingText": "This does not remove the need for idempotency across subscriptions or regions.",
+        "headingPath": [
+          "Pub/Sub",
+          "Delivery"
+        ],
+        "pageTitle": "Exactly-once delivery — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/pubsub-delivery/3",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-07-20T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic pubsub-delivery prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "a96f4a5f-9ca7-4906-92ac-bc25d5833858:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/pubsub-delivery/3",
+            "title": "Exactly-once delivery — synthetic demo",
+            "retrievedAt": "2026-07-20T00:33:45.329Z",
+            "pinId": "a96f4a5f-9ca7-4906-92ac-bc25d5833858"
+          }
+        ],
+        "confidence": "full",
+        "enrichedAt": "2026-08-19T00:34:51.456Z"
+      },
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f"
+    },
+    {
+      "id": "78c7a6b1-cbcc-465c-aeea-9c5ffdfc5554",
+      "type": "interest",
+      "envelope": {
+        "selection": "Messages published with the same ordering key are delivered to subscribers in the order the service received them.",
+        "parts": [],
+        "surroundingText": "Ordering keys require the subscription to have message ordering enabled. Throughput per ordering key is limited.",
+        "headingPath": [
+          "Pub/Sub",
+          "Ordering"
+        ],
+        "pageTitle": "Ordering messages — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/pubsub-ordering/4",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-07-13T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic pubsub-ordering prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "78c7a6b1-cbcc-465c-aeea-9c5ffdfc5554:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/pubsub-ordering/4",
+            "title": "Ordering messages — synthetic demo",
+            "retrievedAt": "2026-07-13T00:33:45.329Z",
+            "pinId": "78c7a6b1-cbcc-465c-aeea-9c5ffdfc5554"
+          }
+        ],
+        "confidence": "full",
+        "enrichedAt": "2026-08-19T00:35:57.733Z"
+      },
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f"
+    },
+    {
+      "id": "4bc3eae7-3648-4e4a-bec1-a274c4841598",
+      "type": "struggle",
+      "envelope": {
+        "selection": "A single hot ordering key serialises all its messages through one subscriber, so a poorly chosen key turns a parallel pipeline into a queue.",
+        "parts": [],
+        "surroundingText": "Choose keys with high cardinality. Tenant id is usually fine; a constant string is a disaster.",
+        "headingPath": [
+          "Ordering"
+        ],
+        "pageTitle": "Three ways ordering keys bite you — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/pubsub-ordering/5",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-07-25T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic pubsub-ordering prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "4bc3eae7-3648-4e4a-bec1-a274c4841598:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/pubsub-ordering/5",
+            "title": "Three ways ordering keys bite you — synthetic demo",
+            "retrievedAt": "2026-07-25T00:33:45.329Z",
+            "pinId": "4bc3eae7-3648-4e4a-bec1-a274c4841598"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:36:01.001Z"
+      },
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f"
+    },
+    {
+      "id": "68aeabc8-79b6-4f6c-a6e2-20d6896c229d",
+      "type": "struggle",
+      "envelope": {
+        "selection": "Conditional role bindings grant access only when the condition expression evaluates to true for the request.",
+        "parts": [],
+        "surroundingText": "Conditions are written in Common Expression Language and can reference request attributes and resource attributes.",
+        "headingPath": [
+          "IAM",
+          "Conditions"
+        ],
+        "pageTitle": "IAM Conditions overview — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/iam-conditions/6",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-07-21T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic iam-conditions prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "68aeabc8-79b6-4f6c-a6e2-20d6896c229d:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/iam-conditions/6",
+            "title": "IAM Conditions overview — synthetic demo",
+            "retrievedAt": "2026-07-21T00:33:45.329Z",
+            "pinId": "68aeabc8-79b6-4f6c-a6e2-20d6896c229d"
+          }
+        ],
+        "confidence": "full",
+        "enrichedAt": "2026-08-19T00:36:03.967Z"
+      },
+      "topicId": "37acf0ec-8584-48c9-a578-70f523075bea"
+    },
+    {
+      "id": "4281e80e-f2f0-4cee-8e1d-d20795083ad7",
+      "type": "struggle",
+      "envelope": {
+        "selection": "resource.name is only available for some services. Where it is unavailable the condition cannot reference the specific resource.",
+        "parts": [],
+        "surroundingText": "Check the supported attributes table per service before writing a condition.",
+        "headingPath": [
+          "IAM",
+          "Conditions",
+          "Attributes"
+        ],
+        "pageTitle": "Attribute reference — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/iam-conditions/7",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": "this keeps catching me out",
+      "capturedAt": "2026-07-27T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic iam-conditions prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "4281e80e-f2f0-4cee-8e1d-d20795083ad7:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/iam-conditions/7",
+            "title": "Attribute reference — synthetic demo",
+            "retrievedAt": "2026-07-27T00:33:45.329Z",
+            "pinId": "4281e80e-f2f0-4cee-8e1d-d20795083ad7"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:37:02.712Z"
+      },
+      "topicId": "37acf0ec-8584-48c9-a578-70f523075bea"
+    },
+    {
+      "id": "8f70d1fd-0c84-47bb-897c-fdc08f633e79",
+      "type": "struggle",
+      "envelope": {
+        "selection": null,
+        "parts": [
+          {
+            "role": "my-answer",
+            "text": "resource.type == \"storage.googleapis.com/Bucket\""
+          },
+          {
+            "role": "correct-answer",
+            "text": "resource.type == \"storage.googleapis.com/Object\""
+          }
+        ],
+        "surroundingText": "Asker wrote a condition on resource.type expecting it to match a bucket, but resource.type for Cloud Storage objects is storage.googleapis.com/Object not Bucket.",
+        "headingPath": [
+          "Questions"
+        ],
+        "pageTitle": "IAM condition never matches — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/iam-conditions/8",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-08-02T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic iam-conditions prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "8f70d1fd-0c84-47bb-897c-fdc08f633e79:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/iam-conditions/8",
+            "title": "IAM condition never matches — synthetic demo",
+            "retrievedAt": "2026-08-02T00:33:45.329Z",
+            "pinId": "8f70d1fd-0c84-47bb-897c-fdc08f633e79"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:37:05.471Z"
+      },
+      "topicId": "37acf0ec-8584-48c9-a578-70f523075bea"
+    },
+    {
+      "id": "99d5220c-50fe-4133-81b0-1edee5a94d01",
+      "type": "struggle",
+      "envelope": {
+        "selection": "Conditions cannot be used with basic roles, and a conditional binding does not reduce access granted by another unconditional binding.",
+        "parts": [],
+        "surroundingText": "This is the most common source of surprise: adding a condition to one binding does not restrict a broader grant elsewhere in the policy.",
+        "headingPath": [
+          "IAM",
+          "Conditions",
+          "Limitations"
+        ],
+        "pageTitle": "IAM Conditions overview — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/iam-conditions/9",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": "THIS is what I kept missing",
+      "capturedAt": "2026-08-10T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic iam-conditions prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "99d5220c-50fe-4133-81b0-1edee5a94d01:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/iam-conditions/9",
+            "title": "IAM Conditions overview — synthetic demo",
+            "retrievedAt": "2026-08-10T00:33:45.329Z",
+            "pinId": "99d5220c-50fe-4133-81b0-1edee5a94d01"
+          }
+        ],
+        "confidence": "full",
+        "enrichedAt": "2026-08-19T00:37:08.560Z"
+      },
+      "topicId": "37acf0ec-8584-48c9-a578-70f523075bea"
+    },
+    {
+      "id": "34aa0f4c-b239-4bd5-9eeb-c81ea4588f49",
+      "type": "interest",
+      "envelope": {
+        "selection": "A cold start occurs when a request arrives and no instance is available, so the container must be started and initialised before the request is served.",
+        "parts": [],
+        "surroundingText": "Minimum instances keep containers warm at the cost of always-on billing.",
+        "headingPath": [
+          "Cloud Run",
+          "Tips"
+        ],
+        "pageTitle": "General development tips — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/cloudrun-coldstart/10",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-08-04T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic cloudrun-coldstart prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "34aa0f4c-b239-4bd5-9eeb-c81ea4588f49:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/cloudrun-coldstart/10",
+            "title": "General development tips — synthetic demo",
+            "retrievedAt": "2026-08-04T00:33:45.329Z",
+            "pinId": "34aa0f4c-b239-4bd5-9eeb-c81ea4588f49"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:38:06.907Z"
+      },
+      "topicId": "90835102-656b-4076-8b9c-e0a4816ad2c3"
+    },
+    {
+      "id": "e7f49edd-91e3-4e33-b77f-ee9f1d72ec61",
+      "type": "struggle",
+      "envelope": {
+        "selection": "Idle instances retained by the minimum instances setting are billed at a reduced rate but are still billed.",
+        "parts": [],
+        "surroundingText": "Setting minimum instances above zero eliminates most cold starts for steady traffic but does not help with sudden spikes.",
+        "headingPath": [
+          "Cloud Run",
+          "Configuring"
+        ],
+        "pageTitle": "Minimum instances — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/cloudrun-coldstart/11",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-08-08T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic cloudrun-coldstart prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "e7f49edd-91e3-4e33-b77f-ee9f1d72ec61:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/cloudrun-coldstart/11",
+            "title": "Minimum instances — synthetic demo",
+            "retrievedAt": "2026-08-08T00:33:45.329Z",
+            "pinId": "e7f49edd-91e3-4e33-b77f-ee9f1d72ec61"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:38:09.862Z"
+      },
+      "topicId": "90835102-656b-4076-8b9c-e0a4816ad2c3"
+    },
+    {
+      "id": "0253d876-972b-4e88-9092-6e217d773a61",
+      "type": "interest",
+      "envelope": {
+        "selection": "Startup CPU boost allocates additional CPU during instance startup to reduce cold start latency.",
+        "parts": [],
+        "surroundingText": "Most effective for runtimes with heavy initialisation such as JVM or large Python dependency trees.",
+        "headingPath": [
+          "Cloud Run",
+          "Configuring"
+        ],
+        "pageTitle": "Startup CPU boost — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/cloudrun-coldstart/12",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-08-17T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic cloudrun-coldstart prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "0253d876-972b-4e88-9092-6e217d773a61:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/cloudrun-coldstart/12",
+            "title": "Startup CPU boost — synthetic demo",
+            "retrievedAt": "2026-08-17T00:33:45.329Z",
+            "pinId": "0253d876-972b-4e88-9092-6e217d773a61"
+          }
+        ],
+        "confidence": "full",
+        "enrichedAt": "2026-08-19T00:38:12.428Z"
+      },
+      "topicId": "90835102-656b-4076-8b9c-e0a4816ad2c3"
+    },
+    {
+      "id": "5186333f-4962-49e1-9e7f-257f78223387",
+      "type": "interest",
+      "envelope": {
+        "selection": "Compound queries with range filters on multiple fields require a composite index and are subject to ordering constraints.",
+        "parts": [],
+        "surroundingText": "Range and inequality filters must all apply to the same field unless you use the newer multi-field capability.",
+        "headingPath": [
+          "Firestore",
+          "Queries"
+        ],
+        "pageTitle": "Perform simple and compound queries — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/firestore-queries/13",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-07-18T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic firestore-queries prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "5186333f-4962-49e1-9e7f-257f78223387:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/firestore-queries/13",
+            "title": "Perform simple and compound queries — synthetic demo",
+            "retrievedAt": "2026-07-18T00:33:45.329Z",
+            "pinId": "5186333f-4962-49e1-9e7f-257f78223387"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:39:22.523Z"
+      },
+      "topicId": "d69f462a-63d5-4fa7-8505-d1c216bd7554"
+    },
+    {
+      "id": "14a110e6-0f52-4342-8ae5-9db6609b8f50",
+      "type": "struggle",
+      "envelope": {
+        "selection": null,
+        "parts": [
+          {
+            "role": "error",
+            "text": "FAILED_PRECONDITION: The query requires an index."
+          },
+          {
+            "role": "fix",
+            "text": "Create a composite index on (status ASC, createdAt DESC)."
+          }
+        ],
+        "surroundingText": "Asker hit an index error combining a where on status with an orderBy on createdAt.",
+        "headingPath": [
+          "Questions"
+        ],
+        "pageTitle": "The query requires an index — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/firestore-queries/14",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": "thought I had this",
+      "capturedAt": "2026-08-16T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic firestore-queries prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "14a110e6-0f52-4342-8ae5-9db6609b8f50:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/firestore-queries/14",
+            "title": "The query requires an index — synthetic demo",
+            "retrievedAt": "2026-08-16T00:33:45.329Z",
+            "pinId": "14a110e6-0f52-4342-8ae5-9db6609b8f50"
+          }
+        ],
+        "confidence": "full",
+        "enrichedAt": "2026-08-19T00:39:26.081Z"
+      },
+      "topicId": "d69f462a-63d5-4fa7-8505-d1c216bd7554"
+    },
+    {
+      "id": "c41bbf41-3a09-454f-aaa0-a11090d35fbe",
+      "type": "struggle",
+      "envelope": {
+        "selection": "An interval is the distance between two notes, counted inclusively from the lower note to the higher.",
+        "parts": [],
+        "surroundingText": "C to E is a third because C, D, E is three letter names, regardless of accidentals.",
+        "headingPath": [
+          "Lessons",
+          "Intervals"
+        ],
+        "pageTitle": "Generic intervals — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/intervals/15",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-07-11T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic intervals prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "c41bbf41-3a09-454f-aaa0-a11090d35fbe:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/intervals/15",
+            "title": "Generic intervals — synthetic demo",
+            "retrievedAt": "2026-07-11T00:33:45.329Z",
+            "pinId": "c41bbf41-3a09-454f-aaa0-a11090d35fbe"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:40:36.414Z"
+      },
+      "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f"
+    },
+    {
+      "id": "02aa6679-5fc7-4003-89ec-d7715d823314",
+      "type": "struggle",
+      "envelope": {
+        "selection": "A major third spans four semitones; a minor third spans three. The generic name tells you the letter distance, the quality tells you the semitone count.",
+        "parts": [],
+        "surroundingText": "Perfect intervals are the unison, fourth, fifth and octave. These are never major or minor.",
+        "headingPath": [
+          "Lessons",
+          "Intervals"
+        ],
+        "pageTitle": "Specific intervals — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/intervals/16",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-07-19T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic intervals prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "02aa6679-5fc7-4003-89ec-d7715d823314:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/intervals/16",
+            "title": "Specific intervals — synthetic demo",
+            "retrievedAt": "2026-07-19T00:33:45.329Z",
+            "pinId": "02aa6679-5fc7-4003-89ec-d7715d823314"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:40:39.612Z"
+      },
+      "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f"
+    },
+    {
+      "id": "4417a5d4-4a05-4667-9356-8a28d91df3dd",
+      "type": "interest",
+      "envelope": {
+        "selection": "Major seventh, dominant seventh, minor seventh and half-diminished are built by stacking thirds and differ only in which thirds are major or minor.",
+        "parts": [],
+        "surroundingText": "A dominant seventh is a major triad with a minor seventh on top, which is what gives it its instability.",
+        "headingPath": [
+          "Harmony"
+        ],
+        "pageTitle": "The four seventh chord qualities — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/seventh-chords/17",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-07-28T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic seventh-chords prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "4417a5d4-4a05-4667-9356-8a28d91df3dd:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/seventh-chords/17",
+            "title": "The four seventh chord qualities — synthetic demo",
+            "retrievedAt": "2026-07-28T00:33:45.329Z",
+            "pinId": "4417a5d4-4a05-4667-9356-8a28d91df3dd"
+          }
+        ],
+        "confidence": "full",
+        "enrichedAt": "2026-08-19T00:41:46.233Z"
+      },
+      "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f"
+    },
+    {
+      "id": "9e671342-1d58-40a3-a33b-3a5441ac3d4c",
+      "type": "struggle",
+      "envelope": {
+        "selection": "Below roughly the C below middle C, thirds sound muddy. Voice the third higher or drop it and let the seventh carry the colour.",
+        "parts": [],
+        "surroundingText": "Rootless voicings exist partly for this reason. The bass player has the root anyway.",
+        "headingPath": [
+          "r/jazztheory"
+        ],
+        "pageTitle": "Why does my Cmaj7 sound muddy? — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/seventh-chords/18",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-08-01T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic seventh-chords prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "9e671342-1d58-40a3-a33b-3a5441ac3d4c:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/seventh-chords/18",
+            "title": "Why does my Cmaj7 sound muddy? — synthetic demo",
+            "retrievedAt": "2026-08-01T00:33:45.329Z",
+            "pinId": "9e671342-1d58-40a3-a33b-3a5441ac3d4c"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:41:49.872Z"
+      },
+      "topicId": "7e55b8bb-d998-4177-9d27-0622f5cc26f2"
+    },
+    {
+      "id": "5f6446a7-9dba-4f6e-a48e-4bd893cd0e7b",
+      "type": "struggle",
+      "envelope": {
+        "selection": "Any dominant seventh can be replaced by the dominant seventh a tritone away, because both chords share the same third and seventh.",
+        "parts": [],
+        "surroundingText": "G7 and Db7 both contain B and F. The guide tones are identical, only inverted, which is why the substitution works.",
+        "headingPath": [
+          "Harmony",
+          "Substitution"
+        ],
+        "pageTitle": "Tritone substitution — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/tritone-sub/19",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-08-11T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic tritone-sub prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "5f6446a7-9dba-4f6e-a48e-4bd893cd0e7b:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/tritone-sub/19",
+            "title": "Tritone substitution — synthetic demo",
+            "retrievedAt": "2026-08-11T00:33:45.329Z",
+            "pinId": "5f6446a7-9dba-4f6e-a48e-4bd893cd0e7b"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:41:53.668Z"
+      },
+      "topicId": "7e55b8bb-d998-4177-9d27-0622f5cc26f2"
+    },
+    {
+      "id": "c78c85ce-cf3f-4ea8-923d-19f17c066670",
+      "type": "struggle",
+      "envelope": {
+        "selection": null,
+        "parts": [],
+        "surroundingText": "Video explains that the substituted chord produces chromatic root movement down a semitone into the tonic, which is the actual reason it sounds smooth.",
+        "headingPath": [],
+        "pageTitle": "Tritone subs in ii-V-I — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/tritone-sub/20",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": "still not hearing it",
+      "capturedAt": "2026-08-18T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic tritone-sub prerequisite"
+        ],
+        "mediaDescription": "Passage refers to a video that explains the smoothness of a substituted chord; the text itself is a brief summary of the video's point.",
+        "references": [
+          {
+            "id": "c78c85ce-cf3f-4ea8-923d-19f17c066670:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/tritone-sub/20",
+            "title": "Tritone subs in ii-V-I — synthetic demo",
+            "retrievedAt": "2026-08-18T00:33:45.329Z",
+            "pinId": "c78c85ce-cf3f-4ea8-923d-19f17c066670"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:43:14.409Z"
+      },
+      "topicId": "7e55b8bb-d998-4177-9d27-0622f5cc26f2"
+    },
+    {
+      "id": "fa977f5e-7ef5-4d93-867f-ad88bad52560",
+      "type": "interest",
+      "envelope": {
+        "selection": "Hydration is the weight of water as a percentage of the weight of flour, so 375g water to 500g flour is 75% hydration.",
+        "parts": [],
+        "surroundingText": "Higher hydration gives a more open crumb but a slacker dough that is harder to shape.",
+        "headingPath": [
+          "Baking",
+          "Fundamentals"
+        ],
+        "pageTitle": "Understanding dough hydration — synthetic demo",
+        "url": "https://example.invalid/virgil-seed/sourdough-hydration/21",
+        "canonicalUrl": null,
+        "siteName": "example.invalid",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-07-10T00:33:45.329Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": [
+          "synthetic sourdough-hydration prerequisite"
+        ],
+        "mediaDescription": null,
+        "references": [
+          {
+            "id": "fa977f5e-7ef5-4d93-867f-ad88bad52560:origin",
+            "origin": "user-pin",
+            "url": "https://example.invalid/virgil-seed/sourdough-hydration/21",
+            "title": "Understanding dough hydration — synthetic demo",
+            "retrievedAt": "2026-07-10T00:33:45.329Z",
+            "pinId": "fa977f5e-7ef5-4d93-867f-ad88bad52560"
+          }
+        ],
+        "confidence": "reduced",
+        "enrichedAt": "2026-08-19T00:43:10.425Z"
+      },
+      "topicId": "2ee55d47-13d9-43f1-a66b-b70a840eb188"
+    }
+  ],
+  "topics": [
+    {
+      "id": "e3b60e7a-b4e9-4168-a012-82fd49b2328f",
+      "label": "Pub/Sub Delivery and Ordering",
+      "summary": "Understanding how Google Pub/Sub delivers messages (pull vs push), manages acknowledgment deadlines and redelivery semantics, and enforces within-key ordering without hot-key serialization.",
+      "pinIds": [
+        "4dcb76db-3e08-409a-b547-f86d78a11855",
+        "5e860f4c-8455-4fd5-86f6-3f4a9b8afbd7",
+        "a96f4a5f-9ca7-4906-92ac-bc25d5833858",
+        "78c7a6b1-cbcc-465c-aeea-9c5ffdfc5554",
+        "4bc3eae7-3648-4e4a-bec1-a274c4841598"
+      ],
+      "state": "working",
+      "comfort": 0.7550498145995145,
+      "lastExposedAt": null,
+      "retiredByUser": false,
+      "createdAt": "2026-08-19T00:33:45.388Z"
+    },
+    {
+      "id": "37acf0ec-8584-48c9-a578-70f523075bea",
+      "label": "IAM Condition Expressions",
+      "summary": "Learning to write IAM condition expressions correctly, including which attributes are available per service, correct resource.type values, and limitations with legacy basic roles.",
+      "pinIds": [
+        "68aeabc8-79b6-4f6c-a6e2-20d6896c229d",
+        "4281e80e-f2f0-4cee-8e1d-d20795083ad7",
+        "8f70d1fd-0c84-47bb-897c-fdc08f633e79",
+        "99d5220c-50fe-4133-81b0-1edee5a94d01"
+      ],
+      "state": "working",
+      "comfort": 0,
+      "lastExposedAt": null,
+      "retiredByUser": false,
+      "createdAt": "2026-08-19T00:33:45.388Z"
+    },
+    {
+      "id": "90835102-656b-4076-8b9c-e0a4816ad2c3",
+      "label": "Cloud Run Instance Lifecycle",
+      "summary": "Managing cold-start latency, idle-instance billing, and startup CPU boost to keep Cloud Run responsive and cost-efficient.",
+      "pinIds": [
+        "34aa0f4c-b239-4bd5-9eeb-c81ea4588f49",
+        "e7f49edd-91e3-4e33-b77f-ee9f1d72ec61",
+        "0253d876-972b-4e88-9092-6e217d773a61"
+      ],
+      "state": "settled",
+      "comfort": 1,
+      "lastExposedAt": null,
+      "retiredByUser": false,
+      "createdAt": "2026-08-19T00:33:45.388Z"
+    },
+    {
+      "id": "d69f462a-63d5-4fa7-8505-d1c216bd7554",
+      "label": "Firestore Composite Indexes",
+      "summary": "Identifying when compound where/orderBy queries require a composite index and constructing the correct index definition to avoid FAILED_PRECONDITION errors.",
+      "pinIds": [
+        "5186333f-4962-49e1-9e7f-257f78223387",
+        "14a110e6-0f52-4342-8ae5-9db6609b8f50"
+      ],
+      "state": "working",
+      "comfort": 0.654342792923857,
+      "lastExposedAt": null,
+      "retiredByUser": false,
+      "createdAt": "2026-08-19T00:33:45.388Z"
+    },
+    {
+      "id": "7ae1950b-9138-4218-a0ea-9924357db38f",
+      "label": "Music Intervals and Chords",
+      "summary": "Building a foundation of intervals (major/minor thirds, semitone counts) and how stacking thirds produces the seven tertian seventh-chord qualities.",
+      "pinIds": [
+        "c41bbf41-3a09-454f-aaa0-a11090d35fbe",
+        "02aa6679-5fc7-4003-89ec-d7715d823314",
+        "4417a5d4-4a05-4667-9356-8a28d91df3dd"
+      ],
+      "state": "working",
+      "comfort": 0.6725752022451889,
+      "lastExposedAt": null,
+      "retiredByUser": false,
+      "createdAt": "2026-08-19T00:33:45.388Z"
+    },
+    {
+      "id": "7e55b8bb-d998-4177-9d27-0622f5cc26f2",
+      "label": "Jazz Voice Leading and Substitution",
+      "summary": "Applying jazz harmony practice: avoiding muddy low-voice thirds and internalising why tritone substitution produces smooth chromatic root motion.",
+      "pinIds": [
+        "9e671342-1d58-40a3-a33b-3a5441ac3d4c",
+        "5f6446a7-9dba-4f6e-a48e-4bd893cd0e7b",
+        "c78c85ce-cf3f-4ea8-923d-19f17c066670"
+      ],
+      "state": "working",
+      "comfort": 0.5800454621639275,
+      "lastExposedAt": null,
+      "retiredByUser": false,
+      "createdAt": "2026-08-19T00:33:45.388Z"
+    },
+    {
+      "id": "2ee55d47-13d9-43f1-a66b-b70a840eb188",
+      "label": "Baking Fundamentals",
+      "summary": "Understanding dough hydration as a water-to-flour weight percentage and its role in bread outcomes.",
+      "pinIds": [
+        "fa977f5e-7ef5-4d93-867f-ad88bad52560"
+      ],
+      "state": "waiting",
+      "comfort": 0.15,
+      "lastExposedAt": null,
+      "retiredByUser": false,
+      "createdAt": "2026-08-19T00:33:45.388Z"
+    }
+  ],
+  "edges": [
+    {
+      "from": "7ae1950b-9138-4218-a0ea-9924357db38f",
+      "to": "7e55b8bb-d998-4177-9d27-0622f5cc26f2",
+      "confidence": 0.95,
+      "justification": "Voice leading and tritone substitution presuppose knowing interval sizes, seventh-chord qualities, and which tritone is shared between a dominant seventh and its sub — all built on the interval/chord foundation."
+    }
+  ],
+  "signals": [
+    {
+      "id": "395b5971-b4fe-4fc6-8511-78174c245212",
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f",
+      "type": "answer-wrong",
+      "direction": "negative",
+      "at": "2026-07-20T00:51:26.770Z",
+      "sourceEvent": "seed:pubsub-delivery:4",
+      "invalidated": false
+    },
+    {
+      "id": "a6c585d2-7d64-4500-ac0d-ce15f1acbc39",
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f",
+      "type": "depth-simpler",
+      "direction": "negative",
+      "at": "2026-07-27T00:51:26.770Z",
+      "sourceEvent": "seed:pubsub-delivery:3",
+      "invalidated": false
+    },
+    {
+      "id": "733b3e91-fa32-46d8-b30b-3768ffb86afa",
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f",
+      "type": "answer-correct",
+      "direction": "positive",
+      "at": "2026-08-03T00:51:26.770Z",
+      "sourceEvent": "seed:pubsub-delivery:2",
+      "invalidated": false
+    },
+    {
+      "id": "c61e1516-b67b-4189-b96e-1e6064cbad15",
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f",
+      "type": "recall-check",
+      "direction": "positive",
+      "at": "2026-08-10T00:51:26.770Z",
+      "sourceEvent": "seed:pubsub-delivery:1",
+      "invalidated": false
+    },
+    {
+      "id": "e6c19f2a-1500-46c7-97d0-c2114e317870",
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f",
+      "type": "answer-correct",
+      "direction": "positive",
+      "at": "2026-08-17T00:51:26.770Z",
+      "sourceEvent": "seed:pubsub-delivery:0",
+      "invalidated": false
+    },
+    {
+      "id": "25e7d0a8-51fa-4ef5-9096-95018046820d",
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f",
+      "type": "section-completed",
+      "direction": "positive",
+      "at": "2026-07-27T00:51:26.770Z",
+      "sourceEvent": "seed:pubsub-ordering:3",
+      "invalidated": false
+    },
+    {
+      "id": "d31f05fe-f8cb-4938-94c5-44db5101a4a0",
+      "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f",
+      "type": "depth-deeper",
+      "direction": "positive",
+      "at": "2026-08-10T00:51:26.770Z",
+      "sourceEvent": "seed:pubsub-ordering:1",
+      "invalidated": false
+    },
+    {
+      "id": "b328a167-9ae6-438f-9ab6-f2c441f10752",
+      "topicId": "37acf0ec-8584-48c9-a578-70f523075bea",
+      "type": "answer-wrong",
+      "direction": "negative",
+      "at": "2026-07-20T00:51:26.770Z",
+      "sourceEvent": "seed:iam-conditions:4",
+      "invalidated": false
+    },
+    {
+      "id": "73617cf4-2319-4cf9-90b0-c85630e268b5",
+      "topicId": "37acf0ec-8584-48c9-a578-70f523075bea",
+      "type": "depth-simpler",
+      "direction": "negative",
+      "at": "2026-07-27T00:51:26.770Z",
+      "sourceEvent": "seed:iam-conditions:3",
+      "invalidated": false
+    },
+    {
+      "id": "ca3be6f8-81df-4eb1-b8cf-43d15649fc55",
+      "topicId": "37acf0ec-8584-48c9-a578-70f523075bea",
+      "type": "answer-wrong",
+      "direction": "negative",
+      "at": "2026-07-27T00:51:26.770Z",
+      "sourceEvent": "seed:iam-conditions:3",
+      "invalidated": false
+    },
+    {
+      "id": "fd567f13-0065-44e0-a842-bec8082b2e98",
+      "topicId": "37acf0ec-8584-48c9-a578-70f523075bea",
+      "type": "answer-wrong",
+      "direction": "negative",
+      "at": "2026-08-03T00:51:26.770Z",
+      "sourceEvent": "seed:iam-conditions:2",
+      "invalidated": false
+    },
+    {
+      "id": "4d698e09-75dc-4c3f-b493-245c1ada9983",
+      "topicId": "37acf0ec-8584-48c9-a578-70f523075bea",
+      "type": "section-abandoned",
+      "direction": "negative",
+      "at": "2026-08-10T00:51:26.770Z",
+      "sourceEvent": "seed:iam-conditions:1",
+      "invalidated": false
+    },
+    {
+      "id": "fa7a0edf-ddc4-4e49-9bc7-bbe882f550eb",
+      "topicId": "90835102-656b-4076-8b9c-e0a4816ad2c3",
+      "type": "section-completed",
+      "direction": "positive",
+      "at": "2026-08-03T00:51:26.770Z",
+      "sourceEvent": "seed:cloudrun-coldstart:2",
+      "invalidated": false
+    },
+    {
+      "id": "f78cb95f-845a-4430-861f-3f21bad4a341",
+      "topicId": "90835102-656b-4076-8b9c-e0a4816ad2c3",
+      "type": "answer-correct",
+      "direction": "positive",
+      "at": "2026-08-10T00:51:26.770Z",
+      "sourceEvent": "seed:cloudrun-coldstart:1",
+      "invalidated": false
+    },
+    {
+      "id": "10e9c76e-50ef-4bb3-8390-9a6d5d6a2b25",
+      "topicId": "90835102-656b-4076-8b9c-e0a4816ad2c3",
+      "type": "depth-deeper",
+      "direction": "positive",
+      "at": "2026-08-17T00:51:26.770Z",
+      "sourceEvent": "seed:cloudrun-coldstart:0",
+      "invalidated": false
+    },
+    {
+      "id": "d69d90aa-5b4d-41a3-8b6e-90b0c8c34af1",
+      "topicId": "d69f462a-63d5-4fa7-8505-d1c216bd7554",
+      "type": "answer-correct",
+      "direction": "positive",
+      "at": "2026-07-20T00:51:26.770Z",
+      "sourceEvent": "seed:firestore-queries:4",
+      "invalidated": false
+    },
+    {
+      "id": "45438914-dae4-41be-b36b-9693591d403e",
+      "topicId": "d69f462a-63d5-4fa7-8505-d1c216bd7554",
+      "type": "recall-check",
+      "direction": "positive",
+      "at": "2026-07-20T00:51:26.770Z",
+      "sourceEvent": "seed:firestore-queries:4",
+      "invalidated": false
+    },
+    {
+      "id": "c108b20e-fc07-4adf-a375-bc94ff9f85d6",
+      "topicId": "d69f462a-63d5-4fa7-8505-d1c216bd7554",
+      "type": "answer-correct",
+      "direction": "positive",
+      "at": "2026-07-27T00:51:26.770Z",
+      "sourceEvent": "seed:firestore-queries:3",
+      "invalidated": false
+    },
+    {
+      "id": "dccbe8ab-ac53-491a-b925-079e30dbc71c",
+      "topicId": "d69f462a-63d5-4fa7-8505-d1c216bd7554",
+      "type": "answer-wrong",
+      "direction": "negative",
+      "at": "2026-08-17T00:51:26.770Z",
+      "sourceEvent": "seed:firestore-queries:0",
+      "invalidated": false
+    },
+    {
+      "id": "f6e7f59a-98c9-4a5f-81a2-4a4c9b0fb7f7",
+      "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f",
+      "type": "answer-wrong",
+      "direction": "negative",
+      "at": "2026-07-13T00:51:26.770Z",
+      "sourceEvent": "seed:intervals:5",
+      "invalidated": false
+    },
+    {
+      "id": "cfa1e6a8-25f4-4ef1-a6d1-2e5e6e7a84b3",
+      "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f",
+      "type": "answer-correct",
+      "direction": "positive",
+      "at": "2026-07-20T00:51:26.770Z",
+      "sourceEvent": "seed:intervals:4",
+      "invalidated": false
+    },
+    {
+      "id": "5797dae6-5c87-4bac-a7e4-17394bfbd9f5",
+      "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f",
+      "type": "answer-correct",
+      "direction": "positive",
+      "at": "2026-07-27T00:51:26.770Z",
+      "sourceEvent": "seed:intervals:3",
+      "invalidated": false
+    },
+    {
+      "id": "0b73d2bf-fd7f-4921-9c5d-aa5fd63d2a03",
+      "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f",
+      "type": "recall-check",
+      "direction": "positive",
+      "at": "2026-08-10T00:51:26.770Z",
+      "sourceEvent": "seed:intervals:1",
+      "invalidated": false
+    },
+    {
+      "id": "f1f9b4fd-021e-450d-a074-b3eaf11ca6ce",
+      "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f",
+      "type": "section-completed",
+      "direction": "positive",
+      "at": "2026-07-27T00:51:26.770Z",
+      "sourceEvent": "seed:seventh-chords:3",
+      "invalidated": false
+    },
+    {
+      "id": "43c2b5b0-a101-4a3c-bba9-663e46166384",
+      "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f",
+      "type": "answer-correct",
+      "direction": "positive",
+      "at": "2026-08-03T00:51:26.770Z",
+      "sourceEvent": "seed:seventh-chords:2",
+      "invalidated": false
+    },
+    {
+      "id": "261e6019-30d9-425d-9008-80d01e375528",
+      "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f",
+      "type": "answer-wrong",
+      "direction": "negative",
+      "at": "2026-08-10T00:51:26.770Z",
+      "sourceEvent": "seed:seventh-chords:1",
+      "invalidated": false
+    },
+    {
+      "id": "85c08368-c999-4247-ae36-01c0df3c58e1",
+      "topicId": "7e55b8bb-d998-4177-9d27-0622f5cc26f2",
+      "type": "answer-correct",
+      "direction": "positive",
+      "at": "2026-08-10T00:51:26.770Z",
+      "sourceEvent": "seed:tritone-sub:1",
+      "invalidated": false
+    },
+    {
+      "id": "5d9f258c-c687-44b8-b600-75fdef346fd9",
+      "topicId": "7e55b8bb-d998-4177-9d27-0622f5cc26f2",
+      "type": "depth-simpler",
+      "direction": "negative",
+      "at": "2026-08-17T00:51:26.770Z",
+      "sourceEvent": "seed:tritone-sub:0",
+      "invalidated": false
+    },
+    {
+      "id": "649e8564-7bf7-4337-86bb-89bfc10fb87e",
+      "topicId": "7e55b8bb-d998-4177-9d27-0622f5cc26f2",
+      "type": "section-abandoned",
+      "direction": "negative",
+      "at": "2026-08-17T00:51:26.770Z",
+      "sourceEvent": "seed:tritone-sub:0",
+      "invalidated": false
+    }
+  ],
+  "statements": [
+    {
+      "text": "Cloud Run Instance Lifecycle is the one topic where you seem settled; the others are still in motion.",
+      "topicId": null,
+      "userEdited": false,
+      "evidenceSignalIds": [],
+      "id": "87aee2c5-5e6d-4f6f-89fa-c182b7a39a52",
+      "updatedAt": "2026-08-19T06:54:40.665Z"
+    },
+    {
+      "text": "IAM Condition Expressions is where you are most stuck, and the sticking point is always the exception rather than the rule itself.",
+      "topicId": null,
+      "userEdited": false,
+      "evidenceSignalIds": [],
+      "id": "e15cb217-7cea-4807-8610-3a0007cea7b1",
+      "updatedAt": "2026-08-19T06:54:40.665Z"
+    },
+    {
+      "text": "Across every domain you study, you grasp the main rule but the boundary case arrives as a surprise, as though it were a new fact rather than a limit of the rule you already hold.",
+      "topicId": null,
+      "userEdited": false,
+      "evidenceSignalIds": [],
+      "id": "dc4b9830-cdf4-469a-831f-cabc6f6c032a",
+      "updatedAt": "2026-08-19T06:54:40.665Z"
+    },
+    {
+      "text": "You tend to mark a concept as understood the moment you read it, then discover weeks later that the reading never captured the constraint that actually matters.",
+      "topicId": null,
+      "userEdited": false,
+      "evidenceSignalIds": [],
+      "id": "72c2fb45-746c-452f-bca3-4f3a10b360f2",
+      "updatedAt": "2026-08-19T06:54:40.665Z"
+    },
+    {
+      "text": "Your understanding of each topic seems to form at the moment a system throws an error, not beforehand; you approach a topic as 'the path works, then find out what breaks' instead of testing the edges up front.",
+      "topicId": null,
+      "userEdited": false,
+      "evidenceSignalIds": [],
+      "id": "7f9ed3a9-d51c-4a8e-bf27-4c002b202d84",
+      "updatedAt": "2026-08-19T06:54:40.665Z"
+    },
+    {
+      "text": "For jazz voice leading you have the conceptual explanation in place but tell me you still cannot hear the substitution, and no pin so far has involved actually listening to it performed or playing it by hand.",
+      "topicId": null,
+      "userEdited": false,
+      "evidenceSignalIds": [],
+      "id": "ca57541b-0c09-4ac1-81b5-ce39655b6952",
+      "updatedAt": "2026-08-19T06:54:40.665Z"
+    },
+    {
+      "text": "Firestore Composite Indexes and Music Intervals both moved forward and then slipped, and in both cases the slip is on the same kind of thing: the specific condition that triggers a requirement, not the general rule.",
+      "topicId": null,
+      "userEdited": false,
+      "evidenceSignalIds": [],
+      "id": "516cc77c-ff9d-46d6-b5c0-69f312f57935",
+      "updatedAt": "2026-08-19T06:54:40.665Z"
+    },
+    {
+      "text": "I am not certain whether this pattern reflects a study habit you could adjust or a genuine mismatch between how you encode information and what the material demands; the pattern is consistent, but the cause is still open.",
+      "topicId": null,
+      "userEdited": false,
+      "evidenceSignalIds": [],
+      "id": "86fa847d-d18a-4825-8332-4b65ea1b34b0",
+      "updatedAt": "2026-08-19T06:54:40.665Z"
+    }
+  ],
+  "sessions": [
+    {
+      "builtAt": "2026-08-19T00:51:26.684Z",
+      "fromPinCount": 12,
+      "targetMinutes": 15,
+      "estimatedMinutes": 15,
+      "sections": [
+        {
+          "topicId": "e3b60e7a-b4e9-4168-a012-82fd49b2328f",
+          "heading": "Pub/Sub: what the ordering key actually constrains, and where parallelism dies",
+          "body": "Start with a concrete picture. Imagine a post office with five delivery clerks. You can send each letter to any clerk and they process in parallel. Now add a rule: every letter addressed to \"Building 7\" must go to Clerk 3, in the order it arrived. If Building 7 gets 10,000 letters and the other four buildings get 200 between them, Clerk 3 is the bottleneck and Clerks 1, 2, 4, 5 sit idle. That is the entire hot-key problem in one image.\n\nNow the terminology, built on that picture. A **topic** is a named stream that publishers send messages into. A **subscription** is a named consumer that receives messages from a topic. A message can go to many subscriptions; a subscription can be pulled or pushed. In **pull delivery**, your subscriber code sends a request to Pub/Sub asking \"give me messages.\" In **push delivery**, Pub/Sub sends each message as an HTTP request to an endpoint you control (source: 4dcb76db — reduced-confidence passage, so treat this as a description of the two modes rather than a complete model of throughput behaviour). Both modes exist; the choice is yours at subscription creation.\n\nWhen a message reaches a pull subscriber, a timer starts. This is the **acknowledgment deadline**: the subscriber must process the message and send an **ack** (acknowledgment) before that timer expires. If it does not, Pub/Sub redelivers the message as though the first delivery never happened. The subscriber can call **modify the acknowledgment deadline** to extend the timer while it is still working (source: 5e860f4c). The default contrast to this is **at-least-once delivery**: because redelivery can happen, the subscriber must tolerate seeing the same message twice. **Exactly-once delivery** (source: a96f4a5f) changes the contract: after a successful ack, no redelivery occurs; while a message is outstanding (deadline not yet expired, not yet acked), no redelivery occurs; and if multiple deliveries did happen (deadline expired, then a new delivery came), only the **latest acknowledgment ID** is valid — earlier IDs are rejected. This is the feature you enable per subscription.\n\nNow the part that catches people out. An **ordering key** is a field you attach to each published message. All messages that share the same key are delivered in publish order (source: 78c7a6b1). The critical move, and the one that is easy to skip, is this: the ordering key is not the data being processed. It is a **serialisation constraint on the key itself**. The key partitions the stream into lanes; each lane is single-threaded. If your key space has high cardinality — thousands of distinct tenant IDs, for example — the lanes are short and parallelism is preserved. If your key space has low cardinality, or if one key absorbs a disproportionate share of messages, that one lane becomes the serial queue and every other lane goes quiet. The passage you pinned says this directly: \"a single hot ordering key serialises all its messages through one subscriber, so a poorly chosen key turns a parallel pipeline into a queue\" (source: 4bc3eae7, reduced confidence — the passage states the mechanism but does not give you a threshold or a diagnostic, so do not assume you can predict the tipping point from the material alone).\n\nThe name/identity trap here is specific. You publish a message about tenant 42's event. The payload is the event data. The ordering key is \"tenant-42\". The key is a partitioning label, not the data. Treating the key as the data leads you to choose it the same way you would choose a database primary key — and a database primary key can be high-cardinality by design, whereas an ordering key that is also your business primary key inherits whatever skew that business key has. The exception to the \"parallelism is free\" assumption is not a rare edge case; it is the default behaviour when one key absorbs more than the system can parallelise.\n\nBefore you move on, the two-sentence note the pattern in your history calls for: \"I have read that ordering keys preserve per-key order. The surprise is that a low-cardinality or skewed key silently removes all parallelism, not just reorders messages. I will test this by sketching a key distribution before I pick a key in the next design.\"",
+          "depth": "from-nothing",
+          "estimatedMinutes": 5,
+          "question": {
+            "prompt": "You are designing a Pub/Sub pipeline for a multi-tenant SaaS product. Your first instinct is to use the tenant ID as the ordering key. Write two sentences: (1) what the ordering key is actually constraining (not the data, but what), and (2) what specific condition on the tenant-ID distribution would turn your parallel pipeline into a single serial queue, and what you would check before shipping.",
+            "kind": "boundary-case",
+            "expectedPoints": [
+              "Identifies the ordering key as a serialisation / partitioning constraint, not as the message payload",
+              "Names the low-cardinality or skewed-distribution condition as the trigger",
+              "Proposes a concrete pre-ship check (e.g. cardinality of the key space, per-key message-volume distribution)"
+            ]
+          },
+          "sourceIds": [
+            "78c7a6b1-cbcc-465c-aeea-9c5ffdfc5554:origin",
+            "4bc3eae7-3648-4e4a-bec1-a274c4841598:origin",
+            "4dcb76db-3e08-409a-b547-f86d78a11855:origin",
+            "5e860f4c-8455-4fd5-86f6-3f4a9b8afbd7:origin",
+            "a96f4a5f-9ca7-4906-92ac-bc25d5833858:origin"
+          ],
+          "mediumWarning": null,
+          "completed": false
+        },
+        {
+          "topicId": "37acf0ec-8584-48c9-a578-70f523075bea",
+          "heading": "IAM conditions: where the keycard stops working, and what resource.type actually says",
+          "body": "Picture a keycard system at an office. Most keycards work the same way: swipe, door opens. But the building allows you to make a **conditional keycard** that only works if it is between 09:00 and 17:00 AND the person is on the third floor. The condition is an expression; it must evaluate to true for the grant to take effect. In Google Cloud IAM, that conditional keycard is a **role binding with a condition**: the principals (a user, a service account, a group) are only granted the role if the condition expression evaluates to true (source: 68aeabc8). The condition is an attribute-based check — it looks at properties of the request, the resource, or the principal, not at a flat allow/deny list.\n\nNow the two walls. First wall: you cannot make a conditional version of the master key. The **legacy basic roles** — roles/owner, roles/editor, roles/viewer — do not accept conditions. If you need a conditional grant, you must use a custom role or a predefined role other than those three. A second corollary in the same passage: a conditional role binding does not override a role binding that has no condition. If a principal already has roles/owner unconditionally, adding a conditional roles/editor does nothing to narrow the owner grant (source: 99d5220c, and you noted \"THIS is what I kept missing\"). The surprise is that conditions are not a layer you stack on top of legacy roles; they are a separate binding type that simply does not attach.\n\nSecond wall: the fields you can reference inside a condition are not universal. **resource.name** (the full resource identifier string) is available only for some services. Where a service does not expose it, the condition cannot reference the specific resource at all — you cannot write `resource.name == \"projects/my-proj/buckets/my-bucket\"` if the service in question does not populate that field (source: 4281e80e, reduced confidence, and you noted \"this keeps catching me out\" — the passage tells you the field is service-specific but does not give you the full list of which services expose it, so treat any claim about availability as provisional until you check the service's IAM documentation).\n\nThe third and most concrete trap: **resource.type** is a string field, and for Cloud Storage objects it is not what the human-readable label suggests. A bucket in Cloud Storage contains objects. When you write a condition on a condition that targets an object inside a bucket, the resource.type for that object is `storage.googleapis.com/Object`, not `storage.googleapis.com/Bucket`. The object lives in a bucket, but it is not a bucket. Writing `resource.type == \"storage.googleapis.com/Bucket\"` in a condition meant to restrict access to objects in a specific bucket will not match the objects; it will match the bucket resource itself. The name \"Bucket\" tells you the container; the type string `Object` tells you the thing being accessed. They are two different identifiers for two different resources in the same hierarchy (source: 8f70d1fd, reduced confidence — the passage illustrates the mismatch with a concrete ask but does not enumerate all services where the type string diverges from the colloquial name).\n\nThe one-line check this calls for, which maps directly onto the pattern you keep hitting: when you see a named concept in a condition expression, ask \"what does this name NOT tell me?\" For resource.type, the name \"Bucket\" tells you the container; it does not tell you the type string of the contents. For resource.name, the name tells you the field exists in the schema; it does not tell you whether the current service populates it. For legacy roles, the name \"Owner\" tells you the scope of the role; it does not tell you that conditions are structurally unavailable on it.\n\nThe two-sentence note before you close this section: \"I have read that IAM conditions are expressions on role bindings. The surprises are (a) legacy roles reject conditions entirely, and (b) resource.type for an object is 'Object', not 'Bucket', so a condition written against the container name will not match the contained object. I will verify the exact type string in the service's IAM reference before writing any condition that targets a nested resource.\"",
+          "depth": "from-nothing",
+          "estimatedMinutes": 5,
+          "question": {
+            "prompt": "You need to grant a service account read access to objects in one specific Cloud Storage bucket but not objects in other buckets. You plan to write a condition on resource.type. (1) What string does resource.type actually hold for an object inside that bucket, and why does writing 'storage.googleapis.com/Bucket' not work? (2) What would you need to verify before writing the condition, given that resource.name may not be available for all services?",
+            "kind": "boundary-case",
+            "expectedPoints": [
+              "States that resource.type for an object is storage.googleapis.com/Object, not Bucket",
+              "Explains that the object and the bucket are distinct resources in the hierarchy; the condition must match the object's type",
+              "Identifies the need to check whether the target service populates resource.name, or to use an alternative field / custom role if it does not"
+            ]
+          },
+          "sourceIds": [
+            "68aeabc8-79b6-4f6c-a6e2-20d6896c229d:origin",
+            "4281e80e-f2f0-4cee-8e1d-d20795083ad7:origin",
+            "8f70d1fd-0c84-47bb-897c-fdc08f633e79:origin",
+            "99d5220c-50fe-4133-81b0-1edee5a94d01:origin"
+          ],
+          "mediumWarning": null,
+          "completed": false
+        },
+        {
+          "topicId": "90835102-656b-4076-8b9c-e0a4816ad2c3",
+          "heading": "Cloud Run: the warm-pool bill, the cold start, and the temporary CPU bump",
+          "body": "Picture a taxi fleet that, between passengers, sends every cab back to the depot. When you hail a cab, one has to start the engine, drive from the depot, and get its GPS initialised before it picks you up. That delay is what Cloud Run calls a **cold start**: a request arrives, no **instance** (a running container that serves requests) is available, so the container must be started and initialised before the request is served (source: 34aa0f4c, reduced confidence — the passage defines the mechanism but does not give you a latency figure or a threshold, so do not attach a number to it from this material alone). Cloud Run's default scaling model is **scale to zero**: when no requests are in flight for a period, the instance is stopped, and the next request triggers a cold start. You pay only when an instance is running; there is no always-on charge in the default model.\n\nThe surprise here is the **minimum-instances** setting. You can tell Cloud Run to keep N instances warm even when no requests are arriving. These idle instances are billed at a **reduced rate**. The word that trips people up is \"reduced\": reduced relative to the full per-instance rate, not reduced to zero. Idle instances retained by the minimum-instances setting are still billed (source: e7f49edd, reduced confidence, struggle — the passage states the billing fact but does not give you the dollar figure or the duration at which the reduced rate applies, so treat the cost as non-zero but do not quantify it from this source). The exception to the \"scale to zero means I pay nothing when idle\" assumption is that the minimum-instances setting overrides the scale-to-zero behaviour for those N instances, and you are paying a per-instance charge that is lower than peak but not absent.\n\nThe third piece is **startup CPU boost**. By default, a Cloud Run instance receives a certain vCPU allocation. Startup CPU boost is a feature that temporarily increases the vCPU allocation during the instance's startup phase, which reduces the wall-clock time of the cold start. It is a time-boxed increase: the extra CPU is available during initialisation, then the instance reverts to its configured vCPU count for request handling (source: 0253d876). This matters because the cold-start latency is often dominated by the container's own initialisation work (loading libraries, establishing database connections, JIT compilation), and a temporary CPU bump compresses that window. The feature is enabled or disabled per service configuration.\n\nThe two-sentence note: \"I have read that Cloud Run scales to zero and that cold starts are the cost of that model. The surprises are (a) minimum-instances keeps instances warm and bills them at a reduced — not zero — rate, and (b) startup CPU boost is a temporary vCPU increase that shortens the cold start but does not change the steady-state allocation. I will check the minimum-instances cost against my traffic pattern before I set it, because 'reduced rate' still adds up over a month of idle time.\"",
+          "depth": "from-nothing",
+          "estimatedMinutes": 5,
+          "question": null,
+          "sourceIds": [
+            "34aa0f4c-b239-4bd5-9eeb-c81ea4588f49:origin",
+            "e7f49edd-91e3-4e33-b77f-ee9f1d72ec61:origin",
+            "0253d876-972b-4e88-9092-6e217d773a61:origin"
+          ],
+          "mediumWarning": null,
+          "completed": false
+        }
+      ],
+      "currentSectionIndex": 0,
+      "closingNote": "The ordering-key-as-serialisation-constraint and the resource.type Object/Bucket distinction moved from label to behaviour in this pass; the minimum-instances billing fact is now explicit but unquantified, and the exact service-level availability of resource.name in IAM conditions remains open until checked against a specific service's reference.",
+      "insufficient": false,
+      "id": "64f9b195-6c75-455a-82e6-a1e0c3e179ba"
+    },
+    {
+      "builtAt": "2026-08-19T00:59:25.267Z",
+      "fromPinCount": 9,
+      "targetMinutes": 15,
+      "estimatedMinutes": 15,
+      "sections": [
+        {
+          "topicId": "d69f462a-63d5-4fa7-8505-d1c216bd7554",
+          "heading": "Firestore composite indexes: why two single-field indexes don't compose",
+          "body": "You had this. The slip is specific: you wrote a query like\n\n  db.collection('orders')\n    .where('status', '==', 'pending')\n    .orderBy('createdAt')\n\nand expected Firestore to use a single-field index on `status` for the filter and a single-field index on `createdAt` for the sort, and stitch them together. It can't. A single-field index on `status` gives you every 'pending' row in arbitrary order. A single-field index on `createdAt` gives you every row in date order, unfiltered. Neither structure contains the joint ordering \"pending, sorted by date.\" The composite index is a different data structure: it is a single B-tree sorted by `status` first, then by `createdAt` within each `status` value. It is not two indexes combined at query time; it is one pre-built structure that both conditions traverse in a single scan.\n\nWhy the rule exists (the generative step you tend to skip): without the composite index, Firestore would have to either (a) read the `status` index, pull every matching row, then sort in memory, or (b) read the `createdAt` index in order and test `status` on each row until it finds enough matches. Both are O(n) on the larger set. The composite index collapses that to a single ordered scan. If you removed the composite index, the query either fails with the index error you saw, or silently degrades to a full-collection scan with a filter applied post-read.\n\nThe reduced-confidence pin you saved adds a second layer: compound queries that carry range filters on more than one field also require a composite index, and the ordering direction is constrained. I can't enumerate the full constraint set from that pin alone, but the operative point is that sort direction and range direction must be compatible within the same index entry. A `where('createdAt','>', X)` combined with `orderBy('createdAt','desc')` will not resolve against an index built for ascending order on that field. When you hit the index-creation prompt in the console, read the field list and the sort directions it proposes before you click create.\n\nAdd this to your running exceptions list, in the format you already use:\n  Rule: two single-field indexes satisfy a where + orderBy on two fields.\n  Exception: they do not. Firestore requires an explicit composite index; the two single-field indexes are never joined at query time.\n\nAnd the second entry:\n  Rule: I can sort and range-filter on the same field freely.\n  Exception: direction must match the index. A descending sort with an ascending range (or vice versa) on the same field needs its own composite index entry.",
+          "depth": "building",
+          "estimatedMinutes": 5,
+          "question": {
+            "prompt": "Name one query shape other than where+orderBy on two fields that would also fail if you only had single-field indexes. You do not need a real query; a description of the shape is enough.",
+            "kind": "application",
+            "expectedPoints": [
+              "a where on two fields with an equality and a range (e.g. where status == 'pending' AND where createdAt > X)",
+              "a query with two orderBy clauses on different fields",
+              "any compound where that combines an equality on one field and a range on a second field"
+            ]
+          },
+          "sourceIds": [
+            "14a110e6-0f52-4342-8ae5-9db6609b8f50:origin",
+            "5186333f-4962-49e1-9e7f-257f78223387:origin"
+          ],
+          "mediumWarning": null,
+          "completed": false
+        },
+        {
+          "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f",
+          "heading": "Intervals and tertian chords: stop reading, go play",
+          "body": "You can see the tertian construction on paper: a seventh chord is three stacked thirds, each major (4 semitones) or minor (3), giving four useful permutations out of eight, the eighth being four stacked major thirds which collapses into an augmented non-seventh chord. That model is intact; the pin marks it full-confidence interest. The problem is not that you cannot reconstruct it. The problem, in your own words, is that you are \"still not hearing it.\" Reading the semitone counts again will not fix that, because the gap is auditory-motor, not conceptual. A major third and a minor third differ by one semitone; that is a fact you already have. The skill you lack is the ability to hear that one-semitone difference in isolation, in your own ear, before a chord name is attached.\n\nSo the section is not an explanation. It is a 20-minute daily instruction that produces no notes and no reading:\n\n1. Five minutes. On a single piano key or a single guitar string, play C, then play E (4 semitones up: major third). Hum both. Then play C, then E-flat (3 semitones up: minor third). Hum both. Repeat until the two hums feel different in your own throat, not just in your head. Label them out loud: \"four,\" \"three.\" You are building the mapping from semitone count to a felt pitch difference.\n\n2. Five minutes. Play the root of C7 (the note C) and the root of F-sharp 7 (the note F-sharp). That is one semitone of chromatic descent. Listen for the pull. Do not name the chords. Do not think about shared tones yet. Just listen for the direction of the pull and whether it resolves to C major or leaves you suspended.\n\n3. Five minutes. Sing a single syllable (say, \"ba\") up a major third and back down. Then sing up a minor third and back down. The difference is one semitone. You are training the larynx to produce and the ear to discriminate that difference without a keyboard.\n\n4. Five minutes. Silence. Listen back to what you just produced. Note which of the two thirds was easier to hold steady and which wobbled. That wobble is where the next session starts.\n\nThe tertian construction you already understand becomes useful the moment the ear can hear the individual thirds inside a chord. Until then, the four-permutation table is a diagram, not a tool. Put the YouTube and jazzadvice pins aside; they are reference material for after the ear is trained, not a substitute for it.",
+          "depth": "building",
+          "estimatedMinutes": 3,
+          "question": null,
+          "sourceIds": [
+            "c41bbf41-3a09-454f-aaa0-a11090d35fbe:origin",
+            "02aa6679-5fc7-4003-89ec-d7715d823314:origin",
+            "4417a5d4-4a05-4667-9356-8a28d91df3dd:origin"
+          ],
+          "mediumWarning": "Intervals and chord quality are auditory-motor skills; reading the semitone counts or watching a video will not build the hearing. This section is a practice instruction, not an explanation, because no amount of prose closes the gap between knowing 'four semitones' and hearing the difference between a major and a minor third.",
+          "completed": false
+        },
+        {
+          "topicId": "37acf0ec-8584-48c9-a578-70f523075bea",
+          "heading": "IAM condition expressions: the bouncer, and the four doors where the bouncer is absent",
+          "body": "Start with a concrete picture. You hand someone a hotel keycard. The card says: floor 3, all day. That is a role binding: a principal (the person) is granted a role (access to floor 3). Now you add a sticker on the card: \"valid 18:00–06:00.\" The sticker is a condition expression. The person still holds the card, but the grant only takes effect when the sticker's expression evaluates to true. Without the sticker, the card works all day. With it, the card works only in the window. In IAM terms: if a role binding has a condition, the principals in that binding are only granted the role when the condition expression evaluates to true. A condition expression is a boolean you attach to a binding; it is evaluated at request time, not at grant time. The principal is not \"partially in\" the role; they are either in or out for each request.\n\nNow the four carve-outs. These are the ones that keep catching you, and they share a shape: the rule you built in your head says \"conditions work everywhere,\" and each of these is a door where the bouncer is absent.\n\n1. Legacy roles. You cannot attach a condition to Owner, Editor, or Viewer. These three predate the attribute-based evaluation layer. They are blanket grants: full read, full write, or full admin, with no hook for a request-time expression to slot into. The exception in your running list: Rule: a condition restricts a role binding. Exception: conditions cannot be attached to legacy basic roles (roles/owner, roles/editor, roles/viewer). Why: there is no evaluation point in the legacy grant path. Adding a condition to them is a no-op that the console will reject.\n\n2. Conditional vs. unconditioned binding. If a principal has two bindings on the same role — one with a condition, one without — the unconditioned binding wins. The condition narrows its own binding; it does not override the broader one. Exception: Rule: a conditional binding restricts access. Exception: it does not override an unconditioned binding on the same principal. Why: IAM is an allow-by-accumulation system. The unconditioned binding says \"always in.\" The conditional binding says \"in when X.\" The union is \"always in,\" because the unconditioned path is always true.\n\n3. resource.name. This field is not available for every service. Where a service does not expose a resource-level name to the condition evaluator, you cannot write a condition that says \"only for this specific bucket\" or \"only for this specific Pub/Sub topic.\" Exception: Rule: resource.name identifies the specific resource in a condition. Exception: resource.name is only available for some services; for services that do not expose it, you cannot reference the specific resource by name in a condition. The pin is reduced-confidence, so I will not assert which services do and do not expose it; check the service's IAM documentation for the list of supported request attributes before you write the condition.\n\n4. resource.type string. You wrote a condition on resource.type expecting it to match a bucket, and it did not. For Cloud Storage objects, the type string is storage.googleapis.com/Object, not storage.googleapis.com/Bucket. The object and its parent bucket are different nodes in the resource hierarchy, and the type string reflects the node you are at. Exception: Rule: resource.type tells me what kind of resource I am looking at, and I can predict the string. Exception: type strings are service-specific and follow that service's own resource hierarchy. For Storage, an object-level operation reports Object, not Bucket. The general principle is that each service defines its own hierarchy and its own type vocabulary; you cannot assume the container name is the type string.\n\nThe generative question for each one, which you tend to skip: why does the carve-out exist? For legacy roles, the evaluation framework was added after they were designed; there is no hook. For resource.name, not every service has a stable, queryable per-resource identifier exposed to the policy engine. For resource.type, the string is a path in a service-defined tree, not a free-form label you can guess. Writing the \"why\" down next to each entry is what turns the list from a set of facts into a predictive model: when you see a new service, you ask \"does it have a per-resource name? what is its resource hierarchy? does it use a legacy role?\" before you write the condition.\n\nYour running list now reads:\n  Rule: conditions restrict any role binding. Exception: not on legacy basic roles.\n  Rule: a conditional binding narrows access. Exception: an unconditioned binding on the same principal is not overridden.\n  Rule: resource.name identifies a specific resource. Exception: only available for some services; check the service's supported attributes.\n  Rule: resource.type is the container I expect. Exception: it is the node in that service's own hierarchy; for Storage objects it is Object, not Bucket.",
+          "depth": "from-nothing",
+          "estimatedMinutes": 7,
+          "question": {
+            "prompt": "Pick a service other than Cloud Storage that you use in your current project. What resource.type string would you expect a condition on that service to report, and what is the one thing you would check before writing the condition that you would not have checked if type strings were uniform across services?",
+            "kind": "prediction",
+            "expectedPoints": [
+              "the service-specific type string (e.g. pubsub.googleapis.com/Topic, cloudfunctions.googleapis.com/CloudFunction, or whatever the service actually uses)",
+              "the check is whether the service exposes resource.name at all, or whether the role in use is a legacy basic role",
+              "any answer that names a service-specific lookup step rather than assuming the type string is obvious from the resource's common name"
+            ]
+          },
+          "sourceIds": [
+            "68aeabc8-79b6-4f6c-a6e2-20d6896c229d:origin",
+            "4281e80e-f2f0-4cee-8e1d-d20795083ad7:origin",
+            "8f70d1fd-0c84-47bb-897c-fdc08f633e79:origin",
+            "99d5220c-50fe-4133-81b0-1edee5a94d01:origin"
+          ],
+          "mediumWarning": null,
+          "completed": false
+        }
+      ],
+      "currentSectionIndex": 0,
+      "closingNote": "The composite-index slip is back in your exceptions list with a why-attached; the four IAM carve-outs are written out as Rule/Exception pairs with a generative reason for each, which is the format that should stop the re-encounter. The tertian table is intact on paper but the ear is still untrained, so the 20-minute daily block is the only thing that moves that. Open: whether the resource.name availability list for the services you actually use is now checked, and whether the one-semitore difference between a major and minor third is felt in the throat or still only known as a number.",
+      "insufficient": false,
+      "id": "9606c620-beb6-4f9b-98ab-d2d41793482c"
+    },
+    {
+      "builtAt": "2026-08-19T06:15:37.670Z",
+      "fromPinCount": 9,
+      "targetMinutes": 15,
+      "estimatedMinutes": 14.399999999999999,
+      "sections": [
+        {
+          "topicId": "d69f462a-63d5-4fa7-8505-d1c216bd7554",
+          "heading": "Firestore Composite Indexes: why the error is the mechanism",
+          "body": "You pinned this on 8/16 with 'thought I had this' next to a where-on-status plus orderBy-on-createdAt query that threw an index error (14a110e6). The error is not a nuisance bolted onto a feature you understood; the error is the mechanism, and the mechanism is what slipped.\n\nWorked extension. Your query:\n\n  col.where('status', '==', 'active')\n      .orderBy('createdAt')\n\nFirestore must do two things at once: filter rows by status and walk the result in createdAt order. A single-field B-tree index on status sorts by status — it cannot walk the output in createdAt order without a full scan. A single-field index on createdAt sorts by createdAt — it cannot efficiently filter by status. Neither serves the query. A composite index on (status, createdAt) builds a B-tree whose key is the concatenation of both columns: rows are grouped by status value and, within each group, sorted by createdAt. That is the structure the error is asking you to create, and the reason it asks is that no such structure existed for that query shape.\n\nThe boundary you keep colliding with across services: you do not declare this index. You write the query, it parses, it looks correct, and Firestore infers the index need at execution time. The happy path — write query, get results — breaks because the constraint is implicit. You go to the Firestore console, see the suggested index definition, and create it. The collision surfaces at runtime, not at schema-design time. That is the 'what I would not expect' constraint for this feature: the requirement is invisible until the query executes and fails.\n\nNow extend the query. Add a second inequality:\n\n  col.where('status', '>', 'pending')\n      .where('priority', '<', 5)\n      .orderBy('createdAt')\n\nTwo range filters, one sort. The source you pinned says compound queries with range filters on multiple fields 'are subject to ordering constraints' (5186333f). I will keep the claim to what that passage states: the ordering of fields within the composite index is constrained, and the relationship between the filter directions and the sort direction is not free. You cannot list three fields in any sequence and expect the resulting index to serve the query. I cannot expand on the exact ordering rules beyond what that single line states, so treat the specific field-ordering as something to verify in the console when you hit the next error rather than as a rule I am handing you here. What the passage does show is that adding a second inequality does not extend the original composite index; it may require a different composite index with a different field order.\n\nThe 'why' to pin instead of the 'what': the composite index exists because a B-tree index is a sorted structure on a fixed key. To serve a filter on one column and a sort on another, you need a structure whose key spans both columns. The index is not a flag or a hint; it is a physical data structure that must be built and maintained. Firestore builds it when you accept the console suggestion, but the reason the error appears at all is that no such structure pre-existed for that query shape. Pin that causal sentence. The fact 'where + orderBy needs a composite index' is the what; the reason is that a single-column B-tree cannot simultaneously satisfy a range scan on one column and a sorted walk on another.\n\nRe-derivation, 48 hours from now, without this open: write the query that triggered your 8/16 error, state what composite index it needs, and say in one sentence why a single-field index on either column cannot serve it. If you stall at 'why,' you have kept the what and lost the mechanism. That is the same slip pattern across your cloud material: the rule sticks, the reason evaporates, and two weeks later the rule feels new again.",
+          "depth": "building",
+          "estimatedMinutes": 4.5,
+          "question": {
+            "prompt": "Extend your 8/16 query with a second inequality on a third field (e.g. where('priority', '<', 5)). State what index Firestore now needs, and say in one sentence why the original two-field composite index on (status, createdAt) is insufficient for the three-field query.",
+            "kind": "apply",
+            "expectedPoints": [
+              "Recognises that a new composite index with a different field order may be required, not just an extension of the old one",
+              "Connects the insufficiency to the ordering constraint: the range-filtered fields and the orderBy field must appear in a specific sequence within the index key",
+              "States that the original index's key shape (status, createdAt) cannot serve a third inequality without being rebuilt"
+            ]
+          },
+          "sourceIds": [
+            "14a110e6-0f52-4342-8ae5-9db6609b8f50:origin",
+            "5186333f-4962-49e1-9e7f-257f78223387:origin"
+          ],
+          "mediumWarning": null,
+          "completed": false
+        },
+        {
+          "topicId": "7ae1950b-9138-4218-a0ea-9924357db38f",
+          "heading": "Intervals and Chords: the two-axis construction",
+          "body": "You have three pinned facts and they are slipping. An interval is counted inclusively from the lower note to the higher (c41bbf41). A major third is four semitones, a minor third three; the generic name gives the letter distance, the quality gives the semitone count (02aa6679). Tertian chords stack major and minor thirds; a seventh chord has three such intervals, 2³ = 8 permutations, the all-major one is excluded because it divides the octave evenly, leaving 7 (4417a5d4). The slip is that these are stored as three separate sentences. The mechanism that holds them together is a two-axis construction, and I want you to rebuild a chord so the axes become procedural.\n\nWorked example: build G⁷ (G dominant seventh) from the root.\n\nStep 1 — first third. Generic name: a third means two letters up the diatonic sequence, three letters counted inclusively. G → A → B. That is the letter slot. Quality: major, four semitones. G + 4 semitones = B. Interval: G–B, a major third.\n\nStep 2 — second third, stacked from B. Generic: B → C → D, two letters up, a third. Quality: for a dominant seventh, minor, three semitones. B + 3 semitones = D. Interval: B–D, a minor third.\n\nStep 3 — third third, stacked from D. Generic: D → E → F, two letters up, a third. Quality: minor, three semitones. D + 3 semitones = F. Interval: D–F, a minor third.\n\nResult: G–B–D–F. The chord is 'dominant' because the first third is major and the second and third are minor. Notice that the spelling (G, B, D, F) came entirely from letter counting. The semitone counts (4, 3, 3) came from quality. The two operations are independent. That independence is the core of 02aa6679: the generic name and the quality answer different questions, and confusing them is how a correct semitone count produces a wrong spelling.\n\nNow the exclusion from 4417a5d4, applied. All three thirds major: G + 4 = B, B + 4 = D#, D# + 4 = F##, which is G. The top note lands on the root an octave up. Three major thirds tile the octave exactly (4 + 4 + 4 = 12 semitones), so the chord is an augmented triad stretched to the octave, not a seventh chord. That is the excluded eighth permutation. 8 − 1 = 7 distinct seventh-chord qualities remain. You do not need to memorise all seven names now; you need the construction: stack three thirds, choose major or minor at each step, and check that the top note is not the root.\n\nWhy the slip happens: when the material is retained as 'a major third is four semitones,' the letter-counting axis has fused into the semitone axis and dropped out. You can state the number and lose the spelling. The re-derivation exercise below forces both axes simultaneously.\n\nRe-derivation, 48 hours from now: build D minor 7th (Dm7) from scratch. D + 3 semitones (minor third, letters D-E-F) = F. F + 4 semitones (major third, letters F-G-A) = A. A + 3 semitones (minor third, letters A-B-C) = C. Result: D–F–A–C. If you get any letter distance wrong, the spelling is wrong even if the semitone counts are right, because the two axes are independent.\n\nThe construction logic above is learnable from this section. The ability to hear, by ear, whether an interval is a major or minor third is not; that discrimination is auditory and requires playing the two intervals back to back, not reading about them.",
+          "depth": "building",
+          "estimatedMinutes": 4.2,
+          "question": null,
+          "sourceIds": [
+            "c41bbf41-3a09-454f-aaa0-a11090d35fbe:origin",
+            "02aa6679-5fc7-4003-89ec-d7715d823314:origin",
+            "4417a5d4-4a05-4667-9356-8a28d91df3dd:origin"
+          ],
+          "mediumWarning": "Discriminating a major third from a minor third by ear is an auditory skill that reading cannot build; the construction logic in this section is text-learnable, but the listening step requires playing the intervals back to back.",
+          "completed": false
+        },
+        {
+          "topicId": "37acf0ec-8584-48c9-a578-70f523075bea",
+          "heading": "IAM Condition Expressions: the gate and its exclusions",
+          "body": "Start from a concrete picture. A role binding in GCP is a key that opens a door: 'service account payments-sa has the role storage.objects.getter on bucket invoices.' A condition expression is a second lock on that same door. The key works, but the door opens only if the second lock's condition is also satisfied — say, 'the request originates from an IP in 10.0.0.0/8.' The condition is an AND gate stacked on top of the role grant. The grant is active only when the expression evaluates to true (68aeabc8). That is the whole mechanism: condition is a Boolean filter on the binding, not a separate policy object.\n\nTerms, defined in order. A principal is the entity receiving the grant: a user, a service account, a group, or a domain. A role binding is a line in an access policy that attaches a role to a principal within a resource scope (organisation, folder, project, or resource). A condition expression is an optional Boolean expression attached to that binding, using a restricted set of operators and fields (request.ip, resource.type, resource.name, and a few others). Legacy basic roles are the three original, broad roles: Owner (roles/owner), Editor (roles/editor), Viewer (roles/viewer). resource.type is a field identifying the kind of resource the request targets; resource.name identifies the specific instance.\n\nNow the two constraints that your material flags as the ones you keep missing (99d5220c, marked 'THIS is what I kept missing').\n\nFirst: you cannot attach a condition to a legacy basic role. A binding that says 'grant roles/owner to user@corp.com with condition request.ip in 10.0.0.0/8' is not a valid binding. The condition must go on a custom role or a predefined role (roles/storage.admin, for example), not on Owner, Editor, or Viewer. The source states this as a hard restriction; it does not explain the reason, so I will not manufacture one. What it shows is that the legacy roles are excluded from conditional binding by design.\n\nSecond, and the one the source singles out: conditional role bindings do not override role bindings with no conditions. This is the counterintuitive point. In many policy systems, a more specific rule wins. Here, if a user has an unconditional Viewer binding on a project and also a conditional Owner binding on the same project that evaluates to false, the unconditional Viewer binding still grants read access. The conditional binding, when false, grants nothing; it does not cancel the unconditional one. The two bindings are evaluated independently, and any binding that grants access is sufficient. The condition narrows its own binding; it does not widen its authority over other bindings.\n\nTwo further constraints from reduced-confidence sources. The first: resource.name is only available for some services (4281e80e, marked 'this keeps catching me out'). The passage states this as a limitation; it does not enumerate which services expose it, so I will not list them. What it shows is that a condition referencing resource.name will fail to evaluate for services that do not expose that field, and the binding is effectively ungrantable for those services. The second: for Cloud Storage objects specifically, resource.type is 'storage.googleapis.com/Object', not 'Bucket' (8f70d1fd). The object model distinguishes the container (bucket) from the stored item (object), and the type string reflects the item. A condition written expecting 'Bucket' will not match a request for an object.\n\nThe boundary-condition pattern you carry across services applies here: the happy path is 'attach a condition to any binding, reference any resource attribute, and it works.' The constraints are: legacy roles are excluded; resource.name may not exist for the service you are targeting; resource.type strings are specific and not what the UI label suggests. Write those three constraints down before your next IAM session, because they are the ones that re-surface as 'I thought I had this.'",
+          "depth": "from-nothing",
+          "estimatedMinutes": 5.7,
+          "question": {
+            "prompt": "Write a condition expression that grants a service account read access to Cloud Storage objects only when the request originates from a specific IP range, using resource.type. Then state, in one sentence, why that same condition cannot be attached to a roles/owner binding.",
+            "kind": "apply",
+            "expectedPoints": [
+              "Correct condition structure referencing request.ip and resource.type = 'storage.googleapis.com/Object'",
+              "States that legacy basic roles (Owner, Editor, Viewer) cannot have conditions attached, per 99d5220c",
+              "Uses the resource.type string for the object, not 'Bucket'"
+            ]
+          },
+          "sourceIds": [
+            "68aeabc8-79b6-4f6c-a6e2-20d6896c229d:origin",
+            "4281e80e-f2f0-4cee-8e1d-d20795083ad7:origin",
+            "8f70d1fd-0c84-47bb-897c-fdc08f633e79:origin",
+            "99d5220c-50fe-4133-81b0-1edee5a94d01:origin"
+          ],
+          "mediumWarning": null,
+          "completed": false
+        }
+      ],
+      "currentSectionIndex": 0,
+      "closingNote": "The two-axis construction (letter distance vs. semitone count) and the 'why the composite index is a physical structure, not a flag' are the mechanisms that replace the rule-as-fact pins; the IAM condition exclusions (legacy roles, resource.type string, resource.name availability) are the boundary conditions to write down before the next session. Open: whether the 48-hour re-derivations for G⁷ and the Firestore query are actually attempted, and whether the IAM condition question is written out before the next IAM work.",
+      "insufficient": false,
+      "id": "d4864c6a-2c05-44f7-8efc-220ffc959619"
+    },
+    {
+      "builtAt": "2026-08-19T07:11:20.156Z",
+      "fromPinCount": 9,
+      "targetMinutes": 15,
+      "estimatedMinutes": 11,
+      "sections": [
+        {
+          "topicId": "d69f462a-63d5-4fa7-8505-d1c216bd7554",
+          "heading": "The query that threw, and why the index had to be shaped a specific way",
+          "body": "You hit a FAILED_PRECONDITION on a query that combined a where clause on status with an orderBy on createdAt [14a110e6]. You had read the rule before — \"compound queries with range filters on multiple fields require a composite index and are subject to ordering constraints\" [5186333f] — and filed it as understood. The thing that slipped was not the existence of the rule. It was the specific structural condition that makes the rule fire, and within that, the ordering constraint that fixes the index shape.\n\nStart from the failure. Your query was, in effect:\n\n  where('status', '==', 'active').orderBy('createdAt', 'desc')\n\nFirestore rejected it because no existing index could serve both the filter and the sort in a single sequential pass. The specific trigger here is the pairing of a filter on one field with an ordering on a *different* field. If both the filter and the ordering referenced the same field, a single-field index on that field handles the query. The moment they diverge — you filter on A, sort on B — Firestore needs a composite index containing both fields. That is the condition that fires the requirement. It is not \"you have two where clauses\" or \"you have an orderBy\"; it is specifically that the filtered field and the ordered field are not the same field.\n\nNow the ordering constraint, which the pin calls out as a separate clause. The fields in the composite index are not an unordered set; they are a sequence, and the sequence must match the way Firestore processes the query left to right. The rule: equality-filtered fields come first, then range-filtered fields, then the orderBy field. In your case, status is an equality filter and createdAt is the orderBy field, so the index must be (status ASC, createdAt DESC). The ASC on status is fixed by the equality match; the DESC on createdAt is fixed by your orderBy direction. Reverse the field order to (createdAt, status) and the index cannot serve the query. Firestore would scan the entire createdAt-ordered sequence to find rows where status equals 'active' — the full scan the index exists to prevent. This is the part that arrives as a surprise because it looks like a separate rule (\"index fields must be in order\") when it is actually a constraint on the index you already decided you need. The ordering constraint does not tell you *whether* you need a composite index; it tells you *which* one. A mis-ordered index exists but does not fire, and you get the same FAILED_PRECONDITION as if no index were present at all.\n\nThe boundary case — when the rule does not fire: if every where clause is an equality filter and the orderBy references one of those same equality-filtered fields, no composite index is required. A single-field index on that one field handles both the filter and the sort. The trigger for a composite index is specifically one of two conditions: (a) at least one where clause uses a range operator (>, <, >=, <=, !=, array-contains, array-contains-any) on a field that differs from the orderBy field, or (b) the orderBy references a field that is not filtered at all. If neither condition holds, the composite index is not needed, and the console will flag a manually created one as unnecessary.\n\nThe other edge: if you add a second range filter on the same field as your orderBy — say where('createdAt', '>', someTimestamp) on top of the original — the index (status, createdAt) still works, because the range on createdAt is handled by the same index entry. But if you add a range filter on a *third* field, say where('priority', '>', 5), you now need a three-field composite index, and the ordering constraint tightens: equality fields first, then all range fields in the order you would scan them, then the orderBy field. Each additional range filter on a new field extends the sequence.\n\nThe \"fails when\" note for this pin: a compound query throws FAILED_PRECONDITION when it pairs a filter on one field with an ordering on a different field, or uses a range filter on any field alongside an orderBy on a second field, and no composite index matching the required field sequence and sort directions exists. The ordering constraint is not a second rule; it is the specific shape of the index the pairing demands, and a mis-ordered index is functionally absent.",
+          "depth": "building",
+          "estimatedMinutes": 5.2,
+          "question": {
+            "prompt": "Given where('status', '==', 'active').where('createdAt', '>', someTimestamp).orderBy('priority', 'asc'), write out the composite index field list with sort directions that Firestore expects, and state what goes wrong if you list priority before createdAt in the index definition.",
+            "kind": "construction",
+            "expectedPoints": [
+              "status (ASC) first as equality filter",
+              "createdAt (ASC) second as range filter",
+              "priority (ASC) third as the orderBy field",
+              "reversing priority and createdAt breaks the scan order because the range on createdAt can no longer be satisfied before the sort"
+            ]
+          },
+          "sourceIds": [
+            "5186333f-4962-49e1-9e7f-257f78223387:origin",
+            "14a110e6-0f52-4342-8ae5-9db6609b8f50:origin"
+          ],
+          "mediumWarning": null,
+          "completed": false
+        },
+        {
+          "topicId": "37acf0ec-8584-48c9-a578-70f523075bea",
+          "heading": "The binding that grants nothing: four ways a condition silently fails",
+          "body": "Start with a physical analogy before any IAM terminology. Imagine a key that opens a door — that is a role binding: a line in an access policy saying \"principal X has role Y on resource Z.\" Now imagine a second lock on that door that only the person turning the key can engage, and that lock checks something about the specific situation: the time of day, the IP address the request comes from, the type of resource being reached. If the second lock does not engage — the situation does not match what the lock is set for — the key turns but the door stays shut. The person is in the system, listed in the policy, but has no access for that request. The condition expression is that second lock [68aeabc8]. It is a boolean expression attached to a role binding; the grant fires only when the expression evaluates to true for the specific request. If it evaluates to false, or cannot be evaluated at all, the grant does not fire. No error is returned to the caller; the request is simply denied.\n\nThe rule above is the one you have. What follows is the exception list, which is the part that keeps arriving as a surprise. Four cases, each one a condition that makes the binding inert or the binding unattachable.\n\n1. resource.name is not available for every service [4281e80e]. A condition expression can reference resource.name to say \"this grant applies only when the specific resource being accessed is named X.\" But for some GCP services, the request metadata does not include a resource.name field at all. If your condition references resource.name and the service does not provide it, the condition cannot evaluate. The binding does not throw an error; it silently fails to grant. The request is denied and the denial carries no annotation explaining that the condition was unresolvable. This is the case your pin flags as \"this keeps catching me out\": the failure is silent, so it looks like a permissions problem rather than a condition-evaluation problem.\n\n2. resource.type names the object, not the container [8f70d1fd]. You write a condition matching resource.type == 'storage.googleapis.com/Bucket' because you are thinking of Cloud Storage buckets. But the request is operating on an *object* inside a bucket. For Cloud Storage, the resource.type of an object is 'storage.googleapis.com/Object', not 'Bucket'. The type field names the object being operated on, not the resource that contains it. Your condition evaluates to false. The grant is inert. The specific surprise is that the container's type is not the type of the operation's target.\n\n3. Legacy basic roles cannot carry conditions [99d5220c]. You cannot attach a condition expression to roles/owner, roles/editor, or roles/viewer. The API rejects the binding outright. If you need a conditional grant at the owner, editor, or viewer permission level, you must create a custom role that replicates the permissions you need and attach the condition to that custom role instead.\n\n4. A conditional binding does not override an unconditional one [99d5220c]. If principal X already has role Y unconditionally on resource Z, and you add a second binding for the same principal, same role, same resource but with a condition, the unconditional binding already covers every case. The conditional binding is redundant; it cannot narrow the grant that the unconditional binding already provides. Conditional bindings do not take precedence over unconditional ones.\n\nThe \"fails when\" note for this topic: a conditional role binding fails to grant when (a) the referenced resource attribute is not available for the target service, (b) the resource.type in the condition names the container rather than the object being accessed, (c) the role is a legacy basic role, or (d) an unconditional binding for the same principal and role already exists on the same resource. All four produce a silent or rejected failure, not a visible error.",
+          "depth": "from-nothing",
+          "estimatedMinutes": 5.8,
+          "question": {
+            "prompt": "You attach a condition resource.type == 'storage.googleapis.com/Bucket' to a Viewer role binding on a Cloud Storage bucket. A service account then issues a GET request for an object inside that bucket. Does the grant fire for that request, and why or why not?",
+            "kind": "prediction",
+            "expectedPoints": [
+              "The grant does not fire",
+              "The resource being accessed is the object, whose resource.type is storage.googleapis.com/Object, not Bucket",
+              "The condition evaluates to false because the type in the condition does not match the type of the object being operated on",
+              "The denial is silent; no error is returned to the caller"
+            ]
+          },
+          "sourceIds": [
+            "68aeabc8-79b6-4f6c-a6e2-20d6896c229d:origin",
+            "4281e80e-f2f0-4cee-8e1d-d20795083ad7:origin",
+            "8f70d1fd-0c84-47bb-897c-fdc08f633e79:origin",
+            "99d5220c-50fe-4133-81b0-1edee5a94d01:origin"
+          ],
+          "mediumWarning": null,
+          "completed": false
+        }
+      ],
+      "currentSectionIndex": 0,
+      "closingNote": "The Firestore ordering constraint is now pinned to the specific field-sequence shape and the equality-first / range-next / orderBy-last ordering, rather than the general \"you need a composite index\" rule; the tertian-chord boundary (12 semitones closing the octave, excluding the eighth permutation) is stated as an arithmetic condition rather than an afterthought; the IAM exception list — resource.name unavailability, resource.type as object not container, legacy-role exclusion, unconditional override — is assembled as a pre-read checklist of silent-failure cases. The auditory-discrimination gap in interval and chord-quality hearing remains open and is not closable by text; the IAM exception space is wider than the four cases listed and will surface further service-specific unavailability cases in practice.",
+      "insufficient": false,
+      "id": "bbd38eb4-8e46-41d0-a305-76a0c00154a5"
+    }
+  ],
+  "suggestions": [],
+  "commitments": [],
+  "awards": [],
+  "courses": [],
+  "intakeDrafts": [],
+  "outcomes": [],
+  "prefs": {
+    "targetMinutes": 15,
+    "availableMinutes": 3,
+    "interfaceLanguage": "en",
+    "pausedUntil": null,
+    "excludedDomains": [
+      "mail.google.com",
+      "outlook.com",
+      "outlook.office.com",
+      "online.lloydsbank.co.uk",
+      "chase.com",
+      "monzo.com",
+      "revolut.com",
+      "nhs.uk",
+      "patient.info",
+      "1password.com",
+      "bitwarden.com"
+    ],
+    "interview": {},
+    "rejectedOrigins": {},
+    "modelSpend": {
+      "since": "2026-08-26T13:44:09.545Z",
+      "connections": {
+        "cloud": {
+          "calls": 0,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "issuedNotReturned": 0
+        },
+        "local": {
+          "calls": 1,
+          "inputTokens": 21,
+          "outputTokens": 1,
+          "issuedNotReturned": 0
+        },
+        "cli": {
+          "calls": 0,
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "issuedNotReturned": 0
+        }
+      }
+    }
+  },
+  "aliases": {}
+}

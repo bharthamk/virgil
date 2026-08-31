@@ -1,0 +1,26 @@
+# The build context, kept to what a build actually reads.
+#
+# At the repository root because that is the only place Docker looks for it, and
+# the build context for both images is the repository root — the workspaces are
+# linked to each other and a context narrower than the root cannot install them.
+
+# Local boards and generated benchmark stores never belong in an image.
+.data
+.data-*
+.bakeoff-cache
+
+# Produced inside the builder. Copying a host build in would make the image
+# depend on whatever the last local `tsc -b` happened to leave behind — which
+# on this machine is output from a Node the runtime image does not have.
+dist
+*.tsbuildinfo
+
+# Installed inside the builder, from the lockfile.
+node_modules
+
+# Credentials are injected at runtime and never copied into an image layer.
+.env
+.env.*
+
+.git
+.DS_Store

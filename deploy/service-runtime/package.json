@@ -1,0 +1,8 @@
+{
+  "name": "virgil-service-runtime",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "@google-cloud/firestore": "9.0.0"
+  }
+}

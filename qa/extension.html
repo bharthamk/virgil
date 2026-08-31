@@ -1,0 +1,118 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virgil QA</title>
+<link rel="stylesheet" href="../extension/panel.css?v=20260827-product-pass">
+<div id="app" class="loading" data-surface="page">Loading…</div>
+<script>
+  // Browser QA without installing the extension. Product data still goes
+  // through the real local service; only Chrome's tiny storage/runtime surface
+  // is reproduced here so the actual compiled panel can run on localhost.
+  const qaStorage = Object.assign(Object.create(null), {
+    sb_service_url: 'http://127.0.0.1:8791',
+    sb_auth_config: {
+      apiKey: 'fake-api-key',
+      projectId: 'virgil-506009',
+      emulatorHost: '127.0.0.1:9099',
+    },
+  }, JSON.parse(localStorage.getItem('virgil-qa-storage') || '{}'));
+  const qaParams = new URLSearchParams(location.search);
+  // A live acceptance harness may own an OS-assigned port rather than the
+  // developer's normal 8791. Keep the override loopback-only: this page is a
+  // local QA surface, not a general way to point the extension at a service.
+  const qaService = qaParams.get('service');
+  if (qaService) {
+    try {
+      const parsed = new URL(qaService);
+      if (parsed.protocol === 'http:' && ['127.0.0.1', 'localhost'].includes(parsed.hostname)) {
+        qaStorage.sb_service_url = parsed.origin;
+      }
+    } catch { /* Leave the normal local service in place. */ }
+  }
+  // Exercise a genuinely self-hosted, single-board service without stale
+  // hosted-auth state turning a room change into the fake Google door. Hosted
+  // identity remains the default QA shape; `single=1` is an explicit second
+  // product mode, not an authentication bypass in the extension itself.
+  if (qaParams.get('single') === '1') {
+    delete qaStorage.sb_auth_config;
+    delete qaStorage.sb_session;
+  }
+  // Optional exact saved pin id for the picker -> lesson transition. Without
+  // one this remains the multi/offline receipt probe and invents no lesson.
+  const qaLessonPin = qaParams.get('lesson');
+  if (qaParams.get('surface') === 'panel') {
+    document.getElementById('app').dataset.surface = 'panel';
+    // Reproduce Chrome's narrow side-panel measure inside an ordinary QA tab.
+    // The tab stays automatable; the product layout receives the real width.
+    document.documentElement.style.width = '360px';
+    document.body.style.width = '360px';
+  }
+  const persistQaStorage = () => localStorage.setItem('virgil-qa-storage', JSON.stringify(qaStorage));
+  const qaRuntimeListeners = [];
+  const dispatchQaRuntime = (message) => {
+    for (const listener of [...qaRuntimeListeners]) listener(message, { id: 'qa-worker' }, () => {});
+  };
+  globalThis.chrome = {
+    storage: {
+      local: {
+        async get(keys) {
+          if (typeof keys === 'string') return { [keys]: qaStorage[keys] };
+          if (Array.isArray(keys)) return Object.fromEntries(keys.map((key) => [key, qaStorage[key]]));
+          return { ...(keys ?? {}), ...qaStorage };
+        },
+        async set(values) { Object.assign(qaStorage, values); persistQaStorage(); },
+        async remove(keys) {
+          for (const key of Array.isArray(keys) ? keys : [keys]) delete qaStorage[key];
+          persistQaStorage();
+        },
+      },
+      onChanged: { addListener() {}, removeListener() {} },
+    },
+    runtime: {
+      id: 'stub-extension-id',
+      // Chrome resolves extension assets from the extension root. This QA page
+      // lives one directory beside that root, so a page-relative `vendor/...`
+      // silently points at `/qa/vendor/...` and makes every real PDF look
+      // unreadable. Mirror chrome.runtime.getURL's root, not this page's.
+      getURL(path) {
+        return new URL(`../extension/${String(path).replace(/^\/+/, '')}`, location.href).href;
+      },
+      async sendMessage(message) {
+        // The HTTP QA page has no service worker. Reproduce only the picker
+        // receipt boundary so the real panel can be inspected through all of
+        // its visible states without claiming to make a pin.
+        if (message?.kind === 'sb-open-selector') {
+          setTimeout(() => dispatchQaRuntime({
+            kind: 'sb-select-status', tabId: 1, state: 'saving', count: 1, queued: 0,
+          }), 60);
+          setTimeout(() => dispatchQaRuntime({
+            kind: 'sb-select-status', tabId: 1, state: 'saved', count: 1, queued: 0,
+            ...(qaLessonPin ? {
+              lessonPinId: qaLessonPin, lessonLabel: 'The passage you pinned', lessonAt: Date.now(),
+            } : {}),
+          }), 180);
+          return { ok: true };
+        }
+      },
+      onMessage: {
+        addListener(listener) { qaRuntimeListeners.push(listener); },
+        removeListener(listener) {
+          const at = qaRuntimeListeners.indexOf(listener);
+          if (at >= 0) qaRuntimeListeners.splice(at, 1);
+        },
+      },
+    },
+    identity: {
+      // The Auth emulator accepts an unsigned Google-shaped ID token. No real
+      // Google account or credential is touched by this visual QA surface.
+      async getAuthToken() {
+        return { token: 'eyJhbGciOiJub25lIn0.eyJzdWIiOiJxYS1nb29nbGUtdXNlciIsImVtYWlsIjoicWEtdXNlckBleGFtcGxlLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdWQiOiJxYS1jbGllbnQifQ.' };
+      },
+    },
+    tabs: {
+      async query() { return [{ id: 1, url: location.href, windowId: 1 }]; },
+      async create({ url }) { location.href = url; },
+    },
+  };
+</script>
+<script type="module" src="../extension/dist/panel.js?v=20260827-product-pass"></script>

@@ -1,0 +1,241 @@
+# The capture and panel API, as a Cloud Run service.
+#
+#   gcloud run services replace deploy/service.rendered.yaml --dry-run   # validates only
+#   gcloud run services replace deploy/service.rendered.yaml
+#
+# `deploy/apply.sh` fills in the double-underscored placeholders below,
+# validates with `--dry-run` first — a flag `jobs replace` does not have — and
+# then applies. Nothing here has been applied to anything.
+#
+# The reasoning behind every number is in `deploy/CLOUD_RUN.md` §6.
+#
+# ## Firebase identity is the browser-reachable gate
+#
+# A Firebase ID token is not a Cloud Run IAM identity token, so the platform's
+# invoker check must not stop the request before the application sees it.
+# `run.googleapis.com/invoker-iam-disabled` opens only that outer platform gate;
+# `SB_AUTH` verifies the learner and selects their board inside the container.
+# `/health` is deliberately anonymous and contains no learner data. Everything
+# else answers 401 without a valid token.
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: virgil-service
+  annotations:
+    # Service-level, not revision-level.
+    # <https://docs.cloud.google.com/run/docs/securing/ingress>
+    # `all` permits the extension to reach the service. Identity is enforced by
+    # `SB_AUTH` inside the container, independently of network ingress.
+    run.googleapis.com/ingress: all
+    # The browser presents a Firebase ID token, not a Google Cloud IAM token.
+    # Let the request reach the container; `SB_AUTH` verifies the learner before
+    # any board route is selected. `/health` is the only anonymous route.
+    run.googleapis.com/invoker-iam-disabled: 'true'
+
+spec:
+  template:
+    metadata:
+      annotations:
+        # Revision-level scaling. Annotation values are strings — the map is
+        # typed map[string]string, so the quotes are load-bearing.
+        # <https://docs.cloud.google.com/run/docs/configuring/min-instances>
+        # <https://docs.cloud.google.com/run/docs/configuring/max-instances>
+
+        # Scale to zero. The demo is used in bursts and idle billing is
+        # avoidable. The cold start is accepted deliberately: the boot warm-up
+        # is off under K_SERVICE precisely so that a cold start costs no model
+        # call against a free tier of twenty a day.
+        autoscaling.knative.dev/minScale: '0'
+
+        # ONE. This is a correctness setting, not a throughput one.
+        #
+        # The store's serialisation law — "the same id written twice
+        # concurrently keeps the later call, not the later flush" — is held by
+        # a per-process promise chain, and so is its single-flight load. Two
+        # instances each hold a whole copy of the board and each write it
+        # whole, and nothing between them orders anything. The Firestore lane
+        # measured the same shape from the other side (two concurrent set()
+        # calls on one document do not resolve in call order) and fixed it with
+        # a queue that is also per-process.
+        #
+        # Raising this is not a bigger number; it needs transactions underneath
+        # the store. CLOUD_RUN.md S4.
+        autoscaling.knative.dev/maxScale: '1'
+
+        # 'true' is the default: CPU is throttled outside a request and billing
+        # is request-based. Stated rather than left implicit because the flag
+        # reads backwards — "CPU always allocated" is cpu-throttling 'false'.
+        # This service does no model work between requests. A threshold-crossing
+        # pin waits only for the Cloud Run Admin API to accept a per-learner Job
+        # execution; the Job owns the long run. Throttled is therefore correct
+        # and cheaper without making the background promise best-effort.
+        # <https://docs.cloud.google.com/run/docs/configuring/cpu-allocation>
+        run.googleapis.com/cpu-throttling: 'true'
+
+    spec:                     # RevisionSpec
+      # Deliberately capped at two. Every handler is async over one shared
+      # learner-store cache and concurrent writes queue through bounded store
+      # operations. Keeping the instance near the configured CPU count avoids
+      # turning one learner's model wait into dozens of queued requests.
+      # NOTE: unlike the Job's, these two are plain integers.
+      # <https://docs.cloud.google.com/run/docs/reference/rest/v1/RevisionSpec>
+      containerConcurrency: 2
+
+      # The default, 300s. The slowest endpoint is a single model call — a
+      # depth rewrite or a quick take — never a composition.
+      timeoutSeconds: 300
+
+      serviceAccountName: __RUNTIME_SA__
+
+      containers:
+        - image: __IMAGE_SERVICE__
+
+          ports:
+            # 8080 is the platform default and what Cloud Run injects as PORT.
+            # `PORT` itself is NEVER set in `env` below: it is reserved, and
+            # the docs are explicit that you should not set it yourself.
+            # <https://docs.cloud.google.com/run/docs/configuring/services/environment-variables>
+            - name: http1
+              containerPort: 8080
+
+          env:
+            # Bootstrap authority. On first start this account becomes the
+            # durable tenant owner and can manage members from Settings.
+            - name: VIRGIL_OWNER_EMAIL
+              value: '__OWNER_EMAIL__'
+
+            # Optional initial-member and migration allowlist. Authentication proves an account;
+            # on first start these become initial members of the owner-managed
+            # directory. Existing installs may leave OWNER_EMAIL blank and use
+            # the first address here as the migration owner.
+            - name: VIRGIL_ALLOWED_EMAILS
+              value: '__ALLOWED_EMAILS__'
+
+            - name: VIRGIL_REQUESTS_PER_MINUTE
+              value: '120'
+
+            # Durable, operator-owned ceiling. Learners may choose a smaller
+            # limit; Settings cannot remove or raise this boundary.
+            - name: SB_OPERATOR_MODEL_BUDGET_TOKENS
+              value: '10000000'
+
+            # The production store, project-qualified. See job.yaml — the same
+            # board, and the same reason the project half is not optional.
+            - name: SB_STORE
+              value: firestore:__PROJECT_ID__/__BOARD_ID__
+
+            # The same named opt-in the Job carries, and needed here for the
+            # same reason: this process opens the same store, and without it
+            # `firestoreWiring` refuses at startup. A service that refused
+            # lazily would bind a port, be reported healthy, and fail every
+            # learner request.
+            - name: VIRGIL_ALLOW_PRODUCTION
+              value: 'yes'
+
+            # Which provider answers. See job.yaml — the same spec, and it has
+            # to be the same value.
+            #
+            # The service is not a lesser case than the nightly. It hosts the
+            # six foreground roles: Scout, Tutor, Reviewer, Marker, Intake
+            # Planner and Transcriber. Wiring only the Job would give this
+            # deployment a working
+            # night and a panel whose collaborative actions cannot answer.
+            #
+            # Two providers across the two halves would be one learner's board
+            # written by two different models, with a cost ledger that
+            # reconciles against neither. `deploy-config.test.ts` asserts the
+            # two values are equal, the way it already does for the board.
+            #
+            # SB_ORCHESTRATOR is deliberately NOT set here: the eleven stages are
+            # the nightly's, and this process runs no night.
+            # FINAL FLOOR LOCK 2026-08-31 — same live-probed 3.5+ pair as the
+            # Job. Both free and managed API-key arms inherit this exact map;
+            # there is no below-floor provider fallback.
+            - name: SB_LLM
+              value: gemini:gemini-3.5-flash-lite/gemini-3.5-flash-lite
+
+            - name: GOOGLE_CLOUD_PROJECT
+              value: __PROJECT_ID__
+            - name: GOOGLE_CLOUD_LOCATION
+              value: __REGION__
+
+            # Which embedder answers embedding work on this half. Same defect
+            # class as the Job's SB_EMBEDDER line: unset builds the Ollama
+            # embedder at 127.0.0.1:11434, which inside this container is the
+            # container. `deploy-config.test.ts` asserts both resources name
+            # it, the way it does for SB_LLM.
+            - name: SB_EMBEDDER
+              value: tfidf
+
+            # The hosted-identity contract. The public service knows which learner is asking and
+            # chooses `boards/learner-<uid>` only after verifying this project's
+            # Firebase ID token. There is no second operator secret in the
+            # learner's browser.
+            - name: SB_AUTH
+              value: firebase:__PROJECT_ID__
+
+            # Durable background processing. The service may override only the
+            # verified learner's SB_STORE and the already-decided batch key;
+            # the runtime identity is scoped to execute this named Job with
+            # overrides by deploy/apply.sh.
+            - name: SB_AUTO_RUN_JOB
+              value: projects/__PROJECT_ID__/locations/__REGION__/jobs/__JOB_NAME__
+
+            # Public browser configuration for this deployment's hosted
+            # `/app/`. These values identify the self-hoster's Firebase/OAuth
+            # clients; they are not Virgil credentials and no universal tenant
+            # is baked into the image or extension.
+            - name: SB_FIREBASE_API_KEY
+              value: __FIREBASE_API_KEY__
+
+            - name: SB_GOOGLE_WEB_CLIENT_ID
+              value: __GOOGLE_WEB_CLIENT_ID__
+
+            # SB_HOST is deliberately NOT set. The process reads K_SERVICE,
+            # which the platform sets to this service's name, and widens its
+            # bind to 0.0.0.0 on its own. Cloud Run routes only to 0.0.0.0 and
+            # a container that binds 127.0.0.1 answers nothing — the symptom
+            # being a startup-probe timeout that names no bind address.
+            # <https://docs.cloud.google.com/run/docs/container-contract>
+
+            # SB_WARMUP is deliberately NOT set. It defaults off under
+            # K_SERVICE, which is what stops every cold start buying a model
+            # call. Set it to '1' only to warm a revision before a demo.
+
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: __SECRET_NAME__
+                  key: latest
+
+            # The ladder's free arm — same pair as the Job's, asserted equal
+            # there. Free spends first; the managed key above is the paid
+            # fallback behind the budget.
+            - name: GEMINI_API_KEY_FREE
+              valueFrom:
+                secretKeyRef:
+                  name: __FREE_SECRET_NAME__
+                  key: latest
+
+            # The request router reads only the account label from this value,
+            # binding a foreground file-id handoff to the worker's grant. It
+            # never returns or stores the refresh token.
+            - name: SB_NOTEBOOK_DRIVE_CREDENTIAL
+              valueFrom:
+                secretKeyRef:
+                  name: __NOTEBOOK_DRIVE_SECRET_NAME__
+                  key: latest
+
+            # Public routing configuration, not a credential. When set, every
+            # Notebook door opens the live notebook already reading Virgil's
+            # three stable Drive sources instead of the generic product home.
+            - name: SB_NOTEBOOK_URL
+              value: "__NOTEBOOK_URL__"
+
+          resources:
+            limits:
+              cpu: '1'
+              # Measured serving /health inside a 128Mi limit. 512Mi is the
+              # platform default and leaves room for a board held in memory.
+              memory: 512Mi

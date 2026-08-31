@@ -1,0 +1,23 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./core"
+    },
+    {
+      "path": "./adapters"
+    },
+    {
+      "path": "./runner"
+    },
+    {
+      "path": "./extension"
+    },
+    {
+      "path": "./adk"
+    },
+    {
+      "path": "./trigger"
+    }
+  ]
+}

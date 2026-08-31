@@ -1,0 +1,9 @@
+{
+  "name": "@sb/extension",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "pdfjs-dist": "^6.2.108"
+  }
+}

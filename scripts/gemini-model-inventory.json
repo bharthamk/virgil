@@ -1,0 +1,32 @@
+{
+  "_": "RECORDED ListModels inventory. Not live, and deliberately not live: preflight must be able to fail on a wrong pin without spending a request, and the free-tier deep model has twenty a day. The LIVE re-check is the first real call the run makes (benchmark-deep.mjs stage 0), because a pin that has moved since this file was written is exactly the failure this file cannot catch — see the transport contract §2, where `gemini-pro-latest` resolved to a 3.1 model and no mocked test could have known.",
+  "recordedAt": "2026-08-20",
+  "source": "GET /v1beta/models on GCP project virgil-free-tier, transcribed from the transport contract §2",
+  "totalModels": 50,
+  "generateContentCapable": 38,
+  "floor": {
+    "minimumVersion": 3.5,
+    "why": "the public release entry's mandatory-model requirement; anything below 3.5 fails it silently"
+  },
+  "aliases": {
+    "gemini-flash-latest": "gemini-3.7-flash",
+    "gemini-flash-lite-latest": "gemini-3.5-flash-lite",
+    "gemini-pro-latest": "gemini-3.1-pro"
+  },
+  "aliasWarning": "Aliases are NOT usable as pins. `gemini-pro-latest` resolves BELOW the floor, and an alias that moves under a cost ledger is a ledger that cannot be reconciled.",
+  "models": [
+    { "id": "gemini-3.7-flash", "version": 3.7, "generateContent": true, "freeTierRequestsPerDay": 20, "role": "deep (pinned)", "reasoningOff": "thinkingBudget:0 — accepted, still bills thought tokens; no encoding zeroes it" },
+    { "id": "gemini-3.6-flash", "version": 3.6, "generateContent": true, "role": "deep alternative", "reasoningOff": "thinkingLevel:minimal" },
+    { "id": "gemini-3.5-flash", "version": 3.5, "generateContent": true, "contextIn": 1048576, "role": "fast alternative", "reasoningOff": "thinkingLevel:minimal" },
+    { "id": "gemini-3.5-flash-lite", "version": 3.5, "generateContent": true, "contextIn": 1048576, "contextOut": 65536, "role": "fast (pinned)", "reasoningOff": "thinkingLevel:minimal", "note": "never once rate-limited across ~80 calls in the transport proof and 11 in the benchmark" },
+    { "id": "gemini-3.1-flash-lite", "version": 3.1, "generateContent": true, "role": "below floor — excluded" },
+    { "id": "gemini-3.1-pro-preview", "version": 3.1, "generateContent": true, "role": "below floor — excluded" },
+    { "id": "gemini-3.1-pro", "version": 3.1, "generateContent": true, "role": "below floor — excluded; free-tier token quota already exhausted when measured" },
+    { "id": "gemma-4-31b-it", "version": 4, "generateContent": true, "family": "gemma", "role": "Scout port candidate (the design contract: not routed)" },
+    { "id": "gemma-4-26b-a4b-it", "version": 4, "generateContent": true, "family": "gemma", "role": "Scout port candidate (the design contract: not routed)" },
+    { "id": "gemini-embedding-001", "generateContent": false, "role": "Embedder port — not yet pointed at" },
+    { "id": "gemini-embedding-2", "generateContent": false, "role": "Embedder port — not yet pointed at" }
+  ],
+  "noProAtOrAboveFloor": true,
+  "noProNote": "There is no Pro-tier model at 3.5+ reachable on this key. The deep tier is a Flash model because that is the ceiling access imposes. The Surveyor's 5x conservatism gap versus frontier is therefore still open after this rerun, whatever the rerun says."
+}
