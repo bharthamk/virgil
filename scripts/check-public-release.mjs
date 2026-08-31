@@ -166,6 +166,22 @@ for (const [corpus, expectedCount] of [
     problems.push(`${corpus}: corpus must use authored example.invalid sources only`);
   }
 }
+
+const d1CachePath = 'benchmarks/d1/nomic-embed-text-vectors.json';
+const d1Cache = JSON.parse(readFileSync(d1CachePath, 'utf8'));
+const d1Entries = Object.entries(d1Cache);
+if (d1Entries.length !== 130) {
+  problems.push(`${d1CachePath}: expected 130 synthetic benchmark vectors, found ${d1Entries.length}`);
+}
+for (const [key, vector] of d1Entries) {
+  const validKey = /^nomic-embed-text:[0-9a-f]{64}$/.test(key);
+  const validVector = Array.isArray(vector) && vector.length === 768
+    && vector.every((value) => typeof value === 'number' && Number.isFinite(value));
+  if (!validKey || !validVector) {
+    problems.push(`${d1CachePath}: malformed keyed vector`);
+    break;
+  }
+}
 const realExpected = JSON.parse(readFileSync('scripts/real-expected.json', 'utf8'));
 const realPins = corpora.get('scripts/real-pins.json') ?? [];
 if (realExpected.length !== 50

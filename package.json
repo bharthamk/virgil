@@ -30,7 +30,7 @@
     "coverage": "npm run build --silent && node scripts/check-coverage.mjs",
     "check:quality": "npm run typecheck && npm run lint && npm run coverage",
     "check:seam": "node scripts/check-seam.mjs",
-    "check:d1": "node scripts/check-d1-equivalence.mjs",
+    "check:d1": "SB_BAKEOFF_CACHE=benchmarks/d1/nomic-embed-text-vectors.json node scripts/check-d1-equivalence.mjs",
     "check:public": "node scripts/check-public-release.mjs",
     "check:deps": "npm audit --audit-level=high",
     "eval:session": "node scripts/eval-session.mjs",
