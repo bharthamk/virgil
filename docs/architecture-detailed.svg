@@ -1,0 +1,401 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 2400 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Virgil architecture: detailed implementation and connection map</title>
+  <desc id="desc">A detailed map of Virgil's learner inputs, Chrome extension and hosted page, Firebase identity chain, Cloud Run service, Firestore state, Cloud Run Job, eleven-stage Google ADK workflow, Gemini API, explicit local Gemma connector, Google Drive and Notebook route, WebMCP tools, browser handoffs, operations and security boundaries. Arrows distinguish production, learner-chosen, returning evidence and paused optional connections.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8F9F5"/>
+      <stop offset="1" stop-color="#EEF4F1"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#183B31" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L11 5.5 L0 11 Z" fill="#2F6B59"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L11 5.5 L0 11 Z" fill="#466C9A"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L11 5.5 L0 11 Z" fill="#C06935"/>
+    </marker>
+    <marker id="arrowGrey" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L11 5.5 L0 11 Z" fill="#87968F"/>
+    </marker>
+    <style>
+      text { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .kicker { font-size: 17px; font-weight: 820; letter-spacing: 2.3px; fill: #5B7269; }
+      .title { font-size: 45px; font-weight: 820; fill: #173C32; }
+      .subtitle { font-size: 20px; font-weight: 520; fill: #526B62; }
+      .lane-title { font-size: 15px; font-weight: 820; letter-spacing: 2px; fill: #667B73; }
+      .box-title { font-size: 20px; font-weight: 800; fill: #173C32; }
+      .copy { font-size: 14px; font-weight: 540; fill: #496158; }
+      .small { font-size: 12px; font-weight: 680; fill: #657A72; }
+      .micro { font-size: 11px; font-weight: 700; fill: #657A72; }
+      .chip { font-size: 12px; font-weight: 760; fill: #244F42; }
+      .hero-title { font-size: 20px; font-weight: 800; fill: #FFFFFF; }
+      .hero-copy { font-size: 14px; font-weight: 560; fill: #DDECE6; }
+      .hero-small { font-size: 12px; font-weight: 700; fill: #BFD6CD; }
+      .flow { fill:none; stroke:#2F6B59; stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; marker-end:url(#arrow); }
+      .flow-bi { fill:none; stroke:#2F6B59; stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; marker-start:url(#arrow); marker-end:url(#arrow); }
+      .cloud { fill:none; stroke:#466C9A; stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; marker-end:url(#arrowBlue); }
+      .optional { fill:none; stroke:#2F6B59; stroke-width:2.8; stroke-dasharray:9 7; stroke-linecap:round; stroke-linejoin:round; marker-end:url(#arrow); }
+      .return { fill:none; stroke:#C06935; stroke-width:3.2; stroke-dasharray:10 7; stroke-linecap:round; stroke-linejoin:round; marker-end:url(#arrowOrange); }
+      .paused { fill:none; stroke:#87968F; stroke-width:2.6; stroke-dasharray:3 8; stroke-linecap:round; marker-end:url(#arrowGrey); }
+      .label { font-size:11px; font-weight:760; fill:#5A7168; paint-order:stroke; stroke:#F5F8F4; stroke-width:5px; stroke-linejoin:round; }
+      .label-orange { font-size:11px; font-weight:760; fill:#A15329; paint-order:stroke; stroke:#F5F8F4; stroke-width:5px; stroke-linejoin:round; }
+    </style>
+  </defs>
+
+  <rect width="2400" height="1600" fill="url(#bg)"/>
+  <rect width="2400" height="10" fill="#2F6B59"/>
+  <text x="60" y="69" class="kicker">VIRGIL · DETAILED IMPLEMENTATION + CONNECTION MAP</text>
+  <text x="60" y="121" class="title">How Virgil connects learning surfaces, agents and Google Cloud</text>
+  <text x="60" y="157" class="subtitle">All Things Agentic submission build · solid = production · dashed = learner-chosen · orange = evidence returning · dotted = paused optional</text>
+
+  <!-- Lanes -->
+  <g>
+    <rect x="60" y="210" width="370" height="1125" rx="26" fill="#F7F9F7" stroke="#D6E0DB" stroke-width="2"/>
+    <rect x="450" y="210" width="300" height="1125" rx="26" fill="#FBF8EE" stroke="#E2D8B9" stroke-width="2"/>
+    <rect x="770" y="210" width="500" height="1125" rx="26" fill="#F2F7F4" stroke="#C7D9D1" stroke-width="2"/>
+    <rect x="1290" y="210" width="500" height="1125" rx="26" fill="#F2F5FA" stroke="#C8D3E2" stroke-width="2"/>
+    <rect x="1810" y="210" width="530" height="1125" rx="26" fill="#F8F5FA" stroke="#D9CEE0" stroke-width="2"/>
+  </g>
+  <text x="84" y="244" class="lane-title">1 · LEARNER + INBOUND</text>
+  <text x="474" y="244" class="lane-title">2 · IDENTITY + INGRESS</text>
+  <text x="794" y="244" class="lane-title">3 · PRODUCT + STATE</text>
+  <text x="1314" y="244" class="lane-title">4 · BACKGROUND AGENTS</text>
+  <text x="1834" y="244" class="lane-title">5 · MODELS + OUTBOUND</text>
+
+  <!-- Connection paths (behind cards) -->
+  <!-- Learner content to surfaces -->
+  <path d="M250 405 V445" class="flow"/>
+  <path d="M250 405 C390 420 390 650 250 660" class="flow"/>
+  <!-- Surfaces to Google sign-in -->
+  <path d="M400 515 H465 C478 515 485 502 485 489 V407" class="flow"/>
+  <path d="M400 745 H444 C462 745 475 730 475 712 V390 C475 375 487 365 500 365" class="flow"/>
+  <text x="411" y="502" class="label">sign in</text>
+  <!-- Identity chain -->
+  <path d="M600 405 V432" class="flow"/>
+  <path d="M600 590 V620" class="flow"/>
+  <path d="M720 717 H790" class="flow"/>
+  <text x="610" y="424" class="label">Google credential</text>
+  <text x="610" y="612" class="label">Firebase ID token</text>
+  <!-- WebMCP to hosted page -->
+  <path d="M250 990 C410 990 415 805 385 782" class="optional"/>
+  <text x="304" y="968" class="label">same signed-in page</text>
+  <!-- Service and state -->
+  <path d="M1015 665 V705" class="flow-bi"/>
+  <text x="1030" y="692" class="label">typed Store</text>
+  <!-- Service to jobs API, then worker -->
+  <path d="M1240 566 H1260 C1274 566 1280 580 1280 594 V1190 C1280 1206 1268 1218 1252 1218 H1238" class="cloud"/>
+  <path d="M1238 1218 H1304 C1320 1218 1330 1206 1330 1190 V395" class="cloud"/>
+  <text x="1250" y="934" class="label">learner id + day key + receipt</text>
+  <text x="1250" y="952" class="label">Cloud Run Jobs API</text>
+  <!-- Job to ADK -->
+  <path d="M1540 420 V447" class="cloud"/>
+  <!-- Job/ADK state -->
+  <path d="M1320 820 H1274 C1256 820 1245 806 1245 790 V770" class="cloud"/>
+  <path d="M1320 885 H1278 C1258 885 1245 900 1245 920 V1010 C1245 1028 1232 1040 1214 1040" class="cloud"/>
+  <text x="1210" y="845" class="label">checkpoints</text>
+  <text x="1210" y="863" class="label">verified output</text>
+  <!-- ADK to Gemini -->
+  <path d="M1760 590 H1830" class="cloud"/>
+  <path d="M1830 347 H1778 C1768 347 1760 355 1760 365 V590" class="cloud"/>
+  <text x="1768" y="575" class="label">typed Llm requests</text>
+  <!-- Secret mounts -->
+  <path d="M1840 505 H1788 C1772 505 1760 492 1760 476 V400" class="optional"/>
+  <path d="M1840 530 H1268 C1252 530 1240 517 1240 501" class="optional"/>
+  <text x="1640" y="523" class="label">named secret mounts</text>
+  <!-- Research seam -->
+  <path d="M1540 930 V965" class="cloud"/>
+  <path d="M1760 1020 H1792 V1267 H1835" class="cloud"/>
+  <text x="1764" y="1008" class="label">safe source fetch</text>
+  <text x="1800" y="1228" class="label">retrieved evidence</text>
+  <!-- Drive / Notebook one-way -->
+  <path d="M1240 610 C1540 610 1580 678 1840 678" class="optional"/>
+  <path d="M2075 735 V765" class="optional"/>
+  <path d="M2075 895 V925" class="optional"/>
+  <text x="1474" y="627" class="label">foreground refresh · Drive API</text>
+  <text x="2090" y="754" class="label">rewrite in place</text>
+  <text x="2090" y="914" class="label">sources only</text>
+  <!-- Browser handoff -->
+  <path d="M1240 640 C1505 648 1640 1100 1840 1100" class="optional"/>
+  <text x="1568" y="958" class="label">prepared context; browser opens</text>
+  <!-- Manual outcomes back -->
+  <path d="M1840 1255 H1780 C1758 1255 1740 1273 1740 1295 V1312 H950 C928 1312 910 1294 910 1272 V1090" class="return"/>
+  <text x="1350" y="1303" class="label-orange">learner records answer · correction · grade · external outcome</text>
+  <!-- Local connector outbound polling -->
+  <path d="M400 1165 H480" class="optional"/>
+  <path d="M720 1120 H780 C798 1120 812 1106 812 1088" class="optional"/>
+  <path d="M800 1070 H735 C720 1070 710 1082 710 1097" class="optional"/>
+  <text x="410" y="1152" class="label">pair once</text>
+  <text x="735" y="1108" class="label">poll / complete</text>
+  <!-- Firestore local queue -->
+  <path d="M800 1030 H742 C726 1030 716 1042 716 1058" class="optional"/>
+  <text x="736" y="1017" class="label">model mailbox</text>
+
+  <!-- Inbound cards -->
+  <g filter="url(#shadow)">
+    <rect x="90" y="275" width="310" height="130" rx="20" fill="#FFFFFF" stroke="#CEDBD5" stroke-width="2"/>
+  </g>
+  <text x="116" y="310" class="box-title">Learning inputs</text>
+  <text x="116" y="338" class="copy">pages · selected passages · URLs · notes</text>
+  <text x="116" y="362" class="copy">PDFs · images · course folders · rubrics</text>
+  <text x="116" y="386" class="small">deadlines · drafts · feedback · outcomes</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="445" width="310" height="180" rx="20" fill="#173C32"/>
+  </g>
+  <rect x="116" y="470" width="150" height="26" rx="13" fill="#DDF0E7"/>
+  <text x="131" y="488" class="chip">CHROME MV3 EXTENSION</text>
+  <text x="116" y="530" class="hero-title">Beside the browser</text>
+  <text x="116" y="558" class="hero-copy">right-click Pin · Alt+P · source receipt</text>
+  <text x="116" y="584" class="hero-copy">side panel · Quick take · Learn · Check</text>
+  <text x="116" y="608" class="hero-small">same authenticated API as the full page</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="660" width="310" height="180" rx="20" fill="#FFFFFF" stroke="#AFC6BC" stroke-width="2"/>
+  </g>
+  <text x="116" y="697" class="box-title">Virgil hosted page</text>
+  <text x="116" y="727" class="copy">Board · Learn · My studies · Plan</text>
+  <text x="116" y="753" class="copy">Insights · Settings · Connections</text>
+  <text x="116" y="779" class="copy">review · marking · intake · transcribe</text>
+  <rect x="116" y="797" width="250" height="25" rx="12" fill="#EEF4F1"/>
+  <text x="131" y="814" class="chip">one state · multiple learning surfaces</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="875" width="310" height="150" rx="20" fill="#FFF7E7" stroke="#DCC78B" stroke-width="2"/>
+  </g>
+  <text x="116" y="910" class="box-title">Browser agent · WebMCP</text>
+  <text x="116" y="938" class="copy">guide view · study state · intake draft</text>
+  <text x="116" y="962" class="copy">classification preview · course drop</text>
+  <text x="116" y="992" class="small">bounded page tools · same session · no model call</text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="1055" width="310" height="220" rx="20" fill="#F1EBF7" stroke="#C4ACD4" stroke-width="2"/>
+  </g>
+  <text x="116" y="1090" class="box-title">Learner’s paired computer</text>
+  <text x="116" y="1118" class="copy">authenticated connector polls outward</text>
+  <text x="116" y="1142" class="copy">to Virgil; no inbound laptop port</text>
+  <rect x="116" y="1170" width="258" height="78" rx="16" fill="#FFFFFF"/>
+  <text x="134" y="1196" class="chip">LOCAL OLLAMA MODELS</text>
+  <text x="134" y="1219" class="small">Gemma 4 · fast text</text>
+  <text x="134" y="1240" class="micro">Qwen deep text + vision · explicit learner route</text>
+
+  <!-- Identity cards -->
+  <g filter="url(#shadow)">
+    <rect x="480" y="285" width="240" height="120" rx="20" fill="#FFFFFF" stroke="#D6DCDD" stroke-width="2"/>
+  </g>
+  <text x="505" y="322" class="box-title">Google sign-in</text>
+  <text x="505" y="350" class="copy">browser obtains Google credential</text>
+  <text x="505" y="376" class="small">Virgil never receives a password</text>
+
+  <g filter="url(#shadow)">
+    <rect x="480" y="435" width="240" height="155" rx="20" fill="#FFF4D9" stroke="#DFC680" stroke-width="2"/>
+  </g>
+  <text x="505" y="472" class="box-title">Firebase Auth</text>
+  <text x="505" y="500" class="copy">deployment-scoped ID token</text>
+  <text x="505" y="525" class="copy">RS256 · issuer · audience</text>
+  <text x="505" y="550" class="copy">lifetime · subject checks</text>
+  <text x="505" y="575" class="small">Google IdP enabled</text>
+
+  <g filter="url(#shadow)">
+    <rect x="480" y="620" width="240" height="190" rx="20" fill="#FFFFFF" stroke="#D7C99F" stroke-width="2"/>
+  </g>
+  <text x="505" y="657" class="box-title">Cloud Run ingress</text>
+  <text x="505" y="685" class="copy">public browser gate; data routes gated</text>
+  <text x="505" y="710" class="copy">verified subject → learner-&lt;uid&gt;</text>
+  <text x="505" y="735" class="copy">owner/member admission</text>
+  <text x="505" y="760" class="copy">rate + origin boundaries</text>
+  <text x="505" y="790" class="small">/health only anonymous route</text>
+
+  <g filter="url(#shadow)">
+    <rect x="480" y="1025" width="240" height="160" rx="20" fill="#F1EBF7" stroke="#C4ACD4" stroke-width="2"/>
+  </g>
+  <text x="505" y="1062" class="box-title">Local pairing token</text>
+  <text x="505" y="1090" class="copy">short-lived learner-scoped route</text>
+  <text x="505" y="1115" class="copy">service stores token hash only</text>
+  <text x="505" y="1140" class="copy">mailbox endpoints only</text>
+  <text x="505" y="1168" class="small">heartbeat · next · complete</text>
+
+  <!-- Product cards -->
+  <g filter="url(#shadow)">
+    <rect x="800" y="275" width="440" height="390" rx="22" fill="#173C32"/>
+  </g>
+  <rect x="828" y="300" width="147" height="28" rx="14" fill="#DDF0E7"/>
+  <text x="843" y="320" class="chip">CLOUD RUN SERVICE</text>
+  <text x="828" y="365" class="hero-title">Authenticated product API</text>
+  <text x="828" y="395" class="hero-copy">pins · courses · board · sessions · plan · insights</text>
+  <text x="828" y="420" class="hero-copy">review · mark · transcribe · Notebook · models</text>
+  <line x1="828" y1="446" x2="1212" y2="446" stroke="#477666" stroke-width="1.5"/>
+  <text x="828" y="478" class="hero-title" style="font-size:17px">Foreground agents</text>
+  <text x="828" y="504" class="hero-copy">Scout · Tutor · Reviewer · Marker · Transcriber</text>
+  <text x="828" y="527" class="hero-copy">Intake Planner · interactive model work</text>
+  <line x1="828" y1="550" x2="1212" y2="550" stroke="#477666" stroke-width="1.5"/>
+  <text x="828" y="580" class="hero-title" style="font-size:17px">Typed architecture seam</text>
+  <text x="828" y="606" class="hero-copy">Llm · Store · Research · Embedder · Clock</text>
+  <text x="828" y="633" class="hero-small">spend guard · schema validation · model receipts · no silent fallback</text>
+
+  <g filter="url(#shadow)">
+    <rect x="800" y="705" width="440" height="390" rx="22" fill="#E7F2EC" stroke="#8FB6A4" stroke-width="2"/>
+  </g>
+  <text x="828" y="745" class="box-title">Firestore Native · learner state</text>
+  <text x="828" y="778" class="copy">boards · pins · topics · evidence · signals · comfort</text>
+  <text x="828" y="804" class="copy">courses · commitments · drafts · sessions · statements</text>
+  <text x="828" y="830" class="copy">external handoffs · outcomes · Notebook file IDs</text>
+  <text x="828" y="856" class="copy">Job leases · receipts · checkpoints · local mailbox</text>
+  <rect x="828" y="884" width="384" height="78" rx="16" fill="#FFFFFF"/>
+  <text x="848" y="911" class="chip">ONE STATE, NOT A BROWSER SHADOW DATABASE</text>
+  <text x="848" y="936" class="small">extension + page + Job open only the verified learner board</text>
+  <text x="828" y="990" class="box-title" style="font-size:17px">Safety</text>
+  <text x="828" y="1017" class="copy">deny-all client rules · server/Admin SDK only</text>
+  <text x="828" y="1042" class="copy">bounded writes · concurrency cap · delete protection</text>
+  <text x="828" y="1070" class="small">product backup / restore / account deletion</text>
+
+  <g filter="url(#shadow)">
+    <rect x="800" y="1140" width="440" height="110" rx="20" fill="#E9EEF7" stroke="#A1B3D0" stroke-width="2"/>
+  </g>
+  <text x="828" y="1178" class="box-title">Cloud Run Jobs API dispatch</text>
+  <text x="828" y="1206" class="copy">direct request completes before service replies</text>
+  <text x="828" y="1232" class="small">process / process-if-due · per-run nonce · retry-safe lease</text>
+
+  <!-- Background cards -->
+  <g filter="url(#shadow)">
+    <rect x="1320" y="275" width="440" height="145" rx="22" fill="#E8EEF8" stroke="#9FB1CF" stroke-width="2"/>
+  </g>
+  <text x="1348" y="313" class="box-title">Cloud Run Job · virgil-nightly</text>
+  <text x="1348" y="342" class="copy">durable worker · 30-minute bound · independent retries</text>
+  <text x="1348" y="368" class="copy">same Firestore board · same model spec · same release tag</text>
+  <text x="1348" y="397" class="small">writes running / finished receipt · survives closed browser</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1320" y="447" width="440" height="485" rx="22" fill="#FFFFFF" stroke="#9FB1CF" stroke-width="2"/>
+  </g>
+  <text x="1348" y="486" class="box-title">Google ADK · SequentialAgent</text>
+  <text x="1348" y="514" class="copy">11 ordered, restartable stages · real BaseAgent children</text>
+  <g>
+    <rect x="1348" y="548" width="118" height="54" rx="14" fill="#F1EBF7"/>
+    <rect x="1478" y="548" width="118" height="54" rx="14" fill="#F1EBF7"/>
+    <rect x="1608" y="548" width="124" height="54" rx="14" fill="#F1EBF7"/>
+    <text x="1407" y="570" text-anchor="middle" class="chip">1 · intake</text><text x="1407" y="589" text-anchor="middle" class="micro">Intake Planner</text>
+    <text x="1537" y="570" text-anchor="middle" class="chip">2 · forage</text><text x="1537" y="589" text-anchor="middle" class="micro">Forager</text>
+    <text x="1670" y="570" text-anchor="middle" class="chip">3 · cluster</text><text x="1670" y="589" text-anchor="middle" class="micro">Clusterer</text>
+
+    <rect x="1348" y="614" width="118" height="54" rx="14" fill="#F1EBF7"/>
+    <rect x="1478" y="614" width="118" height="54" rx="14" fill="#F1EBF7"/>
+    <rect x="1608" y="614" width="124" height="54" rx="14" fill="#E7F2EC"/>
+    <text x="1407" y="636" text-anchor="middle" class="chip">4 · survey</text><text x="1407" y="655" text-anchor="middle" class="micro">Surveyor</text>
+    <text x="1537" y="636" text-anchor="middle" class="chip">5 · analyse</text><text x="1537" y="655" text-anchor="middle" class="micro">Analyst</text>
+    <text x="1670" y="636" text-anchor="middle" class="chip">6 · comfort</text><text x="1670" y="655" text-anchor="middle" class="micro">Registrar · pure</text>
+
+    <rect x="1348" y="680" width="118" height="54" rx="14" fill="#F1EBF7"/>
+    <rect x="1478" y="680" width="118" height="54" rx="14" fill="#F1EBF7"/>
+    <rect x="1608" y="680" width="124" height="54" rx="14" fill="#E7F2EC"/>
+    <text x="1407" y="702" text-anchor="middle" class="chip">7 · statements</text><text x="1407" y="721" text-anchor="middle" class="micro">Registrar</text>
+    <text x="1537" y="702" text-anchor="middle" class="chip">8 · prospect</text><text x="1537" y="721" text-anchor="middle" class="micro">Prospector</text>
+    <text x="1670" y="702" text-anchor="middle" class="chip">9 · garden</text><text x="1670" y="721" text-anchor="middle" class="micro">Gardener · pure</text>
+
+    <rect x="1412" y="746" width="140" height="54" rx="14" fill="#F1EBF7"/>
+    <rect x="1564" y="746" width="140" height="54" rx="14" fill="#FFF1E6"/>
+    <text x="1482" y="768" text-anchor="middle" class="chip">10 · compose</text><text x="1482" y="787" text-anchor="middle" class="micro">Composer</text>
+    <text x="1634" y="768" text-anchor="middle" class="chip">11 · verify</text><text x="1634" y="787" text-anchor="middle" class="micro">Verifier · withhold</text>
+  </g>
+  <rect x="1348" y="824" width="384" height="78" rx="16" fill="#173C32"/>
+  <text x="1368" y="852" class="hero-title" style="font-size:16px">Foreground + background agent fleet</text>
+  <text x="1368" y="878" class="hero-small">15 named roles; Intake Planner serves both paths</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1320" y="965" width="440" height="110" rx="20" fill="#FFFFFF" stroke="#B9CAC2" stroke-width="2"/>
+  </g>
+  <text x="1348" y="1002" class="box-title">Research seam</text>
+  <text x="1348" y="1030" class="copy">Forager re-fetches sources; Prospector proposes gaps</text>
+  <text x="1348" y="1056" class="small">safe links · source provenance · outside text stays untrusted</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1320" y="1110" width="440" height="140" rx="20" fill="#E7F2EC" stroke="#8FB6A4" stroke-width="2"/>
+  </g>
+  <text x="1348" y="1147" class="box-title">Durable completion contract</text>
+  <text x="1348" y="1176" class="copy">checkpoint each stage · bounded failure class</text>
+  <text x="1348" y="1202" class="copy">verified session + provenance → learner board</text>
+  <text x="1348" y="1230" class="small">a failed verifier withholds; it never silently patches</text>
+
+  <!-- External / outbound cards -->
+  <g filter="url(#shadow)">
+    <rect x="1840" y="275" width="470" height="145" rx="22" fill="#E8EEF8" stroke="#9FB1CF" stroke-width="2"/>
+  </g>
+  <text x="1868" y="313" class="box-title">Gemini API</text>
+  <text x="1868" y="342" class="copy">Gemini 3.5 Flash-Lite · mandatory production route</text>
+  <text x="1868" y="368" class="copy">Gemini 3.7 Flash · supported, not the deployed default</text>
+  <text x="1868" y="396" class="small">exact model ID + token counts · schemas · refusal handling</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1840" y="450" width="470" height="130" rx="22" fill="#F0F1F0" stroke="#BFC7C3" stroke-width="2"/>
+  </g>
+  <text x="1868" y="487" class="box-title">Secret Manager + scoped IAM</text>
+  <text x="1868" y="516" class="copy">Gemini key ladder · managed Drive refresh grant</text>
+  <text x="1868" y="542" class="copy">runtime: datastore + secret mounts + Job execute only</text>
+  <text x="1868" y="567" class="small">no project-wide secret role · no unused Vertex role</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1840" y="610" width="470" height="125" rx="22" fill="#FFFFFF" stroke="#B7C7C0" stroke-width="2"/>
+  </g>
+  <text x="1868" y="647" class="box-title">Google Drive API</text>
+  <text x="1868" y="676" class="copy">learner-approved folder · managed refresh credential</text>
+  <text x="1868" y="702" class="small">file IDs in Firestore; refresh grant stays in Secret Manager</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1840" y="765" width="470" height="130" rx="22" fill="#FFFFFF" stroke="#B7C7C0" stroke-width="2"/>
+  </g>
+  <text x="1868" y="802" class="box-title">Three stable Google Docs</text>
+  <text x="1868" y="832" class="copy">Virgil: learn now · on the board · archive</text>
+  <text x="1868" y="858" class="copy">fixed files rewritten in place; learner adds them once</text>
+  <text x="1868" y="884" class="small">no model call in document projection</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1840" y="925" width="470" height="125" rx="22" fill="#FFF4E7" stroke="#D7B589" stroke-width="2"/>
+  </g>
+  <text x="1868" y="962" class="box-title">Google Notebook</text>
+  <text x="1868" y="991" class="copy">Notebook reads Virgil’s three Drive sources</text>
+  <text x="1868" y="1017" class="small">one-way export · Virgil never reads Notebook answers back</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1840" y="1080" width="470" height="120" rx="22" fill="#F1EBF7" stroke="#C4ACD4" stroke-width="2"/>
+  </g>
+  <text x="1868" y="1117" class="box-title">Gemini app + Google AI Mode</text>
+  <text x="1868" y="1146" class="copy">learner-chosen browser handoff with prepared context</text>
+  <text x="1868" y="1174" class="small">Virgil records what left; never silently sends it</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1840" y="1230" width="470" height="75" rx="20" fill="#FFF1E6" stroke="#D6A67C" stroke-width="2"/>
+  </g>
+  <text x="1868" y="1262" class="box-title" style="font-size:17px">Public source pages · learner-owned exports</text>
+  <text x="1868" y="1287" class="small">safe fetch in · manual outcome / backup / restore / delete controls</text>
+
+  <!-- Trust and operations rail -->
+  <rect x="60" y="1370" width="2280" height="170" rx="28" fill="#173C32" filter="url(#shadow)"/>
+  <text x="90" y="1408" class="kicker" style="fill:#AAC8BC">TRUST + OPERATIONS RAIL</text>
+  <rect x="90" y="1430" width="455" height="78" rx="17" fill="#244F43"/>
+  <text x="112" y="1458" class="hero-title" style="font-size:16px">Identity + data isolation</text>
+  <text x="112" y="1484" class="hero-small">Firebase subject · membership · deny-all client rules</text>
+  <rect x="565" y="1430" width="455" height="78" rx="17" fill="#244F43"/>
+  <text x="587" y="1458" class="hero-title" style="font-size:16px">Spend + model safety</text>
+  <text x="587" y="1484" class="hero-small">free→managed only on 429/503 · budget checked first</text>
+  <rect x="1040" y="1430" width="455" height="78" rx="17" fill="#244F43"/>
+  <text x="1062" y="1458" class="hero-title" style="font-size:16px">Artifact Registry</text>
+  <text x="1062" y="1484" class="hero-small">immutable service + Job images · same release identity</text>
+  <rect x="1515" y="1430" width="380" height="78" rx="17" fill="#244F43"/>
+  <text x="1537" y="1458" class="hero-title" style="font-size:16px">Cloud Scheduler · paused</text>
+  <text x="1537" y="1484" class="hero-small">optional recovery floor; not primary dispatch</text>
+  <rect x="1915" y="1430" width="395" height="78" rx="17" fill="#244F43"/>
+  <text x="1937" y="1458" class="hero-title" style="font-size:16px">Production proof</text>
+  <text x="1937" y="1484" class="hero-small">health · auth 401 · tenant isolation · Job receipt</text>
+  <path d="M1705 1430 V1360 C1705 1345 1692 1335 1678 1335 H1220 C1200 1335 1185 1322 1185 1305 V1250" class="paused"/>
+  <text x="1460" y="1358" class="label">optional fixed-board recovery only</text>
+
+  <!-- Legend/footer -->
+  <line x1="90" y1="1570" x2="135" y2="1570" class="flow"/><text x="150" y="1575" class="small">live production</text>
+  <line x1="300" y1="1570" x2="345" y2="1570" class="optional"/><text x="360" y="1575" class="small">learner-chosen / optional</text>
+  <line x1="590" y1="1570" x2="635" y2="1570" class="return"/><text x="650" y="1575" class="small">evidence returns</text>
+  <line x1="850" y1="1570" x2="895" y2="1570" class="paused"/><text x="910" y="1575" class="small">paused optional</text>
+  <text x="2310" y="1575" text-anchor="end" class="small">Server-only Firestore · explicit model routes · one-way Notebook export</text>
+</svg>

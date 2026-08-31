@@ -1,0 +1,103 @@
+{
+  "store": ".data-eval/store.json",
+  "tiers": {
+    "fast": "gemma4:12b-mlx",
+    "deep": "qwen3.8:27b-mlx"
+  },
+  "results": {
+    "deep+think": [
+      {
+        "pin": "82bfe813",
+        "title": "Firestore index types",
+        "outcome": "enriched",
+        "concepts": [
+          "composite index (an index built over multiple fields/columns)",
+          "index covering a query (the index supplies all data needed without a table lookup)",
+          "column order and sort direction (ascending/descending) in indexes and queries"
+        ],
+        "echoed": 0,
+        "ms": 67196
+      },
+      {
+        "pin": "805e0d8d",
+        "title": "Welcome to Neural Networks - Prere",
+        "outcome": "enriched",
+        "concepts": [
+          "Python (the programming language)",
+          "Numpy and Pandas (Python data-manipulation libraries)",
+          "Matplotlib (a Python plotting library)"
+        ],
+        "echoed": 0,
+        "ms": 58977
+      }
+    ],
+    "deep+think:tokens": [
+      2173,
+      94
+    ],
+    "fast+think": [
+      {
+        "pin": "82bfe813",
+        "title": "Firestore index types",
+        "outcome": "enriched",
+        "concepts": [
+          "Database Index",
+          "Composite Index",
+          "Query",
+          "Index order/direction"
+        ],
+        "echoed": 2,
+        "ms": 57866
+      },
+      {
+        "pin": "805e0d8d",
+        "title": "Welcome to Neural Networks - Prere",
+        "outcome": "enriched",
+        "concepts": [
+          "Python programming language",
+          "Data structures",
+          "Linear algebra",
+          "Mathematical logic"
+        ],
+        "echoed": 1,
+        "ms": 54101
+      }
+    ],
+    "fast+think:tokens": [
+      730,
+      102
+    ],
+    "fast": [
+      {
+        "pin": "82bfe813",
+        "title": "Firestore index types",
+        "outcome": "enriched",
+        "concepts": [
+          "Index",
+          "Query",
+          "Composite Index",
+          "Field"
+        ],
+        "echoed": 4,
+        "ms": 944
+      },
+      {
+        "pin": "805e0d8d",
+        "title": "Welcome to Neural Networks - Prere",
+        "outcome": "enriched",
+        "concepts": [
+          "Python programming syntax",
+          "Data science fundamentals",
+          "Linear algebra (implied by Numpy)",
+          "Basic statistics"
+        ],
+        "echoed": 0,
+        "ms": 1705
+      }
+    ],
+    "fast:tokens": [
+      730,
+      104
+    ]
+  }
+}

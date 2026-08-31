@@ -1,0 +1,11 @@
+{
+  "name": "@sb/adk",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@google/adk": "2.0.0",
+    "@sb/core": "*"
+  }
+}

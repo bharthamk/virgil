@@ -1,0 +1,281 @@
+[
+ {
+  "key": "iam-conditions",
+  "comfort": 0,
+  "certainty": 1,
+  "regressed": false,
+  "evidenceCount": 5,
+  "register": "from-nothing",
+  "pins": [
+   {
+    "id": "db5ea778",
+    "type": "struggle",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "If a role binding has a condition, then the principals in the role are only granted the role if the condition expression evaluates to true .",
+    "source": "db5ea778:origin"
+   },
+   {
+    "id": "0ba9b160",
+    "type": "struggle",
+    "note": "this keeps catching me out",
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "resource.name is only available for some services. Where it is unavailable the condition cannot reference the specific resource.",
+    "source": "0ba9b160:origin"
+   },
+   {
+    "id": "56ea3295",
+    "type": "struggle",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "Asker wrote a condition on resource.type expecting it to match a bucket, but resource.type for Cloud Storage objects is storage.googleapis.com/Object not Bucket.",
+    "source": "56ea3295:origin"
+   },
+   {
+    "id": "62985965",
+    "type": "struggle",
+    "note": "THIS is what I kept missing",
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "Note: You cannot use conditions when you grant legacy basic roles , including Owner ( roles/owner ), Editor ( roles/editor ), and Viewer ( roles/viewer ). ... Conditional role bindings do not override role bindings with no conditions.",
+    "source": "62985965:origin"
+   }
+  ]
+ },
+ {
+  "key": "sourdough-hydration",
+  "comfort": 0.15,
+  "certainty": 0,
+  "regressed": false,
+  "evidenceCount": 0,
+  "register": "from-nothing",
+  "pins": [
+   {
+    "id": "74899b3a",
+    "type": "interest",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "Hydration is the weight of water as a percentage of the weight of flour, so 375g water to 500g flour is 75% hydration.",
+    "source": "74899b3a:origin"
+   }
+  ]
+ },
+ {
+  "key": "seventh-chords",
+  "comfort": 0.51,
+  "certainty": 0.72,
+  "regressed": false,
+  "evidenceCount": 3,
+  "register": "building",
+  "pins": [
+   {
+    "id": "7a7fbc44",
+    "type": "interest",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "The most common chords are tertian , constructed using a sequence of major thirds (spanning 4 semitones ) and/or minor thirds (3 semitones). Since there are 3 third intervals in a seventh chord (4 notes) and each can be major or minor, there are 7 possible permutations (the 8th one, consisted of four major thirds, results in a non-seventh augmented chord, since a major third equally divides the octave [ 2 ] ).",
+    "source": "7a7fbc44:origin"
+   },
+   {
+    "id": "3c57f307",
+    "type": "struggle",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "Below roughly the C below middle C, thirds sound muddy. Voice the third higher or drop it and let the seventh carry the colour.",
+    "source": "3c57f307:origin"
+   }
+  ]
+ },
+ {
+  "key": "tritone-sub",
+  "comfort": 0.58,
+  "certainty": 0.6,
+  "regressed": false,
+  "evidenceCount": 3,
+  "register": "building",
+  "pins": [
+   {
+    "id": "c4d1a2dd",
+    "type": "struggle",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "Any dominant seventh can be replaced by the dominant seventh a tritone away, because both chords share the same third and seventh.",
+    "source": "c4d1a2dd:origin"
+   },
+   {
+    "id": "905cf191",
+    "type": "struggle",
+    "note": "still not hearing it",
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "Video explains that the substituted chord produces chromatic root movement down a semitone into the tonic, which is the actual reason it sounds smooth.",
+    "source": "905cf191:origin"
+   }
+  ]
+ },
+ {
+  "key": "firestore-queries",
+  "comfort": 0.65,
+  "certainty": 1,
+  "regressed": true,
+  "evidenceCount": 4,
+  "register": "building",
+  "pins": [
+   {
+    "id": "f118bbf3",
+    "type": "interest",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "Compound queries with range filters on multiple fields require a composite index and are subject to ordering constraints.",
+    "source": "f118bbf3:origin"
+   },
+   {
+    "id": "fa51563a",
+    "type": "struggle",
+    "note": "thought I had this",
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "Asker hit an index error combining a where on status with an orderBy on createdAt.",
+    "source": "fa51563a:origin"
+   }
+  ]
+ },
+ {
+  "key": "pubsub-delivery",
+  "comfort": 0.71,
+  "certainty": 1,
+  "regressed": false,
+  "evidenceCount": 5,
+  "register": "building",
+  "pins": [
+   {
+    "id": "e2de9eb0",
+    "type": "struggle",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "With pull delivery your subscriber client requests messages; with push delivery Pub/Sub sends each message as an HTTP request to an endpoint you control.",
+    "source": "e2de9eb0:origin"
+   },
+   {
+    "id": "9970e3de",
+    "type": "struggle",
+    "note": "why?",
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "When a message is delivered to a pull subscriber, the subscriber must process and acknowledge (ack) the message within the acknowledgment deadline. Else, the subscriber must extend the deadline with a call to modify the acknowledgment deadline.",
+    "source": "9970e3de:origin"
+   },
+   {
+    "id": "1bb6aff0",
+    "type": "interest",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "When the feature is enabled, Pub/Sub provides the following semantics: Subscribers can determine if message acknowledgments were successful. No redelivery occurs after the message is successfully acknowledged. No redelivery occurs while a message is outstanding. A message is considered outstanding until the acknowledgment deadline expires or the message is acknowledged. In case of multiple valid deliveries, due to acknowledgment deadline expiration or client-initiated negative acknowledgment, only the latest acknowledgment ID can be used to acknowledge the message. Any requests with a previous",
+    "source": "1bb6aff0:origin"
+   }
+  ]
+ },
+ {
+  "key": "intervals",
+  "comfort": 0.78,
+  "certainty": 1,
+  "regressed": false,
+  "evidenceCount": 4,
+  "register": "fluent",
+  "pins": [
+   {
+    "id": "9a26e0e7",
+    "type": "struggle",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "An interval is the distance between two notes, counted inclusively from the lower note to the higher.",
+    "source": "9a26e0e7:origin"
+   },
+   {
+    "id": "2b0375aa",
+    "type": "struggle",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "A major third spans four semitones; a minor third spans three. The generic name tells you the letter distance, the quality tells you the semitone count.",
+    "source": "2b0375aa:origin"
+   }
+  ]
+ },
+ {
+  "key": "pubsub-ordering",
+  "comfort": 1,
+  "certainty": 0.23,
+  "regressed": false,
+  "evidenceCount": 2,
+  "register": "from-nothing",
+  "pins": [
+   {
+    "id": "f5753d54",
+    "type": "interest",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "Within-key ordering : Messages published with the same ordering key are expected to be received in order. Assume that for ordering key A, you publish messages 1, 2, and 3.",
+    "source": "f5753d54:origin"
+   },
+   {
+    "id": "0c731084",
+    "type": "struggle",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "A single hot ordering key serialises all its messages through one subscriber, so a poorly chosen key turns a parallel pipeline into a queue.",
+    "source": "0c731084:origin"
+   }
+  ]
+ },
+ {
+  "key": "cloudrun-coldstart",
+  "comfort": 1,
+  "certainty": 0.6,
+  "regressed": false,
+  "evidenceCount": 3,
+  "register": "fluent",
+  "pins": [
+   {
+    "id": "dfdf7022",
+    "type": "interest",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "A cold start occurs when a request arrives and no instance is available, so the container must be started and initialised before the request is served.",
+    "source": "dfdf7022:origin"
+   },
+   {
+    "id": "53a50bb6",
+    "type": "struggle",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "Idle instances retained by the minimum instances setting are billed at a reduced rate but are still billed.",
+    "source": "53a50bb6:origin"
+   },
+   {
+    "id": "bd3dc91c",
+    "type": "interest",
+    "note": null,
+    "confidence": "reduced",
+    "assumes": [],
+    "material": "This page also describes how to enable or disable startup CPU boost , a feature that temporarily increases vCPU allocation during instance startup in order to reduce startup latency.",
+    "source": "bd3dc91c:origin"
+   }
+  ]
+ }
+]

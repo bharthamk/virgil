@@ -1,0 +1,122 @@
+{
+  "store": ".data-eval/store.json",
+  "provider": "ollama",
+  "tiers": {
+    "fast": "gemma4:12b-mlx",
+    "deep": "qwen3.8:27b-mlx"
+  },
+  "results": {
+    "deep+batch": [
+      {
+        "pin": "82bfe813",
+        "title": "Firestore index types",
+        "outcome": "enriched",
+        "concepts": [
+          "Database indexes",
+          "Composite (multi-column) indexes",
+          "Database queries"
+        ],
+        "echoed": 0,
+        "ms": 48138.88888888889
+      },
+      {
+        "pin": "805e0d8d",
+        "title": "Welcome to Neural Networks - Prere",
+        "outcome": "nothing-found",
+        "concepts": [],
+        "echoed": 0,
+        "ms": 48138.88888888889
+      },
+      {
+        "pin": "4d82af66",
+        "title": "How to write a short story | Natio",
+        "outcome": "nothing-found",
+        "concepts": [],
+        "echoed": 0,
+        "ms": 48138.88888888889
+      },
+      {
+        "pin": "084f3b71",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "short story structure",
+          "character development",
+          "dialogue writing",
+          "editing process"
+        ],
+        "echoed": 0,
+        "ms": 48138.88888888889
+      },
+      {
+        "pin": "be4707ce",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "short story structure",
+          "character development",
+          "dialogue writing",
+          "editing process"
+        ],
+        "echoed": 0,
+        "ms": 48138.88888888889
+      },
+      {
+        "pin": "7a5a8904",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "character arc",
+          "narrative epiphany",
+          "fable and parable",
+          "reader response theory"
+        ],
+        "echoed": 1,
+        "ms": 48138.88888888889
+      },
+      {
+        "pin": "5ffe6ca0",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "Creative writing",
+          "Short fiction",
+          "Exposition",
+          "Novel"
+        ],
+        "echoed": 4,
+        "ms": 48138.88888888889
+      },
+      {
+        "pin": "c42babf2",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "Creative writing",
+          "Short fiction",
+          "Exposition",
+          "Novel"
+        ],
+        "echoed": 4,
+        "ms": 48138.88888888889
+      },
+      {
+        "pin": "ffb388cc",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "World-building",
+          "Short fiction",
+          "Self-publishing"
+        ],
+        "echoed": 2,
+        "ms": 48138.88888888889
+      }
+    ],
+    "deep+batch:tokens": [
+      7079,
+      449
+    ],
+    "deep+batch:calls": 3
+  }
+}

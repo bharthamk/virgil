@@ -1,0 +1,8 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src", "outDir": "dist", "lib": ["ES2023", "DOM"],
+    "types": ["chrome", "node"], "composite": true
+  },
+  "include": ["src/**/*.ts"]
+}

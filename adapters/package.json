@@ -1,0 +1,11 @@
+{
+  "name": "@sb/adapters",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@sb/core": "*",
+    "@google-cloud/firestore": "9.0.0"
+  }
+}

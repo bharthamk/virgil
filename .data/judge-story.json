@@ -1,0 +1,360 @@
+{
+  "pins": [
+    {
+      "id": "judge-pin-rag-overview",
+      "type": "interest",
+      "envelope": {
+        "selection": "A RAG corpus contains source documents; retrieval selects relevant chunks and supplies them as grounded context for generation.",
+        "parts": [],
+        "surroundingText": "Retrieval-augmented generation connects a model response to inspectable source material instead of relying only on model memory.",
+        "headingPath": ["RAG overview", "How it works"],
+        "pageTitle": "Retrieval-augmented generation overview",
+        "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/rag-overview",
+        "canonicalUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs/rag-overview",
+        "siteName": "Google Cloud",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": "I want a concrete mental model, not another definition.",
+      "capturedAt": "2026-08-28T09:00:00.000Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": ["embeddings", "context window"],
+        "mediaDescription": null,
+        "references": [{
+          "id": "judge-pin-rag-overview:origin",
+          "origin": "user-pin",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/rag-overview",
+          "title": "Retrieval-augmented generation overview",
+          "retrievedAt": "2026-08-28T09:02:00.000Z",
+          "pinId": "judge-pin-rag-overview"
+        }],
+        "confidence": "full",
+        "enrichedAt": "2026-08-28T09:02:00.000Z"
+      },
+      "topicId": "judge-topic-rag"
+    },
+    {
+      "id": "judge-pin-rag-evaluation",
+      "type": "struggle",
+      "envelope": {
+        "selection": "Retrieval quality and response quality must be evaluated separately: a grounded answer can still be irrelevant, and a relevant answer can cite weak evidence.",
+        "parts": [],
+        "surroundingText": "Evaluation should reveal whether a failure came from finding the wrong evidence or using the right evidence badly.",
+        "headingPath": ["Evaluate RAG", "Separate the failure modes"],
+        "pageTitle": "Evaluate retrieval and grounded generation",
+        "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/models/evaluation-overview",
+        "canonicalUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs/models/evaluation-overview",
+        "siteName": "Google Cloud",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": "I keep collapsing retrieval and answer quality into one score.",
+      "capturedAt": "2026-08-29T10:00:00.000Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": ["grounding", "evaluation"],
+        "mediaDescription": null,
+        "references": [{
+          "id": "judge-pin-rag-evaluation:origin",
+          "origin": "user-pin",
+          "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/models/evaluation-overview",
+          "title": "Evaluate retrieval and grounded generation",
+          "retrievedAt": "2026-08-29T10:02:00.000Z",
+          "pinId": "judge-pin-rag-evaluation"
+        }],
+        "confidence": "full",
+        "enrichedAt": "2026-08-29T10:02:00.000Z"
+      },
+      "topicId": "judge-topic-rag"
+    },
+    {
+      "id": "judge-pin-study-design",
+      "type": "struggle",
+      "envelope": {
+        "selection": "Retrieval practice strengthens access to knowledge when the learner attempts an answer before seeing feedback.",
+        "parts": [],
+        "surroundingText": "A useful study session alternates explanation with effortful recall and targeted feedback.",
+        "headingPath": ["Learning science", "Retrieval practice"],
+        "pageTitle": "Using retrieval practice to learn",
+        "url": "https://www.learningscientists.org/blog/2016/6/23-1",
+        "canonicalUrl": "https://www.learningscientists.org/blog/2016/6/23-1",
+        "siteName": "The Learning Scientists",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": "Turn reading notes into questions I can actually answer.",
+      "capturedAt": "2026-08-30T08:30:00.000Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": ["recall", "feedback"],
+        "mediaDescription": null,
+        "references": [{
+          "id": "judge-pin-study-design:origin",
+          "origin": "user-pin",
+          "url": "https://www.learningscientists.org/blog/2016/6/23-1",
+          "title": "Using retrieval practice to learn",
+          "retrievedAt": "2026-08-30T08:32:00.000Z",
+          "pinId": "judge-pin-study-design"
+        }],
+        "confidence": "full",
+        "enrichedAt": "2026-08-30T08:32:00.000Z"
+      },
+      "topicId": "judge-topic-study"
+    },
+    {
+      "id": "judge-pin-cloud-run",
+      "type": "interest",
+      "envelope": {
+        "selection": "Cloud Run can scale a service to zero when it receives no traffic; configured minimum instances remain available and incur cost.",
+        "parts": [],
+        "surroundingText": "Autoscaling trades idle cost against startup latency, so the right setting depends on the workload.",
+        "headingPath": ["Cloud Run", "Instance autoscaling"],
+        "pageTitle": "About instance autoscaling in Cloud Run",
+        "url": "https://cloud.google.com/run/docs/about-instance-autoscaling",
+        "canonicalUrl": "https://cloud.google.com/run/docs/about-instance-autoscaling",
+        "siteName": "Google Cloud",
+        "contentLanguage": "en",
+        "media": null
+      },
+      "note": null,
+      "capturedAt": "2026-08-25T07:45:00.000Z",
+      "fromSuggestion": false,
+      "enrichment": {
+        "refetchedText": null,
+        "assumedConcepts": ["containers", "autoscaling"],
+        "mediaDescription": null,
+        "references": [{
+          "id": "judge-pin-cloud-run:origin",
+          "origin": "user-pin",
+          "url": "https://cloud.google.com/run/docs/about-instance-autoscaling",
+          "title": "About instance autoscaling in Cloud Run",
+          "retrievedAt": "2026-08-25T07:47:00.000Z",
+          "pinId": "judge-pin-cloud-run"
+        }],
+        "confidence": "full",
+        "enrichedAt": "2026-08-25T07:47:00.000Z"
+      },
+      "topicId": "judge-topic-cloud-run"
+    }
+  ],
+  "topics": [
+    {
+      "id": "judge-topic-rag",
+      "label": "Grounded RAG systems",
+      "summary": "Separating retrieval quality, evidence quality and answer quality in source-grounded AI systems.",
+      "pinIds": ["judge-pin-rag-overview", "judge-pin-rag-evaluation"],
+      "state": "waiting",
+      "comfort": 0.2,
+      "lastExposedAt": "2026-08-31T09:10:00.000Z",
+      "retiredByUser": false,
+      "createdAt": "2026-08-28T09:03:00.000Z"
+    },
+    {
+      "id": "judge-topic-study",
+      "label": "Designing effective study sessions",
+      "summary": "Turning passive notes into short retrieval attempts with feedback and a clear next action.",
+      "pinIds": ["judge-pin-study-design"],
+      "state": "working",
+      "comfort": 0.55,
+      "lastExposedAt": "2026-08-31T09:15:00.000Z",
+      "retiredByUser": false,
+      "createdAt": "2026-08-30T08:33:00.000Z"
+    },
+    {
+      "id": "judge-topic-cloud-run",
+      "label": "Cloud Run lifecycle",
+      "summary": "Balancing scale-to-zero economics, minimum-instance cost and cold-start latency.",
+      "pinIds": ["judge-pin-cloud-run"],
+      "state": "settled",
+      "comfort": 0.9,
+      "lastExposedAt": "2026-08-27T07:45:00.000Z",
+      "retiredByUser": false,
+      "createdAt": "2026-08-25T07:48:00.000Z"
+    }
+  ],
+  "edges": [{
+    "from": "judge-topic-study",
+    "to": "judge-topic-rag",
+    "confidence": 0.86,
+    "justification": "The RAG evaluation lesson uses retrieval practice so the learner must distinguish failure modes from memory."
+  }],
+  "signals": [
+    {
+      "id": "judge-signal-rag-gap",
+      "topicId": "judge-topic-rag",
+      "type": "answer-wrong",
+      "direction": "negative",
+      "at": "2026-08-31T09:12:00.000Z",
+      "sourceEvent": "answer:judge-session-rag:judge-topic-rag",
+      "invalidated": false
+    },
+    {
+      "id": "judge-signal-cloud-known",
+      "topicId": "judge-topic-cloud-run",
+      "type": "answer-correct",
+      "direction": "positive",
+      "at": "2026-08-27T07:50:00.000Z",
+      "sourceEvent": "answer:judge-session-cloud:judge-topic-cloud-run",
+      "invalidated": false
+    }
+  ],
+  "statements": [
+    {
+      "id": "judge-statement-learner",
+      "text": "I learn architecture decisions best when I have to name the failure mode before I see the recommendation.",
+      "topicId": null,
+      "userEdited": true,
+      "evidenceSignalIds": [],
+      "updatedAt": "2026-08-31T10:00:00.000Z",
+      "confirmedAt": "2026-08-31T10:00:00.000Z"
+    },
+    {
+      "id": "judge-statement-machine",
+      "text": "Your current RAG gap is diagnostic: you can describe the pipeline, but you still merge retrieval failure with generation failure.",
+      "topicId": "judge-topic-rag",
+      "userEdited": false,
+      "evidenceSignalIds": ["judge-signal-rag-gap"],
+      "updatedAt": "2026-08-31T10:05:00.000Z",
+      "confirmedAt": null
+    }
+  ],
+  "sessions": [{
+    "id": "judge-session-rag",
+    "builtAt": "2026-08-31T09:10:00.000Z",
+    "fromPinCount": 2,
+    "targetMinutes": 5,
+    "estimatedMinutes": 5,
+    "sections": [{
+      "topicId": "judge-topic-rag",
+      "heading": "Find the broken link in a RAG answer",
+      "summary": "Use one concrete support reply to separate retrieval, grounding and answer-quality failures.",
+      "recap": "A RAG result can fail before generation, during evidence use, or in the final answer.",
+      "why": "This is Up next because your latest answer treated two different failure modes as one.",
+      "body": "Imagine a support answer that confidently says a refund takes 30 days. The source corpus contains the current 14-day policy, but retrieval selects an obsolete pricing page. The generator faithfully repeats what it was given. That is a retrieval failure, not a generation failure. Now keep the correct 14-day policy in context but have the answer claim 30 days: retrieval succeeded and generation failed to use its evidence. The useful diagnostic is therefore two questions in order: did the right evidence enter the context, and did the answer stay faithful to it? This lesson is grounded in your saved RAG overview and evaluation sources, not a generic model memory.",
+      "depth": "building",
+      "actionMinutes": 2,
+      "estimatedMinutes": 5,
+      "question": {
+        "prompt": "The correct policy is retrieved, but the answer states a different deadline. Which stage failed, and what evidence would prove it?",
+        "kind": "free-text",
+        "expectedPoints": ["Retrieval succeeded", "Generation or grounding failed", "Compare retrieved context with the final claim"]
+      },
+      "sourceIds": ["judge-pin-rag-overview:origin", "judge-pin-rag-evaluation:origin"],
+      "completed": false,
+      "mediumWarning": null
+    }],
+    "currentSectionIndex": 0,
+    "closingNote": "Keep retrieval and answer quality as two inspectable claims.",
+    "insufficient": false
+  }],
+  "suggestions": [],
+  "commitments": [{
+    "id": "judge-commitment-evaluation",
+    "title": "Draft the two-column RAG evaluation checklist",
+    "kind": "assignment",
+    "courseId": "judge-course-ai-systems",
+    "topicIds": ["judge-topic-rag"],
+    "dueAt": "2026-09-03T23:59:59.000Z",
+    "dueTime": null,
+    "dueTimeZone": null,
+    "plannedFor": "2026-09-02",
+    "estimateMinutes": 25,
+    "notes": "One column for retrieval evidence; one for answer faithfulness.",
+    "doneAt": null,
+    "createdAt": "2026-08-31T10:10:00.000Z",
+    "source": {"sourceId": "judge-course-source", "quote": "compare retrieval, evaluation, and serverless deployment trade-offs"}
+  }],
+  "awards": [],
+  "courses": [{
+    "id": "judge-course-ai-systems",
+    "title": "Practical AI Systems",
+    "provider": "Independent study",
+    "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/rag-overview",
+    "material": [
+      {
+        "id": "judge-material-rag",
+        "title": "RAG overview and grounding model",
+        "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/rag-overview",
+        "kind": "reading",
+        "minutes": 20,
+        "doneAt": "2026-08-29T11:00:00.000Z",
+        "progressMinutes": 20,
+        "pinIds": ["judge-pin-rag-overview"],
+        "addedAt": "2026-08-28T08:50:00.000Z",
+        "source": {"sourceId": "judge-course-source", "quote": "ground AI-system design in inspectable sources"}
+      },
+      {
+        "id": "judge-material-evaluation",
+        "title": "Evaluate retrieval and grounded generation",
+        "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/models/evaluation-overview",
+        "kind": "exercise",
+        "minutes": 30,
+        "doneAt": null,
+        "progressMinutes": 10,
+        "pinIds": ["judge-pin-rag-evaluation"],
+        "addedAt": "2026-08-29T09:50:00.000Z",
+        "source": {"sourceId": "judge-course-source", "quote": "compare retrieval, evaluation, and serverless deployment trade-offs"}
+      }
+    ],
+    "topicIds": ["judge-topic-rag", "judge-topic-cloud-run"],
+    "objectives": [{
+      "id": "judge-objective-diagnose",
+      "text": "Diagnose whether an AI-system failure came from retrieval, evidence use or deployment.",
+      "source": {"sourceId": "judge-course-source", "quote": "compare retrieval, evaluation, and serverless deployment trade-offs"}
+    }],
+    "sources": [{
+      "id": "judge-course-source",
+      "kind": "course-page",
+      "title": "Practical AI Systems study brief",
+      "text": "Course goals: ground AI-system design in inspectable sources; compare retrieval, evaluation, and serverless deployment trade-offs.",
+      "url": null,
+      "capturedAt": "2026-08-28T08:45:00.000Z",
+      "digest": "dd5c1d8c7985de5c23c0bf96e3165eaae9d60eb9384217c81b93022bf0a3d3fd"
+    }],
+    "archivedAt": null,
+    "createdAt": "2026-08-28T08:45:00.000Z"
+  }],
+  "intakeDrafts": [],
+  "prospects": [],
+  "passedOver": {"startedAt": null, "marks": []},
+  "externals": [{
+    "id": "judge-external-study-group",
+    "clientRef": "judge-external-study-group-v1",
+    "kind": "manual",
+    "label": "Explained retrieval vs generation failure with a worked example",
+    "destination": "manual",
+    "destinationSaid": "Study group",
+    "sentAt": "2026-08-31T11:00:00.000Z",
+    "sessionId": "judge-session-rag",
+    "topicId": "judge-topic-rag",
+    "materialId": null,
+    "note": "The two-question diagnostic made the distinction stick.",
+    "methods": ["hands-on"],
+    "mark": "done",
+    "markedAt": "2026-08-31T11:10:00.000Z",
+    "markLocalOnly": false
+  }],
+  "outcomes": [],
+  "prefs": {
+    "targetMinutes": 15,
+    "availableMinutes": 5,
+    "interfaceLanguage": "en",
+    "pausedUntil": null,
+    "excludedDomains": ["mail.google.com", "outlook.com", "nhs.uk", "1password.com"],
+    "interview": {},
+    "rejectedOrigins": {},
+    "modelSpend": {
+      "since": "2026-08-28T00:00:00.000Z",
+      "connections": {
+        "cloud": {"calls": 0, "inputTokens": 0, "outputTokens": 0, "issuedNotReturned": 0},
+        "local": {"calls": 0, "inputTokens": 0, "outputTokens": 0, "issuedNotReturned": 0},
+        "cli": {"calls": 0, "inputTokens": 0, "outputTokens": 0, "issuedNotReturned": 0}
+      }
+    }
+  },
+  "aliases": {}
+}

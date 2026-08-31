@@ -1,0 +1,252 @@
+[
+  {
+    "id": "pin-01",
+    "expect": "kv-edge-caching",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern edge cache visibility (regional cache)."
+  },
+  {
+    "id": "pin-02",
+    "expect": "kv-edge-caching",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern edge cache visibility (stale copy)."
+  },
+  {
+    "id": "pin-03",
+    "expect": "kv-edge-caching",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern edge cache visibility (negative lookup)."
+  },
+  {
+    "id": "pin-04",
+    "expect": "durable-objects",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern single-owner objects (unique object name)."
+  },
+  {
+    "id": "pin-05",
+    "expect": "durable-objects",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern single-owner objects (single execution location)."
+  },
+  {
+    "id": "pin-06",
+    "expect": "pg-vacuum",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern database vacuum work (cleanup traffic)."
+  },
+  {
+    "id": "pin-07",
+    "expect": "pg-vacuum",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern database vacuum work (long transaction)."
+  },
+  {
+    "id": "pin-08",
+    "expect": "db-indexes",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern database index choices (equality lookup)."
+  },
+  {
+    "id": "pin-09",
+    "expect": "db-indexes",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern database index choices (ordered lookup)."
+  },
+  {
+    "id": "pin-10",
+    "expect": "cors",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern browser origin checks (preflight request)."
+  },
+  {
+    "id": "pin-11",
+    "expect": "cors",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern browser origin checks (response permission)."
+  },
+  {
+    "id": "pin-12",
+    "expect": "http-caching",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern http cache freshness (conditional validation)."
+  },
+  {
+    "id": "pin-13",
+    "expect": "http-caching",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern http cache freshness (reverse cache)."
+  },
+  {
+    "id": "pin-14",
+    "expect": "intervals",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern musical interval naming (letter distance)."
+  },
+  {
+    "id": "pin-15",
+    "expect": "intervals",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern musical interval naming (interval quality)."
+  },
+  {
+    "id": "pin-16",
+    "expect": "intervals",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern musical interval naming (half-step change)."
+  },
+  {
+    "id": "pin-17",
+    "expect": "intervals",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern musical interval naming (perfect family)."
+  },
+  {
+    "id": "pin-18",
+    "expect": "modes",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern musical mode colour (raised sixth)."
+  },
+  {
+    "id": "pin-19",
+    "expect": "modes",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern musical mode colour (tonic relationship)."
+  },
+  {
+    "id": "pin-20",
+    "expect": "modes",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern musical mode colour (characteristic note)."
+  },
+  {
+    "id": "pin-21",
+    "expect": "seventh-chords",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern seventh chord construction (stacked thirds)."
+  },
+  {
+    "id": "pin-22",
+    "expect": "seventh-chords",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern seventh chord construction (guide tones)."
+  },
+  {
+    "id": "pin-23",
+    "expect": "tritone-substitution",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern tritone substitution (dominant replacement)."
+  },
+  {
+    "id": "pin-24",
+    "expect": "tritone-substitution",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern tritone substitution (shared guide tones)."
+  },
+  {
+    "id": "pin-25",
+    "expect": "maillard",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern browning reactions (surface heat)."
+  },
+  {
+    "id": "pin-26",
+    "expect": "maillard",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern browning reactions (aroma compounds)."
+  },
+  {
+    "id": "pin-27",
+    "expect": "braising",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern braising technique (dry then wet heat)."
+  },
+  {
+    "id": "pin-28",
+    "expect": "braising",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern braising technique (gentle covered cooking)."
+  },
+  {
+    "id": "pin-29",
+    "expect": "emulsions",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern emulsion stability (continuous phase)."
+  },
+  {
+    "id": "pin-30",
+    "expect": "emulsions",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern emulsion stability (small droplets)."
+  },
+  {
+    "id": "pin-31",
+    "expect": "sourdough-starter",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern sourdough starter care (flour and water culture)."
+  },
+  {
+    "id": "pin-32",
+    "expect": "sourdough-starter",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern sourdough starter care (feeding rhythm)."
+  },
+  {
+    "id": "pin-33",
+    "expect": "sourdough-starter",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern sourdough starter care (ripe starter)."
+  },
+  {
+    "id": "pin-34",
+    "expect": "sourdough-starter",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern sourdough starter care (levain build)."
+  },
+  {
+    "id": "pin-35",
+    "expect": "derailleur-adjustment",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern derailleur adjustment (limit stop)."
+  },
+  {
+    "id": "pin-36",
+    "expect": "derailleur-adjustment",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern derailleur adjustment (cable tension)."
+  },
+  {
+    "id": "pin-37",
+    "expect": "derailleur-adjustment",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern derailleur adjustment (guide pulley)."
+  },
+  {
+    "id": "pin-38",
+    "expect": "derailleur-adjustment",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern derailleur adjustment (barrel adjuster)."
+  },
+  {
+    "id": "pin-39",
+    "expect": "tire-sizing",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern bicycle tire sizing (bead-seat diameter)."
+  },
+  {
+    "id": "pin-40",
+    "expect": "tire-sizing",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern bicycle tire sizing (rim compatibility)."
+  },
+  {
+    "id": "pin-41",
+    "expect": "gear-ratios",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern bicycle gear ratios (chainring ratio)."
+  },
+  {
+    "id": "pin-42",
+    "expect": "gear-ratios",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern bicycle gear ratios (gain ratio)."
+  },
+  {
+    "id": "pin-43",
+    "expect": "torque-wrench",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern torque wrench practice (smooth pull)."
+  },
+  {
+    "id": "pin-44",
+    "expect": "torque-wrench",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern torque wrench practice (storage setting)."
+  },
+  {
+    "id": "pin-45",
+    "expect": "procrastination",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern useful delay (important work)."
+  },
+  {
+    "id": "pin-46",
+    "expect": "procrastination",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern useful delay (small task displacement)."
+  },
+  {
+    "id": "pin-47",
+    "expect": "procrastination",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern useful delay (deadline pressure)."
+  },
+  {
+    "id": "pin-48",
+    "expect": "maker-schedule",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern focused work schedules (long focus block)."
+  },
+  {
+    "id": "pin-49",
+    "expect": "maker-schedule",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern focused work schedules (meeting fragmentation)."
+  },
+  {
+    "id": "pin-50",
+    "expect": "news-frontpage",
+    "why": "Virgil-authored synthetic fixture: both the topic marker and worked sentence concern news page triage (mixed front-page topics)."
+  }
+]

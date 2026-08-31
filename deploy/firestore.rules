@@ -1,0 +1,55 @@
+// Virgil's Firestore security rules: nothing may read, nothing may write.
+//
+// Deploy with the checked-in Firebase configuration, from the repository root:
+//
+//   npx --no-install firebase deploy --only firestore:rules --project "$PROJECT_ID"
+//
+// It needs the GCP project registered as a Firebase project first
+// (`firebase projects:addfirebase`) and `firebaserules.googleapis.com` enabled —
+// both are installation prerequisites. `deploy/build.sh` enables the rules API
+// and `deploy/apply.sh` publishes this deny-all ruleset before either Cloud Run
+// resource. The console remains an emergency fallback: Firestore → Rules →
+// paste → Publish.
+//
+// This header used to say `gcloud firestore databases update --rules`. **That
+// flag has never existed** — `databases update` takes `--async`,
+// `--concurrency-mode`, `--database`, `--delete-protection`, `--enable-pitr`
+// and `--type`, `gcloud firestore` has no `rules` group, and `gcloud firebase`
+// is Test Lab only (checked 2026-08-21). Security rules are a Firebase surface;
+// gcloud does not reach them. `deploy/CLOUD_RUN.md` §9 carries the full
+// sequence and `deploy-config.test.ts` now fails if either document prints the
+// dead command again.
+//
+// This is the exactly-correct rule for this product rather than a placeholder
+// tightened later, and the argument is short enough to check. Security rules
+// govern requests that arrive from a *client* SDK — Web, Android, iOS. **There
+// is no such path in this repository.** The extension speaks HTTP to
+// `runner/src/service.ts` and holds no Google credential of any kind; the only
+// code in the tree that opens a Firestore client is
+// `adapters/src/firestore-store.ts`, which runs inside the Cloud Run Job and the
+// Cloud Run service under the runtime service account. Server credentials go
+// through the Admin SDK, and **Admin credentials bypass security rules
+// entirely** — so denying everything costs this deployment exactly nothing while
+// closing the one door nobody built.
+//
+// What it prevents is the failure that has no symptom until it has a very large
+// one: a database created in test mode is open to anyone with the project id
+// until its thirty days expire, and Virgil's board is a record of every page a
+// person chose to keep. A deployment with no rules file does not have "no
+// rules"; it has whatever the console last defaulted to.
+//
+// The corollary, so it is not discovered as a surprise: the day a client SDK
+// ever does become the right answer — a mobile capture surface, a browser
+// reading its own board directly — this file is the thing that stops it, and
+// that is the point. It should stop it, and the rules that replace it should be
+// written per collection by whoever builds that surface.
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

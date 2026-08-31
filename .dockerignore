@@ -1,0 +1,30 @@
+# The build context, kept to what a build actually reads.
+#
+# At the repository root because that is the only place Docker looks for it, and
+# the build context for both images is the repository root — the workspaces are
+# linked to each other and a context narrower than the root cannot install them.
+
+# The biggest entry and the one that matters most. `.data/` is the seeded demo
+# board; `.data-*/` are the adversarial, scale and Gemini probe boards. None of
+# it belongs in an image, all of it is a learner's board in shape, and one of
+# them is what a demo recording is recorded against.
+.data
+.data-*
+.bakeoff-cache
+
+# Produced inside the builder. Copying a host build in would make the image
+# depend on whatever the last local `tsc -b` happened to leave behind — which
+# on this machine is output from a Node the runtime image does not have.
+dist
+*.tsbuildinfo
+
+# Installed inside the builder, from the lockfile.
+node_modules
+
+# Never, under any circumstances, in a layer. The key at
+# ~/.config/virgil/env is injected at run time and reaches the image never.
+.env
+.env.*
+
+.git
+.DS_Store
