@@ -1,0 +1,215 @@
+{
+  "store": ".data-eval/store.json",
+  "provider": "ollama",
+  "tiers": {
+    "fast": "gemma4:12b-mlx",
+    "deep": "qwen3.8:27b-mlx"
+  },
+  "results": {
+    "deep+think": [
+      {
+        "pin": "82bfe813",
+        "title": "Firestore index types",
+        "outcome": "enriched",
+        "concepts": [
+          "composite index (a database index spanning multiple columns)",
+          "an index covering a query (satisfying a query entirely from the index without a table lookup)",
+          "index field sort direction (ascending/descending)"
+        ],
+        "echoed": 0,
+        "ms": 28938
+      },
+      {
+        "pin": "805e0d8d",
+        "title": "Welcome to Neural Networks - Prere",
+        "outcome": "enriched",
+        "concepts": [
+          "Python as a programming language",
+          "Numpy, Pandas, and Matplotlib as Python libraries",
+          "Iterators and generators",
+          "Compound data structures"
+        ],
+        "echoed": 2,
+        "ms": 66286
+      },
+      {
+        "pin": "4d82af66",
+        "title": "How to write a short story | Natio",
+        "outcome": "nothing-found",
+        "concepts": [],
+        "echoed": 0,
+        "ms": 32525
+      },
+      {
+        "pin": "084f3b71",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [],
+        "echoed": 0,
+        "ms": 80375
+      },
+      {
+        "pin": "be4707ce",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [],
+        "echoed": 0,
+        "ms": 31250
+      },
+      {
+        "pin": "7a5a8904",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "Epiphany as a literary/narrative device",
+          "Character arc",
+          "Fable and parable as teaching narrative forms"
+        ],
+        "echoed": 1,
+        "ms": 30446
+      },
+      {
+        "pin": "5ffe6ca0",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "Exposition as a narrative technique",
+          "Basic distinction between short fiction and long-form fiction as genres",
+          "The concept of narrative structure and pacing in fiction"
+        ],
+        "echoed": 0,
+        "ms": 86374
+      },
+      {
+        "pin": "c42babf2",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "Exposition as a narrative technique",
+          "Backstory in fiction",
+          "The novel as a literary form distinct from short fiction",
+          "Narrative structure and pacing"
+        ],
+        "echoed": 0,
+        "ms": 67689
+      },
+      {
+        "pin": "ffb388cc",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "World-building in fiction",
+          "Radio drama / dramatized audio fiction as a literary form",
+          "Small press and periodical publishing",
+          "ISBN (International Standard Book Number)"
+        ],
+        "echoed": 0,
+        "ms": 34199
+      }
+    ],
+    "deep+think:tokens": [
+      15104,
+      484
+    ],
+    "deep+think:calls": 9,
+    "deep+batch": [
+      {
+        "pin": "82bfe813",
+        "title": "Firestore index types",
+        "outcome": "enriched",
+        "concepts": [
+          "composite (multi-column) index in a database",
+          "database query",
+          "index coverage (an index 'covering' a query)",
+          "sort direction (ascending/descending) of index fields"
+        ],
+        "echoed": 0,
+        "ms": 0
+      },
+      {
+        "pin": "805e0d8d",
+        "title": "Welcome to Neural Networks - Prere",
+        "outcome": "nothing-found",
+        "concepts": [],
+        "echoed": 0,
+        "ms": 0
+      },
+      {
+        "pin": "4d82af66",
+        "title": "How to write a short story | Natio",
+        "outcome": "nothing-found",
+        "concepts": [],
+        "echoed": 0,
+        "ms": 0
+      },
+      {
+        "pin": "084f3b71",
+        "title": "How to write a short story | Natio",
+        "outcome": "nothing-found",
+        "concepts": [],
+        "echoed": 0,
+        "ms": 0
+      },
+      {
+        "pin": "be4707ce",
+        "title": "How to write a short story | Natio",
+        "outcome": "nothing-found",
+        "concepts": [],
+        "echoed": 0,
+        "ms": 0
+      },
+      {
+        "pin": "7a5a8904",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "Epiphany as a literary device (a sudden moment of realization in fiction)",
+          "Character arcs in narrative",
+          "Fable and parable as teaching narrative forms"
+        ],
+        "echoed": 0,
+        "ms": 0
+      },
+      {
+        "pin": "5ffe6ca0",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "Exposition as a narrative technique",
+          "Basic fiction-craft vocabulary (tight dialogue, structure, pacing)"
+        ],
+        "echoed": 0,
+        "ms": 1
+      },
+      {
+        "pin": "c42babf2",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "Exposition as a narrative technique",
+          "Basic fiction-craft vocabulary (tight dialogue, structure, pacing)"
+        ],
+        "echoed": 0,
+        "ms": 0
+      },
+      {
+        "pin": "ffb388cc",
+        "title": "How to write a short story | Natio",
+        "outcome": "enriched",
+        "concepts": [
+          "World-building in fiction",
+          "Radio drama as a distinct dramatic form",
+          "Literary periodicals and small-press publishing",
+          "Self-publishing as an alternative to traditional publishing"
+        ],
+        "echoed": 0,
+        "ms": 0
+      }
+    ],
+    "deep+batch:tokens": [
+      8801,
+      293
+    ],
+    "deep+batch:calls": 2
+  }
+}

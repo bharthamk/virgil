@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Virgil architecture: system overview</title>
+  <desc id="desc">A learner captures material beside the browser, Virgil authenticates through Firebase, stores one learner-owned state in Firestore, and runs foreground or Google ADK background work through Gemini or an explicitly selected local Gemma route. Prepared learning can remain in Virgil or move to Gemini, AI Mode, or Google Notebook. Learner outcomes return as evidence and change the next recommendation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7F8F3"/>
+      <stop offset="0.58" stop-color="#F1F6F1"/>
+      <stop offset="1" stop-color="#EEF3F7"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#173C32"/>
+      <stop offset="1" stop-color="#245D4C"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="11" flood-color="#15352C" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#2F6B59"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#C06A35"/>
+    </marker>
+    <style>
+      text { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .kicker { font-size: 17px; font-weight: 800; letter-spacing: 2.4px; fill: #5D746B; }
+      .title { font-size: 46px; font-weight: 800; fill: #173C32; }
+      .subtitle { font-size: 21px; font-weight: 500; fill: #516A61; }
+      .group-title { font-size: 15px; font-weight: 800; letter-spacing: 2px; fill: #6A7E76; }
+      .box-title { font-size: 24px; font-weight: 800; fill: #173C32; }
+      .box-copy { font-size: 17px; font-weight: 540; fill: #455F56; }
+      .box-small { font-size: 14px; font-weight: 700; fill: #667B73; }
+      .hero-title { font-size: 25px; font-weight: 800; fill: #FFFFFF; }
+      .hero-copy { font-size: 16px; font-weight: 560; fill: #DDECE6; }
+      .hero-small { font-size: 14px; font-weight: 750; fill: #BFD8CE; }
+      .chip { font-size: 14px; font-weight: 760; fill: #214D40; }
+      .flow { fill: none; stroke: #2F6B59; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .flow-soft { fill: none; stroke: #75978B; stroke-width: 3; stroke-linecap: round; marker-end: url(#arrow); }
+      .optional { fill: none; stroke: #2F6B59; stroke-width: 3; stroke-dasharray: 9 8; stroke-linecap: round; marker-end: url(#arrow); }
+      .return { fill: none; stroke: #C06A35; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowOrange); }
+      .arrow-label { font-size: 13px; font-weight: 760; fill: #5D746B; }
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1920" height="10" fill="#2F6B59"/>
+
+  <text x="78" y="75" class="kicker">VIRGIL · SYSTEM OVERVIEW</text>
+  <text x="78" y="127" class="title">One learning loop, wherever the learner works</text>
+  <text x="78" y="164" class="subtitle">Capture beside the browser → prepare and verify in the background → learn in the right surface → use the outcome to change what comes next</text>
+
+  <text x="78" y="225" class="group-title">WHAT ARRIVES</text>
+  <text x="418" y="225" class="group-title">VIRGIL BESIDE THE BROWSER</text>
+  <text x="865" y="225" class="group-title">ONE GOOGLE CLOUD BACKEND</text>
+  <text x="1550" y="225" class="group-title">LEARN WHERE IT FITS</text>
+
+  <!-- Directional connectors behind the cards -->
+  <path d="M350 393 H402" class="flow"/>
+  <path d="M784 393 H848" class="flow"/>
+  <path d="M1214 337 H1272" class="flow"/>
+  <path d="M1214 448 H1272" class="flow"/>
+  <path d="M1460 393 H1526" class="flow"/>
+  <path d="M1460 393 C1500 393 1492 300 1526 300" class="optional"/>
+  <path d="M1460 393 C1500 393 1492 486 1526 486" class="optional"/>
+  <path d="M1460 393 C1500 393 1492 579 1526 579" class="optional"/>
+
+  <!-- Inputs -->
+  <g filter="url(#shadow)">
+    <rect x="78" y="247" width="272" height="292" rx="24" fill="#FFFFFF" stroke="#CEDBD5" stroke-width="2"/>
+  </g>
+  <circle cx="118" cy="291" r="18" fill="#E5F0EA"/>
+  <path d="M109 291h18M118 282v18" stroke="#2F6B59" stroke-width="3" stroke-linecap="round"/>
+  <text x="149" y="299" class="box-title">Learning material</text>
+  <text x="108" y="350" class="box-copy">Web pages &amp; selected text</text>
+  <text x="108" y="385" class="box-copy">Notes, PDFs, images &amp; files</text>
+  <text x="108" y="420" class="box-copy">Courses, rubrics &amp; deadlines</text>
+  <text x="108" y="455" class="box-copy">Drafts, feedback &amp; outcomes</text>
+  <rect x="108" y="486" width="203" height="30" rx="15" fill="#F0F5F2"/>
+  <text x="125" y="506" class="chip">source context preserved</text>
+
+  <!-- Browser surfaces -->
+  <g filter="url(#shadow)">
+    <rect x="402" y="247" width="382" height="292" rx="24" fill="url(#hero)"/>
+  </g>
+  <rect x="430" y="275" width="150" height="32" rx="16" fill="#DDF0E7"/>
+  <text x="447" y="297" class="chip">CHROME EXTENSION</text>
+  <text x="430" y="350" class="hero-title">Pin it when you see it</text>
+  <text x="430" y="385" class="hero-copy">Right-click capture + side-panel learning</text>
+  <line x1="430" y1="415" x2="756" y2="415" stroke="#477666" stroke-width="1.5"/>
+  <text x="430" y="453" class="hero-title">Come back when you’re ready</text>
+  <text x="430" y="488" class="hero-copy">Full Virgil page · Board · Plan · Insights</text>
+  <text x="430" y="517" class="hero-small">Both surfaces use the same API and learner state</text>
+
+  <!-- Auth -->
+  <rect x="805" y="338" width="84" height="110" rx="20" fill="#FFF4D9" stroke="#DFC680" stroke-width="2"/>
+  <circle cx="847" cy="371" r="15" fill="#F5C85E"/>
+  <path d="M840 371l5 5 10-12" fill="none" stroke="#5F4814" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="847" y="408" text-anchor="middle" class="box-small">Firebase</text>
+  <text x="847" y="428" text-anchor="middle" class="box-small">Auth</text>
+
+  <!-- Cloud Run service -->
+  <g filter="url(#shadow)">
+    <rect x="889" y="247" width="325" height="292" rx="24" fill="#FFFFFF" stroke="#9DB9AE" stroke-width="2"/>
+  </g>
+  <rect x="917" y="275" width="142" height="30" rx="15" fill="#E5F0EA"/>
+  <text x="935" y="296" class="chip">CLOUD RUN SERVICE</text>
+  <text x="917" y="348" class="box-title">Virgil product API</text>
+  <text x="917" y="383" class="box-copy">Verified per-learner boundary</text>
+  <text x="917" y="418" class="box-copy">Foreground agents &amp; model seam</text>
+  <text x="917" y="453" class="box-copy">Dispatches work that outlives the tab</text>
+  <rect x="917" y="481" width="268" height="35" rx="17" fill="#F3F7F5"/>
+  <text x="935" y="504" class="chip">Typed ports · spend guard · receipts</text>
+
+  <!-- Firestore and background -->
+  <g filter="url(#shadow)">
+    <rect x="1272" y="247" width="188" height="126" rx="22" fill="#E8F3ED" stroke="#93B8A7" stroke-width="2"/>
+    <rect x="1272" y="413" width="188" height="126" rx="22" fill="#E9EEF7" stroke="#9FB1CF" stroke-width="2"/>
+  </g>
+  <text x="1297" y="287" class="box-title">Firestore</text>
+  <text x="1297" y="320" class="box-copy">Board + evidence</text>
+  <text x="1297" y="347" class="box-small">one isolated learner state</text>
+
+  <text x="1297" y="453" class="box-title">Cloud Run Job</text>
+  <text x="1297" y="486" class="box-copy">Google ADK</text>
+  <text x="1297" y="513" class="box-small">11 stages · final verifier</text>
+
+  <!-- Destinations -->
+  <g filter="url(#shadow)">
+    <rect x="1526" y="247" width="316" height="106" rx="22" fill="#FFFFFF" stroke="#CAD9D2" stroke-width="2"/>
+    <rect x="1526" y="365" width="316" height="106" rx="22" fill="#F4EEFA" stroke="#C6AED8" stroke-width="2"/>
+    <rect x="1526" y="483" width="316" height="106" rx="22" fill="#EFF3FA" stroke="#AABBD7" stroke-width="2"/>
+    <rect x="1526" y="601" width="316" height="106" rx="22" fill="#FFF4E7" stroke="#D7B589" stroke-width="2"/>
+  </g>
+  <text x="1554" y="285" class="box-title">Virgil</text>
+  <text x="1554" y="320" class="box-copy">Quick take · lesson · guided action</text>
+  <text x="1554" y="403" class="box-title">Gemini + AI Mode</text>
+  <text x="1554" y="438" class="box-copy">prepared browser handoff</text>
+  <text x="1554" y="521" class="box-title">Google Notebook</text>
+  <text x="1554" y="556" class="box-copy">Three stable Drive source docs · one-way</text>
+  <text x="1554" y="639" class="box-title">Local Gemma 4</text>
+  <text x="1554" y="674" class="box-copy">explicit route through paired computer</text>
+
+  <!-- Model loop under cloud -->
+  <g filter="url(#shadow)">
+    <rect x="889" y="605" width="571" height="151" rx="24" fill="#FFFFFF" stroke="#C5D2CD" stroke-width="2"/>
+  </g>
+  <text x="917" y="644" class="group-title">MODEL + AGENT RUNTIME</text>
+  <rect x="917" y="664" width="252" height="62" rx="18" fill="#E9EEF7"/>
+  <text x="940" y="691" class="box-title" style="font-size:20px">Gemini 3.5 Flash-Lite</text>
+  <text x="940" y="714" class="box-small">production cloud route</text>
+  <rect x="1185" y="664" width="247" height="62" rx="18" fill="#F4EEFA"/>
+  <text x="1208" y="691" class="box-title" style="font-size:20px">Agent fleet</text>
+  <text x="1208" y="714" class="box-small">foreground + 11-stage ADK</text>
+  <path d="M1366 539 V585 C1366 596 1355 605 1344 605" class="flow-soft"/>
+  <path d="M1173 605 V560 C1173 549 1162 539 1151 539" class="flow-soft"/>
+
+  <!-- Feedback loop -->
+  <path d="M1842 300 H1860 M1842 418 H1860 M1842 536 H1860 M1842 654 H1860" fill="none" stroke="#C06A35" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/>
+  <path d="M1860 300 V827 C1860 862 1832 890 1797 890 H322 C287 890 259 862 259 827 V560" class="return"/>
+  <text x="1818" y="788" text-anchor="end" class="arrow-label" style="fill:#9B552D">learner answer or outcome</text>
+  <rect x="367" y="820" width="1198" height="141" rx="30" fill="#173C32" filter="url(#shadow)"/>
+  <text x="407" y="862" class="kicker" style="fill:#AFCBC0">THE COMPOUNDING LOOP</text>
+  <text x="407" y="905" class="hero-title" style="font-size:28px">Answer · correction · completion · external outcome</text>
+  <text x="407" y="936" class="hero-copy" style="font-size:18px">returns as evidence → updates comfort, gaps and priorities → changes the next recommendation</text>
+  <path d="M780 820 V783 C780 768 793 756 808 756 H889" class="return"/>
+  <text x="798" y="797" class="arrow-label" style="fill:#9B552D">evidence returns</text>
+
+  <!-- Legend -->
+  <line x1="78" y1="1018" x2="126" y2="1018" class="flow"/>
+  <text x="142" y="1024" class="box-small">live production path</text>
+  <line x1="320" y1="1018" x2="368" y2="1018" class="optional"/>
+  <text x="384" y="1024" class="box-small">learner-chosen handoff or model route</text>
+  <line x1="708" y1="1018" x2="756" y2="1018" class="return"/>
+  <text x="772" y="1024" class="box-small">learner evidence changes the loop</text>
+  <text x="1842" y="1024" text-anchor="end" class="box-small">All Things Agentic · submission architecture</text>
+</svg>

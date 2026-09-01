@@ -1,0 +1,50 @@
+{
+  "name": "virgil",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "workspaces": [
+    "core",
+    "adapters",
+    "runner",
+    "extension",
+    "adk",
+    "trigger"
+  ],
+  "scripts": {
+    "typecheck": "tsc -b",
+    "lint": "node scripts/check-quality.mjs",
+    "coverage": "npm run build --silent && node scripts/check-coverage.mjs",
+    "check:quality": "npm run typecheck && npm run lint && npm run coverage",
+    "check:seam": "node scripts/check-seam.mjs",
+    "check:d1": "node scripts/check-d1-equivalence.mjs",
+    "check:public": "node scripts/check-public-release.mjs",
+    "eval:session": "node scripts/eval-session.mjs",
+    "benchmark:deep": "node scripts/benchmark-deep.mjs",
+    "benchmark:deep:plan": "node scripts/benchmark-deep.mjs --dry-run",
+    "benchmark:deep:stub": "node scripts/benchmark-deep.mjs --stub",
+    "cli:bridge": "node runner/dist/codex-cli-bridge.js",
+    "connector": "node runner/dist/local-model-connector-cli.js",
+    "test:cli:live": "VIRGIL_CLI_LIVE=1 node --test runner/dist/__tests__/codex-cli-live.test.js",
+    "test": "tsc -b && node --test \"core/dist/__tests__/**/*.test.js\" \"adapters/dist/__tests__/**/*.test.js\" \"runner/dist/__tests__/**/*.test.js\" \"extension/dist/__tests__/**/*.test.js\" \"adk/dist/__tests__/**/*.test.js\" \"trigger/dist/__tests__/**/*.test.js\"",
+    "build": "tsc -b",
+    "fixtures:synthetic": "npm run build --silent && node scripts/generate-synthetic-partition-corpora.mjs && node scripts/generate-synthetic-real-corpus.mjs",
+    "package:source": "node scripts/package-source-release.mjs",
+    "package:extension": "npm run build --silent && node scripts/package-extension.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.2.6",
+    "@types/node": "^22.20.1",
+    "firebase-tools": "^15.28.1",
+    "typescript": "^5.6.0"
+  },
+  "overrides": {
+    "@google/adk@2.0.0": {
+      "adm-zip": "0.6.0"
+    },
+    "gaxios": {
+      "uuid": "11.1.1"
+    },
+    "re2": "1.26.1"
+  }
+}

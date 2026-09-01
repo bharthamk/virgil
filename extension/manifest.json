@@ -1,0 +1,120 @@
+{
+  "manifest_version": 3,
+  "name": "Virgil",
+  "version": "0.1.0",
+  "description": "Capture what you want to learn, keep its source and context, and turn it into one useful next move.",
+  "incognito": "not_allowed",
+  "permissions": [
+    "storage",
+    "identity",
+    "contextMenus",
+    "sidePanel",
+    "scripting",
+    "activeTab",
+    "alarms"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8791/*",
+    "http://127.0.0.1:9099/*",
+    "https://identitytoolkit.googleapis.com/*",
+    "https://securetoken.googleapis.com/*"
+  ],
+  "oauth2": {
+    "client_id": "__VIRGIL_GOOGLE_EXTENSION_CLIENT_ID__",
+    "scopes": [
+      "openid",
+      "email",
+      "profile"
+    ]
+  },
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "selection-content.js",
+        "selector-content.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "session-bridge-content.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "reread-content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "dist/reread-bridge.js",
+        "dist/reread.js",
+        "dist/reread-core.js",
+        "dist/selection-memory.js",
+        "dist/pin-box.js",
+        "dist/theme.js",
+        "dist/selector.js",
+        "dist/capture.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "action": {
+    "default_title": "Virgil",
+    "default_icon": {
+      "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png",
+      "48": "assets/icon-48.png",
+      "128": "assets/icon-128.png"
+    },
+    "default_popup": "action-popup.html"
+  },
+  "commands": {
+    "pin-interest": {
+      "suggested_key": {
+        "default": "Alt+P",
+        "mac": "Alt+P"
+      },
+      "description": "Pin this (interest)"
+    },
+    "pin-struggle": {
+      "suggested_key": {
+        "default": "Alt+Shift+P",
+        "mac": "Alt+Shift+P"
+      },
+      "description": "Pin this (struggling with it)"
+    }
+  }
+}

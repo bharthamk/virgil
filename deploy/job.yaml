@@ -1,0 +1,276 @@
+# The nightly, as a Cloud Run Job.
+#
+#   gcloud run jobs replace deploy/job.rendered.yaml --region us-central1
+#
+# `deploy/apply.sh` fills in the double-underscored placeholders below and
+# applies the result. Nothing here has been applied to anything: no project
+# exists, and every script on this branch refuses to run without an explicit
+# confirmation variable.
+#
+# ## The nesting is four `spec`s deep, and that is not a typo
+#
+# Job → ExecutionTemplateSpec → ExecutionSpec → TaskTemplateSpec → TaskSpec.
+# `taskCount` and `parallelism` live on the ExecutionSpec; `maxRetries`,
+# `timeoutSeconds`, `serviceAccountName` and `containers` live two levels
+# further in, on the TaskSpec. Getting that wrong is the most likely way for a
+# first apply to fail, so it is written out rather than remembered.
+# <https://docs.cloud.google.com/run/docs/reference/yaml/v1>
+#
+# `timeoutSeconds` is **quoted**. The REST reference types TaskSpec's as
+# `string` with format int64, where a Service's RevisionSpec types its own as a
+# plain integer. The two kinds genuinely differ.
+# <https://docs.cloud.google.com/run/docs/reference/rest/v1/TaskSpec>
+#
+# There is deliberately **no** `run.googleapis.com/execution-environment`
+# annotation: *"Cloud Run jobs and worker pools only use the second generation
+# execution environment, and this cannot be changed."*
+# <https://docs.cloud.google.com/run/docs/configuring/execution-environments>
+#
+# The reasoning behind every number is in `deploy/CLOUD_RUN.md` §6.
+
+apiVersion: run.googleapis.com/v1
+kind: Job
+metadata:
+  name: virgil-nightly
+
+spec:
+  template:                 # ExecutionTemplateSpec
+    spec:                   # ExecutionSpec
+      # One task. The nightly reasons over the whole board — only the Forager
+      # fans out, and it fans out inside the process — so there is nothing to
+      # shard. Two tasks would be two runs of the same night.
+      taskCount: 1
+      parallelism: 1
+
+      template:             # TaskTemplateSpec
+        spec:               # TaskSpec
+
+          # The platform default is 3. This is 1, for two reasons that have to
+          # hold together.
+          #
+          # Retries are SAFE because of the per-night idempotency contract. A re-run over an unchanged
+          # board is already proven to create no second topics, to keep topic
+          # ids so the learner's signals stay attached, and not to re-enrich a
+          # settled pin (`nightly-idempotence.test.ts`). The one row that is not
+          # idempotent is the session, which is what the per-night idempotency contract's per-night key
+          # exists to fix — and that key is the Store lane's half and is not
+          # merged yet, so this number is chosen to be safe before it lands as
+          # well as after.
+          #
+          # Retries are BOUNDED because a poisoned night must not burn quota. A
+          # warm nightly is seven model calls; the free-tier cap is twenty
+          # requests per day per model. Two attempts is fourteen and fits.
+          # Three is twenty-one and does not. That is the whole argument.
+          #
+          # The third reason has been retired by the persisted batch-identity contract and is recorded
+          # rather than deleted: the key used to be the UTC date of `builtAt`,
+          # so a task starting near midnight UTC whose retry landed after the
+          # boundary named its row for the following night. `Session.nightKey`
+          # closed that, and the retry budget is now bounded by quota alone.
+          # CLOUD_RUN.md R3.
+          maxRetries: 1
+
+          # Thirty minutes. The platform default is 600s and WOULD KILL THIS
+          # RUN: the Forager alone measured 8.5 minutes of silence on the local
+          # stack. Production is Gemini at a measured 0.2 min warm, so this is
+          # roughly 150x the expectation and 3.5x the worst local
+          # network-bound reference — a bound on a hung night, not a budget.
+          # An over-generous timeout costs ~$0.03 in the worst case; an
+          # under-generous one costs the nightly.
+          timeoutSeconds: '1800'
+
+          # Needs roles/secretmanager.secretAccessor on the secret below, and
+          # roles/datastore.user for Firestore.
+          serviceAccountName: __RUNTIME_SA__
+
+          containers:
+            - image: __IMAGE_JOB__
+
+              # Explicit, and the safe one. The same entrypoint also answers
+              # `seed`, which begins with deleteEverything() — see
+              # CLOUD_RUN.md R2. Naming the args here means the destructive
+              # command is never one typo away from being the default.
+              # `--if-due` is what makes the hourly sweep cheap: on a tick
+              # that is not this learner's moment the command reads prefs, one
+              # session row and its own clock, prints `night-outcome not-due`
+              # and exits 0. Without it an hourly cron would build twenty-four
+              # sessions a day.
+              args: ['runner/dist/cli.js', 'process', '--if-due']
+
+              env:
+                - name: SB_OPERATOR_MODEL_BUDGET_TOKENS
+                  value: '10000000'
+                # The production store, in the project-qualified grammar.
+                #
+                # `firestore:<project>/<board>` — the board id is what
+                # `new JsonStore(path)` named on a laptop: one learner's board.
+                # The project half is not decoration. Without it the adapter
+                # defaults to `virgil-emulator`, which is a name for nothing,
+                # and `firestoreWiring` refuses at startup rather than letting
+                # the SDK fail on credentials with a message naming no
+                # variable. An unrecognised spec exits 2 the same way, rather
+                # than falling back to a container disk that vanishes with the
+                # task.
+                - name: SB_STORE
+                  value: firestore:__PROJECT_ID__/__BOARD_ID__
+
+                # Must match maxRetries above. The worker uses Cloud Run's
+                # zero-based attempt counter to close the learner receipt only
+                # after the final catchable failure; earlier failures keep the
+                # nonce leased for the platform retry.
+                - name: SB_RUN_MAX_RETRIES
+                  value: '1'
+
+                # The named opt-in that lets a store leave the emulator.
+                #
+                # An exact word, not a truthiness test: a variable that is *set*
+                # is not a decision. It is here rather than hard-coded in the
+                # composition roots because a hard-coded `true` would authorise
+                # the *build* — and then the same image on a laptop with a stray
+                # `gcloud auth` would write to the real board. This file is
+                # committed and reviewed like code, which is the whole argument
+                # for it being the place.
+                - name: VIRGIL_ALLOW_PRODUCTION
+                  value: 'yes'
+
+                # Which night a run belongs to, and the one setting that makes
+                # the two lanes the same function rather than merely compatible.
+                #
+                # The trigger's night is the local date of `instant − H` hours
+                # (default 6); the store's is the UTC date of the session, which
+                # is `H = 0`. At six they disagree between 00:00Z and 05:59Z —
+                # and the schedule fires at 03:00Z, inside that window. At zero
+                # they agree for every instant of the day, which is a property
+                # no schedule change can erode.
+                #
+                # `trigger-store-joint.test.ts` asserts the arithmetic and
+                # `deploy-config.test.ts` asserts these two lines, so a
+                # deployment that drops them as "looks like a default" fails in
+                # the suite rather than at 3am.
+                - name: VIRGIL_TRIGGER_NIGHT_BOUNDARY_H
+                  value: '0'
+                - name: VIRGIL_TRIGGER_NIGHT_TZ
+                  value: UTC
+
+                # Which provider answers. RUNBOOK §2.4a's defect, closed here.
+                #
+                # This container is handed a GEMINI_API_KEY below and, until
+                # this line existed, nothing in the entrypoint read it: both
+                # composition roots built the local adapter unconditionally, so
+                # the night would have tried to reach Ollama at
+                # 127.0.0.1:11434 — which inside a container is the container —
+                # and failed at the first model call, every night.
+                #
+                # `gemini` on its own takes the tier map the adapter ships, both
+                # entries live-verified and pinned rather than aliased.
+                # `gemini:<fast>/<deep>` pins a pair here instead, which is how
+                # a tier decision gets reviewed like code. An unrecognised spec
+                # exits 2 rather than falling back in either direction: falling
+                # back to the local model deploys happily and fails nightly at
+                # 127.0.0.1, and falling back to Gemini spends money nobody
+                # authorised.
+                #
+                # This is where the model-benchmark boundary's condition ends. "Gemini's benchmark-lane
+                # role is benchmarking only" was never about the adapter being
+                # unproven — it was about a paid provider not arriving in the
+                # fleet by accident. Cloud is the product default
+                # (`model-spec.test.ts` holds the assertion), so unset
+                # also resolves to Gemini now — what keeps a laptop from
+                # spending is the absence of a key, not the default. This file
+                # is still the deployed decision, named rather than inherited.
+                # FINAL FLOOR LOCK 2026-08-31. Both arms of the API-key ladder
+                # use this exact pair: the free key first, then the managed key
+                # only behind the paid budget gate. Both ids were live-probed
+                # through this deployment's credential before the lock. The
+                # earlier Vertex 2.5 rung was below the hackathon's mandatory
+                # Gemini 3.5 floor and therefore cannot be a submission route.
+                - name: SB_LLM
+                  value: gemini:gemini-3.5-flash-lite/gemini-3.5-flash-lite
+
+                - name: GOOGLE_CLOUD_PROJECT
+                  value: __PROJECT_ID__
+                - name: GOOGLE_CLOUD_LOCATION
+                  value: __REGION__
+
+                # Which orchestration host sequences the night — the orchestration dependency boundary's
+                # trigger, in the file that pulls it.
+                #
+                # The entrypoint above stays Virgil's own Node process. That is
+                # deliberate and it is the shape `adk/DESIGN.md` §5a landed on:
+                # `adk deploy cloud_run` generates an Express **service** and
+                # there is no Cloud Run Jobs target anywhere in ADK's deploy
+                # story, so the Job runs `cli.js nightly` and the framework goes
+                # *inside* it. This line is what puts it there.
+                #
+                # Named, refused when malformed, never a silent fallback — the
+                # same grammar as SB_STORE, and for a sharper reason. A typo that
+                # fell back to the framework-free host would deploy happily, run
+                # every night without ADK, and report a green execution, while
+                # the entry's framework claim quietly stopped being true.
+                # `orchestratorChoice` exits 2 on anything it does not know.
+                #
+                # Unset is `local` — the same sequencing rules with no framework
+                # under them — so a laptop is unchanged and this file is the
+                # place the decision is recorded.
+                - name: SB_ORCHESTRATOR
+                  value: adk
+
+                # How many pages the Forager re-fetches at once. The local
+                # default.
+                - name: SB_CONCURRENCY
+                  value: '3'
+
+                # Which embedder clusters the board. RUNBOOK §2.4a's defect,
+                # one port over: both composition roots build
+                # `SB_EMBEDDER === 'tfidf' ? TfIdf : Ollama(127.0.0.1:11434)`,
+                # and inside this container 127.0.0.1 is the container — so an
+                # unset value spends the night's model calls and then dies in
+                # the cluster stage with no board. `tfidf` is the embedder
+                # with no network under it; `check:d1` carries the coarse-cut
+                # caveat that choice accepts.
+                - name: SB_EMBEDDER
+                  value: tfidf
+
+                # The key is injected, never baked. Nothing in either image
+                # contains it, and the smoke suite scans both to prove that.
+                # `name` is the secret; `key` is the version.
+                # <https://docs.cloud.google.com/run/docs/configuring/jobs/secrets>
+                - name: GEMINI_API_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: __SECRET_NAME__
+                      key: latest
+
+                # The ladder's free arm: the free-tier
+                # key spends first, and the key above becomes the paid
+                # fallback behind the learner's own kill-switch. Present in
+                # both resources or neither: one half laddered and one half
+                # not would give the two halves of one learner different
+                # spending rules. `deploy-config.test.ts` asserts the pair.
+                - name: GEMINI_API_KEY_FREE
+                  valueFrom:
+                    secretKeyRef:
+                      name: __FREE_SECRET_NAME__
+                      key: latest
+
+                # The access token is minted at run time from this refresh
+                # grant. The learner board holds only the three file ids; no
+                # Google credential is written to Firestore or the image.
+                - name: SB_NOTEBOOK_DRIVE_CREDENTIAL
+                  valueFrom:
+                    secretKeyRef:
+                      name: __NOTEBOOK_DRIVE_SECRET_NAME__
+                      key: latest
+
+              resources:
+                limits:
+                  # Jobs cannot go below 1 CPU — this is the platform floor,
+                  # not a choice.
+                  # <https://docs.cloud.google.com/run/docs/configuring/jobs/cpu>
+                  cpu: '1'
+                  # Measured: the nightly completes inside a 128Mi limit at 1
+                  # CPU on the 21-pin demo board. 512Mi is the platform default
+                  # and ~4x that floor; the headroom is for real enrichment
+                  # text a stub model never writes, and it costs $0.000002 per
+                  # GiB-second.
+                  memory: 512Mi

@@ -1,0 +1,247 @@
+/* The toolbar button's own surface.
+
+   `panel.css` is linked first and owns the palette — whiteboard, blackboard
+   and match-system. This popup is the smallest Virgil surface, not a generic
+   browser menu floating beside the product, so it uses the same physical
+   board, handwriting and marker/chalk rules as the side-panel tools. */
+
+html { background: var(--bg); }
+
+#app {
+  width: 304px;
+  max-width: none;
+  margin: 0;
+  padding: 15px 15px 18px;
+  color: var(--mark-ink);
+  background-color: var(--board);
+  background-image: var(--board-texture);
+  border: 5px solid var(--board-frame);
+  border-bottom-width: 8px;
+  box-shadow: var(--board-shadow);
+}
+
+.popup-heading,
+.popup-utility-heading {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  color: var(--mark-ink);
+  font-family: var(--hand);
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
+.popup-heading {
+  margin: 0 5px 13px;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.popup-heading::after,
+.popup-utility-heading::after,
+.popup-choice-label::after,
+.popup-utility::after,
+.popup-theme-control > span::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: -2px;
+  bottom: -2px;
+  height: 2px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .5;
+  transform: rotate(-.7deg);
+}
+
+.popup-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+  min-height: 60px;
+  margin: 0 0 4px;
+  padding: 8px 7px 9px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--mark-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.popup-choice:hover { background: var(--board-wash); }
+.popup-choice:focus-visible,
+.popup-utility:focus-visible,
+.popup-theme:focus-visible {
+  outline: 2px solid var(--mark-2);
+  outline-offset: 1px;
+}
+
+.popup-choice-label {
+  position: relative;
+  display: inline-block;
+  font-family: var(--hand);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.popup-choice-site .popup-choice-label { color: var(--mark-3); }
+.popup-choice-panel .popup-choice-label { color: var(--mark-2); }
+.popup-choice-pick .popup-choice-label { color: var(--mark-1); }
+
+.popup-choice-note {
+  color: var(--board-muted);
+  font-size: 12px;
+  line-height: 1.38;
+}
+
+/* Refused rather than absent: a page this extension may not read still shows
+   the choice, greyed, with the reason where the explanation was. */
+.popup-choice.is-off { cursor: default; opacity: .58; }
+.popup-choice.is-off:hover { background: transparent; }
+
+.popup-utilities {
+  margin: 12px 4px 0;
+  padding-top: 12px;
+  border-top: 2px solid var(--board-line);
+}
+
+.popup-queue {
+  margin: 11px 4px 0;
+  padding-top: 11px;
+  border-top: 2px solid var(--board-line);
+}
+
+.popup-queue-heading {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 5px;
+  color: var(--mark-1);
+  font-family: var(--hand);
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.popup-queue-note,
+.popup-queue-status {
+  margin: 0 0 7px;
+  color: var(--board-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.popup-queue-list {
+  display: grid;
+  gap: 6px;
+  max-height: 212px;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.popup-queue-item {
+  padding: 7px 8px;
+  border-left: 2px solid var(--mark-1);
+  background: var(--board-wash);
+}
+
+.popup-queue-item[aria-busy="true"] { opacity: .7; }
+
+.popup-queue-title {
+  margin: 0 0 3px;
+  color: var(--mark-ink);
+  font-family: var(--hand);
+  font-size: 14px;
+  line-height: 1.22;
+}
+
+.popup-queue-detail {
+  margin: 0 0 4px;
+  color: var(--board-muted);
+  font-size: 11px;
+  line-height: 1.32;
+}
+
+.popup-queue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px 13px;
+}
+
+.popup-queue-confirm-copy {
+  flex: 1 0 100%;
+  color: var(--mark-ink);
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.popup-queue-status {
+  min-height: 1.35em;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.popup-utility-heading {
+  margin: 0 0 6px;
+  color: var(--mark-4);
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.popup-utility-note {
+  margin: 0 0 9px;
+  color: var(--board-muted);
+  font-size: 12px;
+  line-height: 1.38;
+}
+
+.popup-utility-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 18px;
+}
+.popup-utility {
+  position: relative;
+  padding: 4px 1px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--mark-ink);
+  font-family: var(--hand);
+  font-size: 14px;
+  font-weight: 700;
+}
+.popup-utility:hover { color: var(--mark-1); background: transparent; }
+
+.popup-theme-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px solid var(--board-line);
+  color: var(--mark-ink);
+  font-family: var(--hand);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.popup-theme-control > span { position: relative; }
+
+.popup-theme {
+  min-width: 132px;
+  padding: 5px 25px 5px 9px;
+  border: 1px solid var(--board-line);
+  border-radius: 999px;
+  color: var(--mark-ink);
+  background-color: var(--board-wash);
+  font-family: var(--hand);
+  font-size: 13px;
+  font-weight: 700;
+}

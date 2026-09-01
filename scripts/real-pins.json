@@ -1,0 +1,712 @@
+[
+  {
+    "id": "pin-01",
+    "capturedAt": "2026-07-04",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/kv-edge-caching/1",
+    "site": "example.invalid",
+    "title": "Edge cache visibility — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Edge cache visibility"
+    ],
+    "selection": "In this authored edge cache visibility example, regional cache is the main idea. It stays connected to stale copy, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: kv-edge-caching."
+  },
+  {
+    "id": "pin-02",
+    "capturedAt": "2026-07-07",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/kv-edge-caching/2",
+    "site": "example.invalid",
+    "title": "Edge cache visibility — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Edge cache visibility"
+    ],
+    "selection": "In this authored edge cache visibility example, stale copy is the main idea. It stays connected to negative lookup, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: kv-edge-caching."
+  },
+  {
+    "id": "pin-03",
+    "capturedAt": "2026-07-10",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/kv-edge-caching/3",
+    "site": "example.invalid",
+    "title": "Edge cache visibility — synthetic note 3",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Edge cache visibility"
+    ],
+    "selection": "In this authored edge cache visibility example, negative lookup is the main idea. It stays connected to regional cache, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: kv-edge-caching."
+  },
+  {
+    "id": "pin-04",
+    "capturedAt": "2026-07-13",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/durable-objects/1",
+    "site": "example.invalid",
+    "title": "Single-owner objects — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Single-owner objects"
+    ],
+    "selection": "In this authored single-owner objects example, unique object name is the main idea. It stays connected to single execution location, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: durable-objects."
+  },
+  {
+    "id": "pin-05",
+    "capturedAt": "2026-07-16",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/durable-objects/2",
+    "site": "example.invalid",
+    "title": "Single-owner objects — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Single-owner objects"
+    ],
+    "selection": "In this authored single-owner objects example, single execution location is the main idea. It stays connected to unique object name, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: durable-objects.",
+    "note": "Synthetic learner note about single execution location."
+  },
+  {
+    "id": "pin-06",
+    "capturedAt": "2026-07-19",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/pg-vacuum/1",
+    "site": "example.invalid",
+    "title": "Database vacuum work — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Database vacuum work"
+    ],
+    "selection": "In this authored database vacuum work example, cleanup traffic is the main idea. It stays connected to long transaction, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: pg-vacuum."
+  },
+  {
+    "id": "pin-07",
+    "capturedAt": "2026-07-22",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/pg-vacuum/2",
+    "site": "example.invalid",
+    "title": "Database vacuum work — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Database vacuum work"
+    ],
+    "selection": "In this authored database vacuum work example, long transaction is the main idea. It stays connected to cleanup traffic, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: pg-vacuum."
+  },
+  {
+    "id": "pin-08",
+    "capturedAt": "2026-07-25",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/db-indexes/1",
+    "site": "example.invalid",
+    "title": "Database index choices — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Database index choices"
+    ],
+    "selection": "In this authored database index choices example, equality lookup is the main idea. It stays connected to ordered lookup, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: db-indexes."
+  },
+  {
+    "id": "pin-09",
+    "capturedAt": "2026-07-01",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/db-indexes/2",
+    "site": "example.invalid",
+    "title": "Database index choices — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Database index choices"
+    ],
+    "selection": "In this authored database index choices example, ordered lookup is the main idea. It stays connected to equality lookup, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: db-indexes."
+  },
+  {
+    "id": "pin-10",
+    "capturedAt": "2026-07-04",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/cors/1",
+    "site": "example.invalid",
+    "title": "Browser origin checks — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Browser origin checks"
+    ],
+    "selection": "In this authored browser origin checks example, preflight request is the main idea. It stays connected to response permission, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: cors.",
+    "note": "Synthetic learner note about preflight request."
+  },
+  {
+    "id": "pin-11",
+    "capturedAt": "2026-07-07",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/cors/2",
+    "site": "example.invalid",
+    "title": "Browser origin checks — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Browser origin checks"
+    ],
+    "selection": "In this authored browser origin checks example, response permission is the main idea. It stays connected to preflight request, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: cors."
+  },
+  {
+    "id": "pin-12",
+    "capturedAt": "2026-07-10",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/http-caching/1",
+    "site": "example.invalid",
+    "title": "HTTP cache freshness — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "HTTP cache freshness"
+    ],
+    "selection": "In this authored http cache freshness example, conditional validation is the main idea. It stays connected to reverse cache, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: http-caching."
+  },
+  {
+    "id": "pin-13",
+    "capturedAt": "2026-07-13",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/http-caching/2",
+    "site": "example.invalid",
+    "title": "HTTP cache freshness — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "HTTP cache freshness"
+    ],
+    "selection": "In this authored http cache freshness example, reverse cache is the main idea. It stays connected to conditional validation, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: http-caching."
+  },
+  {
+    "id": "pin-14",
+    "capturedAt": "2026-07-16",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/intervals/1",
+    "site": "example.invalid",
+    "title": "Musical interval naming — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Musical interval naming"
+    ],
+    "selection": "In this authored musical interval naming example, letter distance is the main idea. It stays connected to interval quality, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: intervals."
+  },
+  {
+    "id": "pin-15",
+    "capturedAt": "2026-07-19",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/intervals/2",
+    "site": "example.invalid",
+    "title": "Musical interval naming — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Musical interval naming"
+    ],
+    "selection": "In this authored musical interval naming example, interval quality is the main idea. It stays connected to half-step change, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: intervals.",
+    "note": "Synthetic learner note about interval quality."
+  },
+  {
+    "id": "pin-16",
+    "capturedAt": "2026-07-22",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/intervals/3",
+    "site": "example.invalid",
+    "title": "Musical interval naming — synthetic note 3",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Musical interval naming"
+    ],
+    "selection": "In this authored musical interval naming example, half-step change is the main idea. It stays connected to perfect family, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: intervals."
+  },
+  {
+    "id": "pin-17",
+    "capturedAt": "2026-07-25",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/intervals/4",
+    "site": "example.invalid",
+    "title": "Musical interval naming — synthetic note 4",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Musical interval naming"
+    ],
+    "selection": "In this authored musical interval naming example, perfect family is the main idea. It stays connected to letter distance, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: intervals."
+  },
+  {
+    "id": "pin-18",
+    "capturedAt": "2026-07-01",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/modes/1",
+    "site": "example.invalid",
+    "title": "Musical mode colour — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Musical mode colour"
+    ],
+    "selection": "In this authored musical mode colour example, raised sixth is the main idea. It stays connected to tonic relationship, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: modes."
+  },
+  {
+    "id": "pin-19",
+    "capturedAt": "2026-07-04",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/modes/2",
+    "site": "example.invalid",
+    "title": "Musical mode colour — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Musical mode colour"
+    ],
+    "selection": "In this authored musical mode colour example, tonic relationship is the main idea. It stays connected to characteristic note, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: modes."
+  },
+  {
+    "id": "pin-20",
+    "capturedAt": "2026-07-07",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/modes/3",
+    "site": "example.invalid",
+    "title": "Musical mode colour — synthetic note 3",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Musical mode colour"
+    ],
+    "selection": "In this authored musical mode colour example, characteristic note is the main idea. It stays connected to raised sixth, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: modes.",
+    "note": "Synthetic learner note about characteristic note."
+  },
+  {
+    "id": "pin-21",
+    "capturedAt": "2026-07-10",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/seventh-chords/1",
+    "site": "example.invalid",
+    "title": "Seventh chord construction — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Seventh chord construction"
+    ],
+    "selection": "In this authored seventh chord construction example, stacked thirds is the main idea. It stays connected to guide tones, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: seventh-chords."
+  },
+  {
+    "id": "pin-22",
+    "capturedAt": "2026-07-13",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/seventh-chords/2",
+    "site": "example.invalid",
+    "title": "Seventh chord construction — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Seventh chord construction"
+    ],
+    "selection": "In this authored seventh chord construction example, guide tones is the main idea. It stays connected to stacked thirds, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: seventh-chords."
+  },
+  {
+    "id": "pin-23",
+    "capturedAt": "2026-07-16",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/tritone-substitution/1",
+    "site": "example.invalid",
+    "title": "Tritone substitution — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Tritone substitution"
+    ],
+    "selection": "In this authored tritone substitution example, dominant replacement is the main idea. It stays connected to shared guide tones, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: tritone-substitution."
+  },
+  {
+    "id": "pin-24",
+    "capturedAt": "2026-07-19",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/tritone-substitution/2",
+    "site": "example.invalid",
+    "title": "Tritone substitution — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Tritone substitution"
+    ],
+    "selection": "In this authored tritone substitution example, shared guide tones is the main idea. It stays connected to dominant replacement, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: tritone-substitution."
+  },
+  {
+    "id": "pin-25",
+    "capturedAt": "2026-07-22",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/maillard/1",
+    "site": "example.invalid",
+    "title": "Browning reactions — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Browning reactions"
+    ],
+    "selection": "In this authored browning reactions example, surface heat is the main idea. It stays connected to aroma compounds, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: maillard.",
+    "note": "Synthetic learner note about surface heat."
+  },
+  {
+    "id": "pin-26",
+    "capturedAt": "2026-07-25",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/maillard/2",
+    "site": "example.invalid",
+    "title": "Browning reactions — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Browning reactions"
+    ],
+    "selection": "In this authored browning reactions example, aroma compounds is the main idea. It stays connected to surface heat, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: maillard."
+  },
+  {
+    "id": "pin-27",
+    "capturedAt": "2026-07-01",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/braising/1",
+    "site": "example.invalid",
+    "title": "Braising technique — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Braising technique"
+    ],
+    "selection": "In this authored braising technique example, dry then wet heat is the main idea. It stays connected to gentle covered cooking, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: braising."
+  },
+  {
+    "id": "pin-28",
+    "capturedAt": "2026-07-04",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/braising/2",
+    "site": "example.invalid",
+    "title": "Braising technique — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Braising technique"
+    ],
+    "selection": "In this authored braising technique example, gentle covered cooking is the main idea. It stays connected to dry then wet heat, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: braising."
+  },
+  {
+    "id": "pin-29",
+    "capturedAt": "2026-07-07",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/emulsions/1",
+    "site": "example.invalid",
+    "title": "Emulsion stability — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Emulsion stability"
+    ],
+    "selection": "In this authored emulsion stability example, continuous phase is the main idea. It stays connected to small droplets, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: emulsions."
+  },
+  {
+    "id": "pin-30",
+    "capturedAt": "2026-07-10",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/emulsions/2",
+    "site": "example.invalid",
+    "title": "Emulsion stability — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Emulsion stability"
+    ],
+    "selection": "In this authored emulsion stability example, small droplets is the main idea. It stays connected to continuous phase, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: emulsions.",
+    "note": "Synthetic learner note about small droplets."
+  },
+  {
+    "id": "pin-31",
+    "capturedAt": "2026-07-13",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/sourdough-starter/1",
+    "site": "example.invalid",
+    "title": "Sourdough starter care — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Sourdough starter care"
+    ],
+    "selection": "In this authored sourdough starter care example, flour and water culture is the main idea. It stays connected to feeding rhythm, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: sourdough-starter."
+  },
+  {
+    "id": "pin-32",
+    "capturedAt": "2026-07-16",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/sourdough-starter/2",
+    "site": "example.invalid",
+    "title": "Sourdough starter care — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Sourdough starter care"
+    ],
+    "selection": "In this authored sourdough starter care example, feeding rhythm is the main idea. It stays connected to ripe starter, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: sourdough-starter."
+  },
+  {
+    "id": "pin-33",
+    "capturedAt": "2026-07-19",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/sourdough-starter/3",
+    "site": "example.invalid",
+    "title": "Sourdough starter care — synthetic note 3",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Sourdough starter care"
+    ],
+    "selection": "In this authored sourdough starter care example, ripe starter is the main idea. It stays connected to levain build, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: sourdough-starter."
+  },
+  {
+    "id": "pin-34",
+    "capturedAt": "2026-07-22",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/sourdough-starter/4",
+    "site": "example.invalid",
+    "title": "Sourdough starter care — synthetic note 4",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Sourdough starter care"
+    ],
+    "selection": "In this authored sourdough starter care example, levain build is the main idea. It stays connected to flour and water culture, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: sourdough-starter."
+  },
+  {
+    "id": "pin-35",
+    "capturedAt": "2026-07-25",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/derailleur-adjustment/1",
+    "site": "example.invalid",
+    "title": "Derailleur adjustment — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Derailleur adjustment"
+    ],
+    "selection": "In this authored derailleur adjustment example, limit stop is the main idea. It stays connected to cable tension, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: derailleur-adjustment.",
+    "note": "Synthetic learner note about limit stop."
+  },
+  {
+    "id": "pin-36",
+    "capturedAt": "2026-07-01",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/derailleur-adjustment/2",
+    "site": "example.invalid",
+    "title": "Derailleur adjustment — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Derailleur adjustment"
+    ],
+    "selection": "In this authored derailleur adjustment example, cable tension is the main idea. It stays connected to guide pulley, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: derailleur-adjustment."
+  },
+  {
+    "id": "pin-37",
+    "capturedAt": "2026-07-04",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/derailleur-adjustment/3",
+    "site": "example.invalid",
+    "title": "Derailleur adjustment — synthetic note 3",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Derailleur adjustment"
+    ],
+    "selection": "In this authored derailleur adjustment example, guide pulley is the main idea. It stays connected to barrel adjuster, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: derailleur-adjustment."
+  },
+  {
+    "id": "pin-38",
+    "capturedAt": "2026-07-07",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/derailleur-adjustment/4",
+    "site": "example.invalid",
+    "title": "Derailleur adjustment — synthetic note 4",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Derailleur adjustment"
+    ],
+    "selection": "In this authored derailleur adjustment example, barrel adjuster is the main idea. It stays connected to limit stop, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: derailleur-adjustment."
+  },
+  {
+    "id": "pin-39",
+    "capturedAt": "2026-07-10",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/tire-sizing/1",
+    "site": "example.invalid",
+    "title": "Bicycle tire sizing — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Bicycle tire sizing"
+    ],
+    "selection": "In this authored bicycle tire sizing example, bead-seat diameter is the main idea. It stays connected to rim compatibility, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: tire-sizing."
+  },
+  {
+    "id": "pin-40",
+    "capturedAt": "2026-07-13",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/tire-sizing/2",
+    "site": "example.invalid",
+    "title": "Bicycle tire sizing — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Bicycle tire sizing"
+    ],
+    "selection": "In this authored bicycle tire sizing example, rim compatibility is the main idea. It stays connected to bead-seat diameter, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: tire-sizing.",
+    "note": "Synthetic learner note about rim compatibility."
+  },
+  {
+    "id": "pin-41",
+    "capturedAt": "2026-07-16",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/gear-ratios/1",
+    "site": "example.invalid",
+    "title": "Bicycle gear ratios — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Bicycle gear ratios"
+    ],
+    "selection": "In this authored bicycle gear ratios example, chainring ratio is the main idea. It stays connected to gain ratio, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: gear-ratios."
+  },
+  {
+    "id": "pin-42",
+    "capturedAt": "2026-07-19",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/gear-ratios/2",
+    "site": "example.invalid",
+    "title": "Bicycle gear ratios — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Bicycle gear ratios"
+    ],
+    "selection": "In this authored bicycle gear ratios example, gain ratio is the main idea. It stays connected to chainring ratio, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: gear-ratios."
+  },
+  {
+    "id": "pin-43",
+    "capturedAt": "2026-07-22",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/torque-wrench/1",
+    "site": "example.invalid",
+    "title": "Torque wrench practice — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Torque wrench practice"
+    ],
+    "selection": "In this authored torque wrench practice example, smooth pull is the main idea. It stays connected to storage setting, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: torque-wrench."
+  },
+  {
+    "id": "pin-44",
+    "capturedAt": "2026-07-25",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/torque-wrench/2",
+    "site": "example.invalid",
+    "title": "Torque wrench practice — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Torque wrench practice"
+    ],
+    "selection": "In this authored torque wrench practice example, storage setting is the main idea. It stays connected to smooth pull, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: torque-wrench."
+  },
+  {
+    "id": "pin-45",
+    "capturedAt": "2026-07-01",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/procrastination/1",
+    "site": "example.invalid",
+    "title": "Useful delay — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Useful delay"
+    ],
+    "selection": "In this authored useful delay example, important work is the main idea. It stays connected to small task displacement, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: procrastination.",
+    "note": "Synthetic learner note about important work."
+  },
+  {
+    "id": "pin-46",
+    "capturedAt": "2026-07-04",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/procrastination/2",
+    "site": "example.invalid",
+    "title": "Useful delay — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Useful delay"
+    ],
+    "selection": "In this authored useful delay example, small task displacement is the main idea. It stays connected to deadline pressure, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: procrastination."
+  },
+  {
+    "id": "pin-47",
+    "capturedAt": "2026-07-07",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/procrastination/3",
+    "site": "example.invalid",
+    "title": "Useful delay — synthetic note 3",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Useful delay"
+    ],
+    "selection": "In this authored useful delay example, deadline pressure is the main idea. It stays connected to important work, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: procrastination."
+  },
+  {
+    "id": "pin-48",
+    "capturedAt": "2026-07-10",
+    "type": "interest",
+    "url": "https://example.invalid/virgil-fixture/maker-schedule/1",
+    "site": "example.invalid",
+    "title": "Focused work schedules — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Focused work schedules"
+    ],
+    "selection": "In this authored focused work schedules example, long focus block is the main idea. It stays connected to meeting fragmentation, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: maker-schedule."
+  },
+  {
+    "id": "pin-49",
+    "capturedAt": "2026-07-13",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/maker-schedule/2",
+    "site": "example.invalid",
+    "title": "Focused work schedules — synthetic note 2",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "Focused work schedules"
+    ],
+    "selection": "In this authored focused work schedules example, meeting fragmentation is the main idea. It stays connected to long focus block, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: maker-schedule."
+  },
+  {
+    "id": "pin-50",
+    "capturedAt": "2026-07-16",
+    "type": "struggle",
+    "url": "https://example.invalid/virgil-fixture/news-frontpage/1",
+    "site": "example.invalid",
+    "title": "News page triage — synthetic note 1",
+    "headings": [
+      "Virgil synthetic learning fixture",
+      "News page triage"
+    ],
+    "selection": "In this authored news page triage example, mixed front-page topics is the main idea. It stays connected to mixed front-page topics, but the two terms answer different questions in the worked scenario.",
+    "surrounding": "This fictional passage exists only to test whether related notes cluster together while unrelated study areas stay separate. Topic marker: news-frontpage.",
+    "note": "Synthetic learner note about mixed front-page topics."
+  }
+]

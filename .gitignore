@@ -1,0 +1,29 @@
+# Isolated boards. `SB_DB=.data-<name>/store.json` is how a probe, a scale run
+# or an adversarial run stays off the seeded board, and each one leaves a store
+# and its artefacts behind. The default board — `.data/` — is deliberately NOT
+# matched: it is the one that is committed.
+*.tsbuildinfo
+.DS_Store
+.bakeoff-cache/
+.data-*/
+.data/*
+!.data/store.json
+!.data/seed-pin-order.json
+.env
+.env.*
+.firebaserc
+# Rendered from deploy/*.yaml by deploy/apply.sh. They carry a project id and a
+# service account, and the templates beside them are the thing worth reading.
+deploy/*.rendered.yaml
+deploy/*.plan.yaml
+dist/
+node_modules/
+release/
+.exp-*/
+.runlogs/
+
+# The Auth emulator writes this next to firebase.json on every start.
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/

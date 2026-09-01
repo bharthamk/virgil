@@ -1,0 +1,49 @@
+{
+  "store": ".data-eval/store.json",
+  "provider": "gemini",
+  "tiers": {
+    "fast": "gemini-3.5-flash-lite",
+    "deep": "gemini-3.7-flash"
+  },
+  "results": {
+    "deep+think": [
+      {
+        "pin": "82bfe813",
+        "title": "Firestore index types",
+        "outcome": "enriched",
+        "concepts": [
+          "Database indexes",
+          "Database queries",
+          "Covering queries"
+        ],
+        "echoed": 0,
+        "ms": 3389
+      },
+      {
+        "pin": "805e0d8d",
+        "title": "Welcome to Neural Networks - Prere",
+        "outcome": "enriched",
+        "concepts": [
+          "Python programming",
+          "NumPy and Pandas",
+          "Matplotlib",
+          "Basic control flow and functions"
+        ],
+        "echoed": 2,
+        "ms": 5775
+      },
+      {
+        "pin": "4d82af66",
+        "title": "How to write a short story | Natio",
+        "outcome": "model-failed",
+        "concepts": [],
+        "echoed": 0,
+        "ms": 1900
+      }
+    ],
+    "deep+think:tokens": [
+      598,
+      500
+    ]
+  }
+}
